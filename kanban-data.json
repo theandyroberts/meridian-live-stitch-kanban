@@ -189,10 +189,10 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Current note": "Initial overlay-control slice landed in `cdb66c5`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. `swift build` passed.",
-            "Next action": "Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring."
+            "Current note": "Overlay-control slice landed in `cdb66c5`; durable slate snapshots landed in `e89f86f`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields, persists current slate state in `_STATE/current_slate.json`, feeds applied values into the Live Stitch program overlay, and snapshots non-empty slate values into production take sidecars/manifest at REC start. `swift build` passed.",
+            "Next action": "App smoke verification: apply slate values, record a short production take, confirm overlay text and per-take `slate` JSON. Remaining build work: take auto-increment, retroactive last-take slate edits, false-roll slate behavior, and daily report formatting."
           },
-          "summary": "Initial overlay-control slice landed in `cdb66c5`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. `swift build` passed. Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring."
+          "summary": "Overlay-control slice landed in `cdb66c5`; durable slate snapshots landed in `e89f86f`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields, persists current slate state in `_STATE/current_slate.json`, feeds applied values into the Live Stitch program overlay, and snapshots non-empty slate values into production take sidecars/manifest at REC start. `swift build` passed. App smoke verification: apply slate values, record a short production take, confirm overlay text and per-take `slate` JSON. Remaining build work: take auto-increment, retroactive last-take slate edits, false-roll slate behavior, and daily report formatting."
         }
       ]
     },
@@ -374,7 +374,7 @@
   "suggested_next_pulls": [
     "Validate cards 8, 9, 10, 11, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, grid REC overlays, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
     "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
-    "Continue card 21 Slate Service and Operator Console Slate Controls so Live Stitch overlays can use real scene/take/director/DP values.",
+    "Continue card 21 Slate Service with take auto-increment, retroactive last-take slate edits, false-roll slate behavior, and daily report formatting.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
