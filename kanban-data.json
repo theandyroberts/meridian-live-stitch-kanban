@@ -72,6 +72,17 @@
             "Next action": "Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking."
           },
           "summary": "Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage. Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking."
+        },
+        {
+          "id": 7,
+          "title": "500 ms REC Consensus and Recording Classification",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`. Partial REC states that persist past 500 ms now start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events, so 8/9, 1/9, and middle partial patterns can produce take artifacts with sidecar QC flags instead of only UI alarms. `swift build` passed.",
+            "Next action": "Live-array verification across 9/9, 8/9, 1/9, and 5/4 split patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
+          },
+          "summary": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`. Partial REC states that persist past 500 ms now start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events, so 8/9, 1/9, and middle partial patterns can produce take artifacts with sidecar QC flags instead of only UI alarms. `swift build` passed. Live-array verification across 9/9, 8/9, 1/9, and 5/4 split patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
         }
       ]
     },
@@ -82,15 +93,15 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": 7,
-          "title": "500 ms REC Consensus and Recording Classification",
+          "id": 8,
+          "title": "Authoritative Roll/Clip OCR Take Identity",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Why ready": "Card 6 can now arm/observe overlay verification. Existing tally consensus and partial-rec events are present, and `9cefa66` changed the partial-rec tolerance to the approved 500 ms.",
-            "Definition of done": "Make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the Operator Console and event log agree on which cameras failed, false-rolled, or recorded alone."
+            "Why ready": "Card 7 now creates take artifacts for partial REC states, so the next stability risk is making OCR-derived roll/clip identity authoritative and operator-visible.",
+            "Definition of done": "Make roll/clip OCR drive production take identity with majority consensus, detect unreadable/mismatched OCR as a serious non-blocking warning, and expose a clear Verify Clip Sync action/report in the Operator Console."
           },
-          "summary": "Make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the Operator Console and event log agree on which cameras failed, false-rolled, or recorded alone."
+          "summary": "Make roll/clip OCR drive production take identity with majority consensus, detect unreadable/mismatched OCR as a serious non-blocking warning, and expose a clear Verify Clip Sync action/report in the Operator Console."
         }
       ]
     },
@@ -100,17 +111,6 @@
       "dot": "blocked",
       "phase": "Phase 1",
       "cards": [
-        {
-          "id": 8,
-          "title": "Authoritative Roll/Clip OCR Take Identity",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Blocked by": "6, 7",
-            "Unblocks": "9, 25"
-          },
-          "summary": "Blocked by 6, 7. Unblocks 9, 25."
-        },
         {
           "id": 9,
           "title": "Take Lifecycle Sorting, Sidecars, and Manifest Rollup",
@@ -373,8 +373,8 @@
     }
   ],
   "suggested_next_pulls": [
-    "Start card 7: finish 500 ms REC consensus behavior so partial starts still create correctly classified take records.",
-    "Get operator/hardware signoff on cards 5 and 6 with the physical array connected.",
+    "Start card 8: make roll/clip OCR the authoritative production take identity and expose clip-sync verification.",
+    "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.",
     "Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.",
     "Get operator/design review on card 3's Operator Console shell while card 6 is being wired.",
     "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."

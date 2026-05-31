@@ -20,18 +20,18 @@ Legend:
 | 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`. | Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock. |
 | 5 | 9-Grid and PTGui Mapping Verification | HITL | Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. | Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered. |
 | 6 | ROI Profile Store and Overlay Verification Roll | HITL | Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage. | Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking. |
+| 7 | 500 ms REC Consensus and Recording Classification | AFK | Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`. Partial REC states that persist past 500 ms now start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events, so 8/9, 1/9, and middle partial patterns can produce take artifacts with sidecar QC flags instead of only UI alarms. `swift build` passed. | Live-array verification across 9/9, 8/9, 1/9, and 5/4 split patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent. |
 
 ## Ready Now
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 7 | 500 ms REC Consensus and Recording Classification | AFK | Card 6 can now arm/observe overlay verification. Existing tally consensus and partial-rec events are present, and `9cefa66` changed the partial-rec tolerance to the approved 500 ms. | Make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the Operator Console and event log agree on which cameras failed, false-rolled, or recorded alone. |
+| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | Card 7 now creates take artifacts for partial REC states, so the next stability risk is making OCR-derived roll/clip identity authoritative and operator-visible. | Make roll/clip OCR drive production take identity with majority consensus, detect unreadable/mismatched OCR as a serious non-blocking warning, and expose a clear Verify Clip Sync action/report in the Operator Console. |
 
 ## Phase 1 Blocked
 
 | ID | Card | Type | Blocked by | Unblocks |
 | --- | --- | --- | --- | --- |
-| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | 6, 7 | 9, 25 |
 | 9 | Take Lifecycle Sorting, Sidecars, and Manifest Rollup | AFK | 7, 8 | 12, 13, 14, 15, 16, 21, 24, 29 |
 | 10 | Alarm Controller and Acknowledgement Model | AFK | 7 | 11, 12, 13 |
 | 11 | Live 9-Grid Recording/Alarm Overlays | HITL | 10 | 28 |
@@ -67,8 +67,8 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Start card 7: finish 500 ms REC consensus behavior so partial starts still create correctly classified take records.
-2. Get operator/hardware signoff on cards 5 and 6 with the physical array connected.
+1. Start card 8: make roll/clip OCR the authoritative production take identity and expose clip-sync verification.
+2. Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.
 3. Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.
 4. Get operator/design review on card 3's Operator Console shell while card 6 is being wired.
 5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.
