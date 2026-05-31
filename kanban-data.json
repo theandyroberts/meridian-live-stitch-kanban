@@ -8,7 +8,7 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": 1,
+          "id": "01",
           "issue": "[#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2)",
           "title": "Startup, Resume, and Recovery Shell",
           "type": "AFK",
@@ -21,7 +21,7 @@
           "summary": "Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed. Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present."
         },
         {
-          "id": 2,
+          "id": "02",
           "issue": "[#3](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/3)",
           "title": "Setup Mode to Working Mode State Machine",
           "type": "AFK",
@@ -34,7 +34,7 @@
           "summary": "Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work."
         },
         {
-          "id": 3,
+          "id": "03",
           "issue": "[#4](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/4)",
           "title": "Operator Console Readiness Dashboard",
           "type": "HITL",
@@ -47,7 +47,7 @@
           "summary": "Initial OC shell implemented in `1994477`; `swift build` passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls. Operator/design review for layout clarity and module terminology before deeper OC modules are accepted."
         },
         {
-          "id": 4,
+          "id": "04",
           "issue": "[#5](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/5)",
           "title": "Default and Active PTGui Template Lifecycle",
           "type": "AFK",
@@ -60,7 +60,7 @@
           "summary": "Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`. Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
         },
         {
-          "id": 5,
+          "id": "05",
           "issue": "[#6](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/6)",
           "title": "9-Grid and Live Stitch Mapping Verification",
           "type": "HITL",
@@ -73,46 +73,7 @@
           "summary": "Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered."
         },
         {
-          "id": 6,
-          "issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
-          "title": "ROI Profiles and Required Overlay Verification Roll",
-          "type": "HITL",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
-            "Current note": "Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage.",
-            "Next action": "Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking."
-          },
-          "summary": "Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage. Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking."
-        },
-        {
-          "id": 7,
-          "issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
-          "title": "Working Mode 500 ms REC Consensus Engine",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
-            "Current note": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`; SDI dropout grace landed in `e6a5ca0`; direct full-consensus start landed in `cf0c6e8`. Full 9/9 REC consensus now starts recording from the per-camera consensus path, while partial REC states that persist past 500 ms start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events. Missing SDI signal is handled separately with a 1s debounce and does not stop recording or create loud alarm spam. `swift build` passed.",
-            "Next action": "Live-array verification across 9/9, 8/9, 1/9, 5/4 split, and bump/dropout patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
-          },
-          "summary": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`; SDI dropout grace landed in `e6a5ca0`; direct full-consensus start landed in `cf0c6e8`. Full 9/9 REC consensus now starts recording from the per-camera consensus path, while partial REC states that persist past 500 ms start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events. Missing SDI signal is handled separately with a 1s debounce and does not stop recording or create loud alarm spam. `swift build` passed. Live-array verification across 9/9, 8/9, 1/9, 5/4 split, and bump/dropout patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
-        },
-        {
-          "id": 8,
-          "issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
-          "title": "Authoritative Roll/Clip OCR Take Identity",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
-            "Current note": "Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag.",
-            "Next action": "Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
-          },
-          "summary": "Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag. Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
-        },
-        {
-          "id": 9,
+          "id": "09",
           "issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
           "title": "Take Sorting, Sidecar, and Manifest Finalization",
           "type": "AFK",
@@ -125,7 +86,7 @@
           "summary": "Core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. Closed takes now get explicit `takeClassification` and `classificationReason`; critical REC consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as SDI dropout remain in `takes/` with QC metadata. Sidecar filenames follow the final folder name, clip-level QC flags are populated, manifest rollup scans all sort folders, QC-fail/false-roll takes create a non-blocking Operator Console review item, and good takes under the 5s short-take threshold queue review with Keep Good, Slate/VFX Chart, False Roll, and QC Fail choices. Slate/VFX Chart stays in `takes/` and adds `SLATE_OR_VFX_CHART` metadata. `swift build` passed. App/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and Review Take override behavior."
         },
         {
-          "id": 10,
+          "id": "10",
           "issue": "[#11](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/11)",
           "title": "Late Stop and False Roll Operator Flows",
           "type": "AFK",
@@ -138,7 +99,7 @@
           "summary": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed. Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
         },
         {
-          "id": 11,
+          "id": "11",
           "issue": "[#12](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/12)",
           "title": "Alarm State, Acknowledgement, and Visual Priority",
           "type": "AFK",
@@ -151,7 +112,7 @@
           "summary": "Initial monitoring overlay slice landed in `95ae8e2`. The primary 9-grid and Operator Console grid preview now show per-camera red REC borders plus a one-second REC bug on REC transition. Existing orange warning/error frames remain separate app-only NSView overlays, so these UI overlays are not baked into the recorded 9-grid texture. `swift build` passed. Operator visual review on the actual monitoring display: confirm red REC borders/bug are visible but not distracting, warning overlays remain legible over REC, and clean recorded 9-grid assets stay overlay-free."
         },
         {
-          "id": 12,
+          "id": "12",
           "issue": "[#13](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/13)",
           "title": "9-Grid Recording and Alarm Overlays",
           "type": "HITL",
@@ -164,7 +125,7 @@
           "summary": "Protected fallback landed in `16340d6`; live recorder telemetry landed in `915cd82`. The 9-grid writer starts first and is the required protected recorder. Live Stitch writer start failure no longer kills the take. During active production takes, writers now track submitted/appended/dropped/failure counters; sustained 9-grid stalls emit loud `PROTECTED_RECORDER_STALLED`, while Live Stitch/per-camera stalls and dropped frames emit warning metadata. Production sidecars include structured `recordingOutputs` with writer health fields and `protectedFallbackAvailable`. `swift build` passed. Fault-inject Live Stitch/9-grid writer failures and heavy writer backpressure to verify alarms, sidecar fields, and 9-grid protection behavior."
         },
         {
-          "id": 13,
+          "id": "13",
           "issue": "[#14](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/14)",
           "title": "Independent Recorder Health and Protected 9-Grid Fallback",
           "type": "AFK",
@@ -177,7 +138,7 @@
           "summary": "Initial late-stop/false-roll slice landed in `6a65e14`. Sustained stop-side partial REC after a full-array take now emits loud `CAMERA_STOPPED_LATE` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. Operator Console now has a Mark False Roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `FALSE_ROLL_DETECTED`. `swift build` passed. Hardware/OCR validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/TTS/clear behavior and sidecar offset. Then mark a closed take false roll and verify folder move plus manifest update."
         },
         {
-          "id": 14,
+          "id": "14",
           "issue": "[#15](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/15)",
           "title": "Setup Test Recording Sandbox",
           "type": "AFK",
@@ -190,7 +151,7 @@
           "summary": "Initial sandbox landed in `40cbb0f`. Project layout now includes `_SETUP_TESTS/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. `swift build` passed. App smoke verification: run a setup test, confirm files land only under `_SETUP_TESTS/`, and confirm `manifest.json` production `takes[]` is unchanged."
         },
         {
-          "id": 15,
+          "id": "15",
           "issue": "[#16](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/16)",
           "title": "Minimal Timecode Status Plumbing",
           "type": "AFK",
@@ -203,7 +164,7 @@
           "summary": "Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`."
         },
         {
-          "id": 16,
+          "id": "16",
           "issue": "[#17](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/17)",
           "title": "Open Record Folder Action",
           "type": "AFK",
@@ -216,20 +177,7 @@
           "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
         },
         {
-          "id": 20,
-          "issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
-          "title": "Live Stitch Program Overlay System",
-          "type": "HITL",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
-            "Current note": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed.",
-            "Next action": "Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
-          },
-          "summary": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed. Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
-        },
-        {
-          "id": 21,
+          "id": "21",
           "issue": "[#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22)",
           "title": "Slate Service and Operator Console Slate Controls",
           "type": "HITL",
@@ -248,14 +196,471 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": []
+      "cards": [
+        {
+          "id": "06A",
+          "issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
+          "title": "ROI profile persistence by SDI/output profile",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
+            "Why ready": "Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened.",
+            "Definition of done": "ROI profile state is keyed by enough SDI/output context to distinguish incompatible profiles."
+          },
+          "summary": "ROI profile state is keyed by enough SDI/output context to distinguish incompatible profiles."
+        },
+        {
+          "id": "06C",
+          "issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
+          "title": "Verification roll records REC bug evidence",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
+            "Why ready": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence.",
+            "Definition of done": "A setup verification roll records REC bug observed/not observed per camera."
+          },
+          "summary": "A setup verification roll records REC bug observed/not observed per camera."
+        },
+        {
+          "id": "06D",
+          "issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
+          "title": "Verification roll records roll/clip advancement",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
+            "Why ready": "Make the setup verification roll prove that roll/clip OCR advances after a roll/cut cycle and stores per-camera evidence.",
+            "Definition of done": "Baseline roll/clip OCR is captured before the verification roll."
+          },
+          "summary": "Baseline roll/clip OCR is captured before the verification roll."
+        },
+        {
+          "id": "06E",
+          "issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
+          "title": "Passive overlay baseline and stale readiness rules",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
+            "Why ready": "Passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes.",
+            "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
+          },
+          "summary": "Stable overlay fields are checked against expected setup baseline values."
+        },
+        {
+          "id": "07A",
+          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+          "title": "REC consensus simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+            "Why ready": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
+            "Definition of done": "Fixtures cover clean 9/9 REC within 500 ms."
+          },
+          "summary": "Fixtures cover clean 9/9 REC within 500 ms."
+        },
+        {
+          "id": "07B",
+          "issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
+          "title": "Partial REC classification metadata",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
+            "Why ready": "Ensure partial REC patterns produce precise classification metadata without deciding whether proxy files are written.",
+            "Definition of done": "8/9 produces CAMERA_FAILED_TO_RECORD with missing-camera evidence."
+          },
+          "summary": "8/9 produces CAMERA_FAILED_TO_RECORD with missing-camera evidence."
+        },
+        {
+          "id": "07C",
+          "issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
+          "title": "SDI dropout tolerance regression",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
+            "Why ready": "Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps.",
+            "Definition of done": "Short SDI dropout fixture does not stop an active recording."
+          },
+          "summary": "Short SDI dropout fixture does not stop an active recording."
+        },
+        {
+          "id": "08A",
+          "issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
+          "title": "Roll/clip OCR evidence debug report",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
+            "Why ready": "Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed.",
+            "Definition of done": "Clip Sync report shows stable value, raw candidate, unreadable state, and slot/camera identity."
+          },
+          "summary": "Clip Sync report shows stable value, raw candidate, unreadable state, and slot/camera identity."
+        },
+        {
+          "id": "08B",
+          "issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
+          "title": "OCR-derived production folder naming",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
+            "Why ready": "Finalize Working Mode take folder identity from stable camera OCR consensus, including arbitrary roll and clip values such as day-three roll 701.",
+            "Definition of done": "Stable majority OCR consensus determines final production folder name."
+          },
+          "summary": "Stable majority OCR consensus determines final production folder name."
+        },
+        {
+          "id": "08C",
+          "issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
+          "title": "Unreadable OCR readiness state",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
+            "Why ready": "Treat unreadable or inconsistent roll/clip OCR as a serious analyzer/readiness state, without silently inventing production counters.",
+            "Definition of done": "Unreadable OCR is visible in Operator Console readiness."
+          },
+          "summary": "Unreadable OCR is visible in Operator Console readiness."
+        },
+        {
+          "id": "17A",
+          "issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
+          "title": "DeckLink SDK availability and bridge plan",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
+            "Why ready": "Determine the concrete SDK/build path for using Blackmagic DeckLink APIs from the Swift app without removing the existing AVFoundation path.",
+            "Definition of done": "Local SDK/header/library availability is detected or documented as missing."
+          },
+          "summary": "Local SDK/header/library availability is detected or documented as missing."
+        },
+        {
+          "id": "17B",
+          "issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
+          "title": "Capture provider selector for AVFoundation vs DeckLink",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
+            "Why ready": "Add the app-level provider-selection path that can choose DeckLink when available while keeping AVFoundation as the emergency fallback.",
+            "Definition of done": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
+          },
+          "summary": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
+        },
+        {
+          "id": "18D",
+          "issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
+          "title": "TC source and drift simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
+            "Why ready": "Add mock-frame fixtures for TC source selection, no-RP188 fallback, failover, split TC, and drift thresholds.",
+            "Definition of done": "Fixture covers primary healthy RP188."
+          },
+          "summary": "Fixture covers primary healthy RP188."
+        },
+        {
+          "id": "20A",
+          "issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
+          "title": "Live Stitch overlay presets and field toggles",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
+            "Why ready": "Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays.",
+            "Definition of done": "TC, roll/clip, and slate fields can be enabled/disabled for the recordable Live Stitch overlay."
+          },
+          "summary": "TC, roll/clip, and slate fields can be enabled/disabled for the recordable Live Stitch overlay."
+        },
+        {
+          "id": "20C",
+          "issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
+          "title": "Overlay layout reorder controls",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
+            "Why ready": "Allow quick operator reordering/placement of Live Stitch overlay fields within preset-safe layout zones.",
+            "Definition of done": "Operator can reorder major fields such as TC, roll/clip, scene/take, and DIR/DP."
+          },
+          "summary": "Operator can reorder major fields such as TC, roll/clip, scene/take, and DIR/DP."
+        }
+      ]
     },
     {
       "key": "phase1",
       "title": "Phase 1 Blocked",
       "dot": "blocked",
       "phase": "Phase 1",
-      "cards": []
+      "cards": [
+        {
+          "id": "06",
+          "issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
+          "title": "ROI Profiles and Required Overlay Verification Roll",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
+            "Blocked by": "#3 (MLS-02), #6 (MLS-05), #10 (MLS-09)",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #3 (MLS-02), #6 (MLS-05), #10 (MLS-09). Unblocks See issue dependencies.."
+        },
+        {
+          "id": "06B",
+          "issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+          "title": "Manual ROI rectangle repair path",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+            "Blocked by": "#32",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #32. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "06F",
+          "issue": "[#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37)",
+          "title": "Live-array UAT for setup verification flow",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37)",
+            "Blocked by": "#32, #34, #35, #36",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #32, #34, #35, #36. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "07",
+          "issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
+          "title": "Working Mode 500 ms REC Consensus Engine",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
+            "Blocked by": "#3 (MLS-02), #7 (MLS-06)",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #3 (MLS-02), #7 (MLS-06). Unblocks See issue dependencies.."
+        },
+        {
+          "id": "07D",
+          "issue": "[#41](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/41)",
+          "title": "Live-array UAT for REC consensus patterns",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#41](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/41)",
+            "Blocked by": "#37, #38, #39",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #37, #38, #39. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "08",
+          "issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
+          "title": "Authoritative Roll/Clip OCR Take Identity",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
+            "Blocked by": "#7 (MLS-06), #8 (MLS-07)",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #7 (MLS-06), #8 (MLS-07). Unblocks See issue dependencies.."
+        },
+        {
+          "id": "08D",
+          "issue": "[#45](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/45)",
+          "title": "Live-array OCR UAT for roll and clip identity",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#45](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/45)",
+            "Blocked by": "#42, #43, #44",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #42, #43, #44. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "17",
+          "issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
+          "title": "DeckLink/RP188 Capture Provider",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
+            "Blocked by": "#16 (MLS-15)",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #16 (MLS-15). Unblocks See issue dependencies.."
+        },
+        {
+          "id": "17C",
+          "issue": "[#48](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/48)",
+          "title": "DeckLink frame ingestion provider shell",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#48](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/48)",
+            "Blocked by": "MLS-17A and MLS-17B",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-17A and MLS-17B. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "17D",
+          "issue": "[#49](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/49)",
+          "title": "RP188 extraction into CapturedFrame",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#49](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/49)",
+            "Blocked by": "MLS-17C",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-17C. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "17E",
+          "issue": "[#50](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/50)",
+          "title": "DeckLink fallback and reconnect state",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#50](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/50)",
+            "Blocked by": "MLS-17B and MLS-17C",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-17B and MLS-17C. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "17F",
+          "issue": "[#51](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/51)",
+          "title": "Hardware certification for DeckLink RP188 on all 9 SDI inputs",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#51](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/51)",
+            "Blocked by": "MLS-17D and MLS-17E",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-17D and MLS-17E. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "18",
+          "issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
+          "title": "Primary TC Source Failover and Drift Evidence",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
+            "Blocked by": "#18 (MLS-17)",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #18 (MLS-17). Unblocks See issue dependencies.."
+        },
+        {
+          "id": "18A",
+          "issue": "[#52](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/52)",
+          "title": "Primary RP188 source selector",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#52](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/52)",
+            "Blocked by": "#49",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #49. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "18B",
+          "issue": "[#53](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/53)",
+          "title": "RP188 failover without silent switchback",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#53](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/53)",
+            "Blocked by": "MLS-18A",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-18A. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "18C",
+          "issue": "[#54](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/54)",
+          "title": "RP188 median drift thresholds",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#54](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/54)",
+            "Blocked by": "#49",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #49. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "18E",
+          "issue": "[#56](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/56)",
+          "title": "Live-array UAT for TC failover and drift evidence",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#56](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/56)",
+            "Blocked by": "MLS-18A, MLS-18B, MLS-18C",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-18A, MLS-18B, MLS-18C. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "20",
+          "issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
+          "title": "Live Stitch Program Overlay System",
+          "type": "TRACKING",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
+            "Blocked by": "None - can start immediately.",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by None - can start immediately.. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "20B",
+          "issue": "[#58](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/58)",
+          "title": "Live Stitch overlay TC source priority",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#58](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/58)",
+            "Blocked by": "#49 and #52",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #49 and #52. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "20D",
+          "issue": "[#60](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60)",
+          "title": "Operator visual UAT for Live Stitch overlays",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#60](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60)",
+            "Blocked by": "MLS-20A and MLS-20C",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies.."
+        }
+      ]
     },
     {
       "key": "phase2",
@@ -264,33 +669,7 @@
       "phase": "Phase 2",
       "cards": [
         {
-          "id": 17,
-          "issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
-          "title": "DeckLink/RP188 Capture Provider",
-          "type": "HITL",
-          "phase": "Phase 2",
-          "fields": {
-            "Issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
-            "Blocked by": "#16 (MLS-15)",
-            "Notes": "Needs hardware/capture certification."
-          },
-          "summary": "Needs hardware/capture certification."
-        },
-        {
-          "id": 18,
-          "issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
-          "title": "Primary TC Source Failover and Drift Evidence",
-          "type": "AFK",
-          "phase": "Phase 2",
-          "fields": {
-            "Issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
-            "Blocked by": "#18 (MLS-17)",
-            "Notes": "Position 1 default, median drift, failover without silent switchback."
-          },
-          "summary": "Position 1 default, median drift, failover without silent switchback."
-        },
-        {
-          "id": 19,
+          "id": "19",
           "issue": "[#20](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/20)",
           "title": "Embedded QuickTime tmcd and Proxy TC Self-Test",
           "type": "AFK",
@@ -303,7 +682,7 @@
           "summary": "Production-valid proxy milestone."
         },
         {
-          "id": 22,
+          "id": "22",
           "issue": "[#23](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/23)",
           "title": "GPS/IMU Motion Data Source and Per-Take Slicing",
           "type": "HITL",
@@ -316,7 +695,7 @@
           "summary": "Logging-first simpleRTK2B Fusion support; TC alignment."
         },
         {
-          "id": 23,
+          "id": "23",
           "issue": "[#24](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/24)",
           "title": "Stream Comment TC Stamping and Standby Blur",
           "type": "AFK",
@@ -329,7 +708,7 @@
           "summary": "Refine existing stream system."
         },
         {
-          "id": 24,
+          "id": "24",
           "issue": "[#25](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/25)",
           "title": "End-of-Day Camera Report Package",
           "type": "HITL",
@@ -350,7 +729,7 @@
       "phase": "Phase 3",
       "cards": [
         {
-          "id": 25,
+          "id": "25",
           "issue": "[#26](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/26)",
           "title": "Analyzer Corpus and Simulator Harness",
           "type": "AFK",
@@ -363,7 +742,7 @@
           "summary": "Can move earlier if OCR/REC reliability becomes the limiting risk."
         },
         {
-          "id": 26,
+          "id": "26",
           "issue": "[#27](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/27)",
           "title": "PTGui Still Grab Support Tool",
           "type": "HITL",
@@ -376,7 +755,7 @@
           "summary": "TIFF preferred, overlay-off/on prompts, calibration still manifest."
         },
         {
-          "id": 27,
+          "id": "27",
           "issue": "[#28](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/28)",
           "title": "System Calibration Mode",
           "type": "HITL",
@@ -389,7 +768,7 @@
           "summary": "Troubleshooting workflow beyond per-job verification."
         },
         {
-          "id": 28,
+          "id": "28",
           "issue": "[#29](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/29)",
           "title": "9-Grid Camera Punch-Up",
           "type": "AFK",
@@ -402,7 +781,7 @@
           "summary": "Disabled during recording."
         },
         {
-          "id": 29,
+          "id": "29",
           "issue": "[#30](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/30)",
           "title": "Flow Warp Validation Harness",
           "type": "AFK",
@@ -415,7 +794,7 @@
           "summary": "Post-MVP quality experiment unless it proves safe and high value."
         },
         {
-          "id": 30,
+          "id": "30",
           "issue": "[#31](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/31)",
           "title": "Radial Distortion Parity Experiment",
           "type": "AFK",
