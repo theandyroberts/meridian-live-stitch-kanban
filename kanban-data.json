@@ -73,6 +73,32 @@
           "summary": "Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered."
         },
         {
+          "id": "06A",
+          "issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
+          "title": "ROI profile persistence by SDI/output profile",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
+            "Current note": "Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. Closed in GitHub Issues."
+        },
+        {
+          "id": "06C",
+          "issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
+          "title": "Verification roll records REC bug evidence",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
+            "Current note": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues."
+        },
+        {
           "id": "09",
           "issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
           "title": "Take Sorting, Sidecar, and Manifest Finalization",
@@ -177,6 +203,19 @@
           "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
         },
         {
+          "id": "20A",
+          "issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
+          "title": "Live Stitch overlay presets and field toggles",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
+            "Current note": "Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays. Closed in GitHub Issues."
+        },
+        {
           "id": "21",
           "issue": "[#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22)",
           "title": "Slate Service and Operator Console Slate Controls",
@@ -197,32 +236,6 @@
       "dot": "ready",
       "phase": "Phase 1",
       "cards": [
-        {
-          "id": "06A",
-          "issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
-          "title": "ROI profile persistence by SDI/output profile",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32)",
-            "Why ready": "Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened.",
-            "Definition of done": "ROI profile state is keyed by enough SDI/output context to distinguish incompatible profiles."
-          },
-          "summary": "ROI profile state is keyed by enough SDI/output context to distinguish incompatible profiles."
-        },
-        {
-          "id": "06C",
-          "issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
-          "title": "Verification roll records REC bug evidence",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
-            "Why ready": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence.",
-            "Definition of done": "A setup verification roll records REC bug observed/not observed per camera."
-          },
-          "summary": "A setup verification roll records REC bug observed/not observed per camera."
-        },
         {
           "id": "06D",
           "issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
@@ -365,19 +378,6 @@
             "Definition of done": "Fixture covers primary healthy RP188."
           },
           "summary": "Fixture covers primary healthy RP188."
-        },
-        {
-          "id": "20A",
-          "issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
-          "title": "Live Stitch overlay presets and field toggles",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
-            "Why ready": "Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays.",
-            "Definition of done": "TC, roll/clip, and slate fields can be enabled/disabled for the recordable Live Stitch overlay."
-          },
-          "summary": "TC, roll/clip, and slate fields can be enabled/disabled for the recordable Live Stitch overlay."
         },
         {
           "id": "20C",

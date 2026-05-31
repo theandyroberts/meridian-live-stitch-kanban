@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 06A and card 06C.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 06D and card 06E.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">15</span>
+          <span class="metric-value">12</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">14</span>
+          <span class="metric-value">17</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">14</span>
+            <span class="count">17</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -422,6 +422,18 @@
               <h2><span class="id">05</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/6">9-Grid and Live Stitch Mapping Verification</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/6">#6</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
               <p>Initial mapping module implemented in <code>a41c49d</code>; <code>swift build</code> passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06a roi profile persistence by sdi/output profile afk phase 1 make roi profiles load and save against the current sdi/output profile so the red overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. closed in github issues. [#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32) make roi profiles load and save against the current sdi/output profile so the red overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. closed in github issues.">
+              <h2><span class="id">06A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">ROI profile persistence by SDI/output profile</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">#32</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06c verification roll records rec bug evidence afk phase 1 make the setup verification roll prove that each camera rec bug is detected and recorded as per-camera evidence. closed in github issues. [#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34) make the setup verification roll prove that each camera rec bug is detected and recorded as per-camera evidence. closed in github issues.">
+              <h2><span class="id">06C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">Verification roll records REC bug evidence</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">#34</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="09 take sorting, sidecar, and manifest finalization afk phase 1 core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior. [#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10) core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior.">
@@ -472,6 +484,12 @@
               <p>Implemented in <code>75d82cb</code>. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing <code>takes/</code>, <code>qc_fail/</code>, and <code>false_roll/</code>. <code>swift build</code> passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="20a live stitch overlay presets and field toggles afk phase 1 let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable live stitch overlays. closed in github issues. [#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57) let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable live stitch overlays. closed in github issues.">
+              <h2><span class="id">20A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57">Live Stitch overlay presets and field toggles</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57">#57</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays. Closed in GitHub Issues.</p>
+            </article>
+
             <article class="card is-done" data-type="HITL" data-phase="Phase 1" data-text="21 slate service and operator console slate controls hitl phase 1 overlay controls landed in `cdb66c5`, durable rec-start snapshots in `e89f86f`, and take-advance/edit controls in `57bc1cd`. the slate tab exposes scene, take, and dir/dp fields, persists current slate state in `_state/current_slate.json`, feeds applied values into the live stitch overlay, snapshots non-empty slate values into production take sidecars/manifest at rec start, advances numeric take labels after good production takes, and can rewrite the latest take slate after recording. false-roll marking now preserves slate while flagging slate quality as `false_roll`. `swift build` passed. app smoke verification: apply slate values, record a short production take, confirm overlay text, take auto-advance, per-take `slate` json, update last take slate, and false-roll slate quality. remaining build work: daily report formatting. [#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22) overlay controls landed in `cdb66c5`, durable rec-start snapshots in `e89f86f`, and take-advance/edit controls in `57bc1cd`. the slate tab exposes scene, take, and dir/dp fields, persists current slate state in `_state/current_slate.json`, feeds applied values into the live stitch overlay, snapshots non-empty slate values into production take sidecars/manifest at rec start, advances numeric take labels after good production takes, and can rewrite the latest take slate after recording. false-roll marking now preserves slate while flagging slate quality as `false_roll`. `swift build` passed. app smoke verification: apply slate values, record a short production take, confirm overlay text, take auto-advance, per-take `slate` json, update last take slate, and false-roll slate quality. remaining build work: daily report formatting.">
               <h2><span class="id">21</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22">Slate Service and Operator Console Slate Controls</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22">#22</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
@@ -483,21 +501,9 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">15</span>
+            <span class="count">12</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06a roi profile persistence by sdi/output profile afk phase 1 roi profile state is keyed by enough sdi/output context to distinguish incompatible profiles. [#32](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32) make roi profiles load and save against the current sdi/output profile so the red overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. roi profile state is keyed by enough sdi/output context to distinguish incompatible profiles.">
-              <h2><span class="id">06A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">ROI profile persistence by SDI/output profile</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">#32</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>ROI profile state is keyed by enough SDI/output context to distinguish incompatible profiles.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06c verification roll records rec bug evidence afk phase 1 a setup verification roll records rec bug observed/not observed per camera. [#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34) make the setup verification roll prove that each camera rec bug is detected and recorded as per-camera evidence. a setup verification roll records rec bug observed/not observed per camera.">
-              <h2><span class="id">06C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">Verification roll records REC bug evidence</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">#34</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>A setup verification roll records REC bug observed/not observed per camera.</p>
-            </article>
-
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 baseline roll/clip ocr is captured before the verification roll. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. baseline roll/clip ocr is captured before the verification roll.">
               <h2><span class="id">06D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">Verification roll records roll/clip advancement</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">#35</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
@@ -562,12 +568,6 @@
               <h2><span class="id">18D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55">TC source and drift simulator fixtures</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55">#55</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Fixture covers primary healthy RP188.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="20a live stitch overlay presets and field toggles afk phase 1 tc, roll/clip, and slate fields can be enabled/disabled for the recordable live stitch overlay. [#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57) let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable live stitch overlays. tc, roll/clip, and slate fields can be enabled/disabled for the recordable live stitch overlay.">
-              <h2><span class="id">20A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57">Live Stitch overlay presets and field toggles</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57">#57</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>TC, roll/clip, and slate fields can be enabled/disabled for the recordable Live Stitch overlay.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="20c overlay layout reorder controls afk phase 1 operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp. [#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59) allow quick operator reordering/placement of live stitch overlay fields within preset-safe layout zones. operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp.">
