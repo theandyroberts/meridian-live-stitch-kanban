@@ -107,6 +107,17 @@
           "summary": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed. Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
         },
         {
+          "id": 15,
+          "title": "Minimal TC Source Status and Degraded-TC Marking",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed.",
+            "Next action": "Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`."
+          },
+          "summary": "Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`."
+        },
+        {
           "id": 16,
           "title": "Open Record Folder Action",
           "type": "AFK",
@@ -179,17 +190,6 @@
             "Definition of done": "Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept."
           },
           "summary": "Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept."
-        },
-        {
-          "id": 15,
-          "title": "Minimal TC Source Status and Degraded-TC Marking",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Take sidecars now persist warning-only conditions without forcing `qc_fail/`, which is the needed foundation for degraded/non-certified TC metadata.",
-            "Definition of done": "Operator Console shows primary/degraded/no-TC state, sidecars record the active TC source and degraded reason, and recording remains allowed."
-          },
-          "summary": "Operator Console shows primary/degraded/no-TC state, sidecars record the active TC source and degraded reason, and recording remains allowed."
         }
       ]
     },
@@ -372,10 +372,10 @@
     }
   ],
   "suggested_next_pulls": [
-    "Start card 15's minimal TC source/degraded-state metadata, then use it to prepare for RP188 work.",
     "Implement card 14's Setup Test Recording Sandbox so setup rolls stay out of production takes.",
     "Implement card 12's independent recorder-health/fallback path.",
-    "Validate cards 8, 9, 10, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, and Finder folder opening.",
+    "Validate cards 8, 9, 10, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, degraded TC metadata, and Finder folder opening.",
+    "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
