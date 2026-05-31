@@ -46,10 +46,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Current note": "Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired.",
-            "Next action": "Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata."
+            "Current note": "Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`.",
+            "Next action": "Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
           },
-          "summary": "Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata."
+          "summary": "Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`. Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
         }
       ]
     },
@@ -58,13 +58,6 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": []
-    },
-    {
-      "key": "phase1",
-      "title": "Phase 1 Blocked",
-      "dot": "blocked",
-      "phase": "Phase 1",
       "cards": [
         {
           "id": 5,
@@ -72,11 +65,19 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2 app verification, 4 app verification",
-            "Unblocks": "6, 26"
+            "Why ready": "Card 2 app smoke verification is complete and Card 4's active-template artifact path is verified enough to build mapping UI against the current PTGui template.",
+            "Definition of done": "Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent."
           },
-          "summary": "Blocked by 2 app verification, 4 app verification. Unblocks 6, 26."
-        },
+          "summary": "Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent."
+        }
+      ]
+    },
+    {
+      "key": "phase1",
+      "title": "Phase 1 Blocked",
+      "dot": "blocked",
+      "phase": "Phase 1",
+      "cards": [
         {
           "id": 6,
           "title": "ROI Profile Store and Overlay Verification Roll",
@@ -374,8 +375,8 @@
   "suggested_next_pulls": [
     "Get operator visual signoff on card 1's revised startup/new-job flow.",
     "Get operator/design review on card 3's initial Operator Console shell.",
-    "Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.",
-    "After card 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
+    "Start card 5: 9-Grid and PTGui Mapping Verification.",
+    "Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.",
     "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
   ],
   "acceptance_gates": [

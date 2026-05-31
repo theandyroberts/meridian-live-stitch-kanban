@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are the next unblocked card.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 5.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,7 +372,7 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">0</span>
+          <span class="metric-value">1</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
@@ -412,10 +412,10 @@
               <p>Initial OC shell implemented in <code>1994477</code>; <code>swift build</code> passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls. Operator/design review for layout clarity and module terminology before deeper OC modules are accepted.</p>
             </article>
 
-            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata. initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata.">
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 core artifact path app-verified 2026-05-30. launch copied active ptgui to `_calibration/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and sha-256; fresh `take_007` sidecar records project-level and take-level `calibrationtemplate`. operator test import/replace in setup mode and between takes, plus disabled-during-recording lock. core artifact path app-verified 2026-05-30. launch copied active ptgui to `_calibration/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and sha-256; fresh `take_007` sidecar records project-level and take-level `calibrationtemplate`. operator test import/replace in setup mode and between takes, plus disabled-during-recording lock.">
               <h2><span class="id">4</span><span>Default PTGui Template and Active Calibration Lifecycle</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Initial implementation complete in working tree; <code>swift build</code> passed. Default/global template selection, project <code>_CALIBRATION/</code> copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into <code>_CALIBRATION/</code>, and take sidecars include template metadata.</p>
+              <p>Core artifact path app-verified 2026-05-30. Launch copied active PTGui to <code>_CALIBRATION/calibration_1bb8cd94.pts</code>; <code>manifest.json</code> records project-local template path and SHA-256; fresh <code>take_007</code> sidecar records project-level and take-level <code>calibrationTemplate</code>. Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock.</p>
             </article>
           </div>
         </section>
@@ -423,24 +423,23 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">0</span>
+            <span class="count">1</span>
           </div>
           <div class="cards">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 mapping view shows sdi/channel, 9-grid cell, ocr camera id, pinwheel position, ptgui slot, expected live stitch camera id, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent. card 2 app smoke verification is complete and card 4&#x27;s active-template artifact path is verified enough to build mapping ui against the current ptgui template. mapping view shows sdi/channel, 9-grid cell, ocr camera id, pinwheel position, ptgui slot, expected live stitch camera id, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent.">
+              <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
+              <p>Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent.</p>
+            </article>
           </div>
         </section>
 
         <section class="column" aria-labelledby="phase1-title">
           <div class="column-header">
             <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
-            <span class="count">12</span>
+            <span class="count">11</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 blocked by 2 app verification, 4 app verification. unblocks 6, 26. 2 app verification, 4 app verification 6, 26">
-              <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 4 app verification</span></div>
-              <p>Blocked by 2 app verification, 4 app verification. Unblocks 6, 26.</p>
-            </article>
-
             <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 blocked by 2 app verification, 5. unblocks 7, 8, 25. 2 app verification, 5 7, 8, 25">
               <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 5</span></div>
@@ -617,8 +616,8 @@
         <ol>
           <li>Get operator visual signoff on card 1&#x27;s revised startup/new-job flow.</li>
           <li>Get operator/design review on card 3&#x27;s initial Operator Console shell.</li>
-          <li>Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes <code>_CALIBRATION/</code>.</li>
-          <li>After card 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.</li>
+          <li>Start card 5: 9-Grid and PTGui Mapping Verification.</li>
+          <li>Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.</li>
           <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
         </ol>
       </div>
