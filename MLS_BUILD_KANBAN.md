@@ -18,18 +18,18 @@ Legend:
 | 2 | Setup Mode and Working Mode Gate | AFK | Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. | Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work. |
 | 3 | Operator Console Readiness Dashboard | HITL | Initial OC shell implemented in `1994477`; `swift build` passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls. | Operator/design review for layout clarity and module terminology before deeper OC modules are accepted. |
 | 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`. | Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock. |
+| 5 | 9-Grid and PTGui Mapping Verification | HITL | Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. | Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered. |
 
 ## Ready Now
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 5 | 9-Grid and PTGui Mapping Verification | HITL | Card 2 app smoke verification is complete and Card 4's active-template artifact path is verified enough to build mapping UI against the current PTGui template. | Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent. |
+| 6 | ROI Profile Store and Overlay Verification Roll | HITL | Card 5's mapping surface exists, so ROI/OCR verification can now key off the active mapping context and Setup Mode entry flow. | Persist ROI profiles by SDI/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing ROI as yellow/non-blocking status unless production policy changes. |
 
 ## Phase 1 Blocked
 
 | ID | Card | Type | Blocked by | Unblocks |
 | --- | --- | --- | --- | --- |
-| 6 | ROI Profile Store and Overlay Verification Roll | HITL | 2 app verification, 5 | 7, 8, 25 |
 | 7 | 500 ms REC Consensus and Recording Classification | AFK | 6 | 8, 9, 10, 25 |
 | 8 | Authoritative Roll/Clip OCR Take Identity | AFK | 6, 7 | 9, 25 |
 | 9 | Take Lifecycle Sorting, Sidecars, and Manifest Rollup | AFK | 7, 8 | 12, 13, 14, 15, 16, 21, 24, 29 |
@@ -67,10 +67,10 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Get operator visual signoff on card 1's revised startup/new-job flow.
-2. Get operator/design review on card 3's initial Operator Console shell.
-3. Start card 5: 9-Grid and PTGui Mapping Verification.
-4. Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.
+1. Get operator/hardware signoff on card 5's Cameras/Mapping module with the physical array connected.
+2. Start card 6: ROI Profile Store and Overlay Verification Roll.
+3. Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.
+4. Get operator/design review on card 3's Operator Console shell while card 6 is being wired.
 5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.
 
 ## Acceptance Gates Before Phase 2

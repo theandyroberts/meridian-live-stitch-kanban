@@ -50,6 +50,17 @@
             "Next action": "Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
           },
           "summary": "Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`. Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
+        },
+        {
+          "id": 5,
+          "title": "9-Grid and PTGui Mapping Verification",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state.",
+            "Next action": "Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered."
+          },
+          "summary": "Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered."
         }
       ]
     },
@@ -60,15 +71,15 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": 5,
-          "title": "9-Grid and PTGui Mapping Verification",
+          "id": 6,
+          "title": "ROI Profile Store and Overlay Verification Roll",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Why ready": "Card 2 app smoke verification is complete and Card 4's active-template artifact path is verified enough to build mapping UI against the current PTGui template.",
-            "Definition of done": "Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent."
+            "Why ready": "Card 5's mapping surface exists, so ROI/OCR verification can now key off the active mapping context and Setup Mode entry flow.",
+            "Definition of done": "Persist ROI profiles by SDI/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing ROI as yellow/non-blocking status unless production policy changes."
           },
-          "summary": "Mapping view shows SDI/channel, 9-grid cell, OCR camera ID, Pinwheel position, PTGui slot, expected Live Stitch camera ID, and match status; standard mode derives stitch assignment from verified 9-grid positions; advanced override is visible and persistent."
+          "summary": "Persist ROI profiles by SDI/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing ROI as yellow/non-blocking status unless production policy changes."
         }
       ]
     },
@@ -78,17 +89,6 @@
       "dot": "blocked",
       "phase": "Phase 1",
       "cards": [
-        {
-          "id": 6,
-          "title": "ROI Profile Store and Overlay Verification Roll",
-          "type": "HITL",
-          "phase": "Phase 1",
-          "fields": {
-            "Blocked by": "2 app verification, 5",
-            "Unblocks": "7, 8, 25"
-          },
-          "summary": "Blocked by 2 app verification, 5. Unblocks 7, 8, 25."
-        },
         {
           "id": 7,
           "title": "500 ms REC Consensus and Recording Classification",
@@ -373,10 +373,10 @@
     }
   ],
   "suggested_next_pulls": [
-    "Get operator visual signoff on card 1's revised startup/new-job flow.",
-    "Get operator/design review on card 3's initial Operator Console shell.",
-    "Start card 5: 9-Grid and PTGui Mapping Verification.",
+    "Get operator/hardware signoff on card 5's Cameras/Mapping module with the physical array connected.",
+    "Start card 6: ROI Profile Store and Overlay Verification Roll.",
     "Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.",
+    "Get operator/design review on card 3's Operator Console shell while card 6 is being wired.",
     "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
   ],
   "acceptance_gates": [
