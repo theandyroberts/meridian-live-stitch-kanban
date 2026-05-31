@@ -96,6 +96,17 @@
           "summary": "Core lifecycle routing landed in `6d8340a`. Closed takes now get explicit `takeClassification` and `classificationReason`; critical REC consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as SDI dropout remain in `takes/` with QC metadata. Sidecar filenames now follow the final folder name, clip-level QC flags are populated, and manifest rollup scans all sort folders. `swift build` passed. Hardware/OCR validation: record 9/9, 8/9, 1/9, and middle partial patterns, then inspect folder placement, per-take `data.json`, and `manifest.json`. False-roll routing still needs the operator action from card 13."
         },
         {
+          "id": 10,
+          "title": "Alarm Controller and Acknowledgement Model",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed.",
+            "Next action": "Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
+          },
+          "summary": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed. Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
+        },
+        {
           "id": 16,
           "title": "Open Record Folder Action",
           "type": "AFK",
@@ -126,15 +137,37 @@
           "summary": "Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
         },
         {
-          "id": 10,
-          "title": "Alarm Controller and Acknowledgement Model",
+          "id": 11,
+          "title": "Live 9-Grid Recording/Alarm Overlays",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Why ready": "Alarm controller and REC consensus foundations are now in place. The remaining work is visual treatment on the primary 9-grid monitoring surface.",
+            "Definition of done": "9-grid shows red REC outlines/bugs for recording cameras and orange/yellow warning overlays by camera without recording app-only overlays into clean assets unless explicitly enabled."
+          },
+          "summary": "9-grid shows red REC outlines/bugs for recording cameras and orange/yellow warning overlays by camera without recording app-only overlays into clean assets unless explicitly enabled."
+        },
+        {
+          "id": 12,
+          "title": "Independent Recorder Health and Protected 9-Grid Fallback",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Why ready": "REC consensus, SDI dropout debounce, and take-sidecar classification are now in place. The remaining gap is a proper operator alarm model instead of the current per-camera overlay/pill behavior.",
-            "Definition of done": "Critical errors produce visible flashing state plus audio/TTS; warning-only issues stay quieter; acknowledge/silence suppresses audio while preserving visual status and event/sidecar history."
+            "Why ready": "Take lifecycle sorting and alarm model are in place, so recorder-health errors can route to operator alarms and sidecar metadata.",
+            "Definition of done": "Live Stitch and 9-grid recorders are independently monitored; if stitch recording fails, 9-grid remains protected and the take metadata clearly records fallback status."
           },
-          "summary": "Critical errors produce visible flashing state plus audio/TTS; warning-only issues stay quieter; acknowledge/silence suppresses audio while preserving visual status and event/sidecar history."
+          "summary": "Live Stitch and 9-grid recorders are independently monitored; if stitch recording fails, 9-grid remains protected and the take metadata clearly records fallback status."
+        },
+        {
+          "id": 13,
+          "title": "Late Stop and False Roll Flows",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Why ready": "Take lifecycle routing and alarm silence behavior are in place.",
+            "Definition of done": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
+          },
+          "summary": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
         },
         {
           "id": 14,
@@ -165,41 +198,7 @@
       "title": "Phase 1 Blocked",
       "dot": "blocked",
       "phase": "Phase 1",
-      "cards": [
-        {
-          "id": 11,
-          "title": "Live 9-Grid Recording/Alarm Overlays",
-          "type": "HITL",
-          "phase": "Phase 1",
-          "fields": {
-            "Blocked by": "10",
-            "Unblocks": "28"
-          },
-          "summary": "Blocked by 10. Unblocks 28."
-        },
-        {
-          "id": 12,
-          "title": "Independent Recorder Health and Protected 9-Grid Fallback",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Blocked by": "10",
-            "Unblocks": "Reliability baseline"
-          },
-          "summary": "Blocked by 10. Unblocks Reliability baseline."
-        },
-        {
-          "id": 13,
-          "title": "Late Stop and False Roll Flows",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Blocked by": "10",
-            "Unblocks": "Cleaner take lifecycle"
-          },
-          "summary": "Blocked by 10. Unblocks Cleaner take lifecycle."
-        }
-      ]
+      "cards": []
     },
     {
       "key": "phase2",
@@ -373,10 +372,10 @@
     }
   ],
   "suggested_next_pulls": [
-    "Implement card 10's alarm controller so critical REC/sync issues have the correct visual/audio/TTS behavior before deeper overlay work.",
     "Start card 15's minimal TC source/degraded-state metadata, then use it to prepare for RP188 work.",
     "Implement card 14's Setup Test Recording Sandbox so setup rolls stay out of production takes.",
-    "Validate cards 8, 9, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, manifest rollup, and Finder folder opening.",
+    "Implement card 12's independent recorder-health/fallback path.",
+    "Validate cards 8, 9, 10, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, and Finder folder opening.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
