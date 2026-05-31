@@ -30,6 +30,7 @@ Legend:
 | 15 | Minimal TC Source Status and Degraded-TC Marking | AFK | Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. | Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`. |
 | 16 | Open Record Folder Action | AFK | Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. | App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder. |
 | 20 | Live Stitch Program Overlay System | HITL | Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed. | Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use. |
+| 21 | Slate Service and Operator Console Slate Controls | HITL | Initial overlay-control slice landed in `cdb66c5`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. `swift build` passed. | Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring. |
 
 ## Ready Now
 
@@ -49,7 +50,6 @@ Legend:
 | 17 | DeckLink/RP188 Capture Provider | HITL | 15 | Needs hardware/capture certification. |
 | 18 | Primary TC Source Failover and Drift Evidence | AFK | 17 | Position 1 default, median drift, failover without silent switchback. |
 | 19 | Embedded QuickTime `tmcd` and Proxy TC Self-Test | AFK | 17, 18 | Production-valid proxy milestone. |
-| 21 | Slate Service and Operator Console Slate Controls | HITL | 9, 20 | Sticky job fields, quick scene/shot/take, REC-start snapshot. |
 | 22 | GPS/IMU Motion Data Source and Per-Take Slicing | HITL | 15, 17 | Logging-first simpleRTK2B Fusion support; TC alignment. |
 | 23 | Stream Comment TC Stamping and Standby Blur | AFK | 15, 20 | Refine existing stream system. |
 | 24 | End-of-Day Camera Report Package | HITL | 9, 15, 21, 22, 23 | PDF-first report plus JSON/package artifacts. |

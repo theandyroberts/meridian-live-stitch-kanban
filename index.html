@@ -376,7 +376,7 @@
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">16</span>
+          <span class="metric-value">17</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">16</span>
+            <span class="count">17</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -489,6 +489,12 @@
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
               <p>Initial preset slice landed in <code>de55659</code>. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. <code>swift build</code> passed. Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use.</p>
             </article>
+
+            <article class="card is-done" data-type="HITL" data-phase="Phase 1" data-text="21 slate service and operator console slate controls hitl phase 1 initial overlay-control slice landed in `cdb66c5`. the operator console slate tab now exposes scene, take, and dir/dp fields plus apply slate. applied values feed the live stitch program overlay immediately. `swift build` passed. continue with durable slate persistence, rec-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring. initial overlay-control slice landed in `cdb66c5`. the operator console slate tab now exposes scene, take, and dir/dp fields plus apply slate. applied values feed the live stitch program overlay immediately. `swift build` passed. continue with durable slate persistence, rec-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring.">
+              <h2><span class="id">21</span><span>Slate Service and Operator Console Slate Controls</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial overlay-control slice landed in <code>cdb66c5</code>. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. <code>swift build</code> passed. Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring.</p>
+            </article>
           </div>
         </section>
 
@@ -518,7 +524,7 @@
         <section class="column" aria-labelledby="phase2-title">
           <div class="column-header">
             <div class="column-title"><span class="dot phase2"></span><span id="phase2-title">Phase 2 Backlog</span></div>
-            <span class="count">7</span>
+            <span class="count">6</span>
           </div>
           <div class="cards">
             <article class="card" data-type="HITL" data-phase="Phase 2" data-text="17 decklink/rp188 capture provider hitl phase 2 needs hardware/capture certification. 15 needs hardware/capture certification.">
@@ -537,12 +543,6 @@
               <h2><span class="id">19</span><span>Embedded QuickTime `tmcd` and Proxy TC Self-Test</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 17, 18</span></div>
               <p>Production-valid proxy milestone.</p>
-            </article>
-
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="21 slate service and operator console slate controls hitl phase 2 sticky job fields, quick scene/shot/take, rec-start snapshot. 9, 20 sticky job fields, quick scene/shot/take, rec-start snapshot.">
-              <h2><span class="id">21</span><span>Slate Service and Operator Console Slate Controls</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 9, 20</span></div>
-              <p>Sticky job fields, quick scene/shot/take, REC-start snapshot.</p>
             </article>
 
             <article class="card" data-type="HITL" data-phase="Phase 2" data-text="22 gps/imu motion data source and per-take slicing hitl phase 2 logging-first simplertk2b fusion support; tc alignment. 15, 17 logging-first simplertk2b fusion support; tc alignment.">

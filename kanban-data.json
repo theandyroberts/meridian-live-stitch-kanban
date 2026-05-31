@@ -182,6 +182,17 @@
             "Next action": "Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
           },
           "summary": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed. Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
+        },
+        {
+          "id": 21,
+          "title": "Slate Service and Operator Console Slate Controls",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial overlay-control slice landed in `cdb66c5`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. `swift build` passed.",
+            "Next action": "Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring."
+          },
+          "summary": "Initial overlay-control slice landed in `cdb66c5`. The Operator Console Slate tab now exposes Scene, Take, and DIR/DP fields plus Apply Slate. Applied values feed the Live Stitch program overlay immediately. `swift build` passed. Continue with durable slate persistence, REC-start slate snapshots, auto-increment, retroactive last-take edits, false-roll slate decisions, and sidecar/manifest/report wiring."
         }
       ]
     },
@@ -249,17 +260,6 @@
             "Notes": "Production-valid proxy milestone."
           },
           "summary": "Production-valid proxy milestone."
-        },
-        {
-          "id": 21,
-          "title": "Slate Service and Operator Console Slate Controls",
-          "type": "HITL",
-          "phase": "Phase 2",
-          "fields": {
-            "Blocked by": "9, 20",
-            "Notes": "Sticky job fields, quick scene/shot/take, REC-start snapshot."
-          },
-          "summary": "Sticky job fields, quick scene/shot/take, REC-start snapshot."
         },
         {
           "id": 22,
