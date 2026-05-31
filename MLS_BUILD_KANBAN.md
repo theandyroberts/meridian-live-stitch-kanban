@@ -26,7 +26,7 @@ Legend:
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | Starter slice landed in `fca62f6`: Overlay/QC now has a Clip Sync report action, and unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH` QC evidence. | Finish the authoritative path: make roll/clip OCR drive production take identity with majority consensus, promote unreadable/mismatched OCR into persistent yellow Operator Console status, and use the Clip Sync report as the operator-facing verification view. |
+| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | Starter slices landed in `fca62f6` and `c5fff9e`: Overlay/QC now has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH` QC evidence, and context-keyed clip-sync readiness persists into the Overlay/QC status rows. | Finish the authoritative path: make roll/clip OCR drive production take identity with stronger majority/readability rules and carry clip-sync status into take sidecars/reporting. |
 
 ## Phase 1 Blocked
 
