@@ -29,6 +29,7 @@ Legend:
 | 14 | Setup Test Recording Sandbox | AFK | Initial sandbox landed in `40cbb0f`. Project layout now includes `_SETUP_TESTS/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. `swift build` passed. | App smoke verification: run a setup test, confirm files land only under `_SETUP_TESTS/`, and confirm `manifest.json` production `takes[]` is unchanged. |
 | 15 | Minimal TC Source Status and Degraded-TC Marking | AFK | Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. | Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`. |
 | 16 | Open Record Folder Action | AFK | Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. | App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder. |
+| 20 | Live Stitch Program Overlay System | HITL | Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed. | Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use. |
 
 ## Ready Now
 
@@ -48,7 +49,6 @@ Legend:
 | 17 | DeckLink/RP188 Capture Provider | HITL | 15 | Needs hardware/capture certification. |
 | 18 | Primary TC Source Failover and Drift Evidence | AFK | 17 | Position 1 default, median drift, failover without silent switchback. |
 | 19 | Embedded QuickTime `tmcd` and Proxy TC Self-Test | AFK | 17, 18 | Production-valid proxy milestone. |
-| 20 | Live Stitch Program Overlay System | HITL | 15 | TC, roll/clip, slate, presets, live/record toggles. |
 | 21 | Slate Service and Operator Console Slate Controls | HITL | 9, 20 | Sticky job fields, quick scene/shot/take, REC-start snapshot. |
 | 22 | GPS/IMU Motion Data Source and Per-Take Slicing | HITL | 15, 17 | Logging-first simpleRTK2B Fusion support; TC alignment. |
 | 23 | Stream Comment TC Stamping and Standby Blur | AFK | 15, 20 | Refine existing stream system. |
@@ -69,7 +69,7 @@ Legend:
 
 1. Validate cards 8, 9, 10, 11, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, grid REC overlays, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.
 2. Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.
-3. Start card 20 Live Stitch program overlay system if hardware remains unavailable.
+3. Continue card 21 Slate Service and Operator Console Slate Controls so Live Stitch overlays can use real scene/take/director/DP values.
 4. Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.
 
 ## Acceptance Gates Before Phase 2

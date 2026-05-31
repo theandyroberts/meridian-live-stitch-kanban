@@ -171,6 +171,17 @@
             "Next action": "App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
           },
           "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
+        },
+        {
+          "id": 20,
+          "title": "Live Stitch Program Overlay System",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed.",
+            "Next action": "Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
+          },
+          "summary": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed. Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
         }
       ]
     },
@@ -238,17 +249,6 @@
             "Notes": "Production-valid proxy milestone."
           },
           "summary": "Production-valid proxy milestone."
-        },
-        {
-          "id": 20,
-          "title": "Live Stitch Program Overlay System",
-          "type": "HITL",
-          "phase": "Phase 2",
-          "fields": {
-            "Blocked by": "15",
-            "Notes": "TC, roll/clip, slate, presets, live/record toggles."
-          },
-          "summary": "TC, roll/clip, slate, presets, live/record toggles."
         },
         {
           "id": 21,
@@ -374,7 +374,7 @@
   "suggested_next_pulls": [
     "Validate cards 8, 9, 10, 11, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, grid REC overlays, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
     "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
-    "Start card 20 Live Stitch program overlay system if hardware remains unavailable.",
+    "Continue card 21 Slate Service and Operator Console Slate Controls so Live Stitch overlays can use real scene/take/director/DP values.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
