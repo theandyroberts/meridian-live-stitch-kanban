@@ -26,7 +26,7 @@ Legend:
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | Starter slices landed in `fca62f6` and `c5fff9e`: Overlay/QC now has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH` QC evidence, and context-keyed clip-sync readiness persists into the Overlay/QC status rows. | Finish the authoritative path: make roll/clip OCR drive production take identity with stronger majority/readability rules and carry clip-sync status into take sidecars/reporting. |
+| 8 | Authoritative Roll/Clip OCR Take Identity | AFK | Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag. | Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports. |
 
 ## Phase 1 Blocked
 
@@ -67,7 +67,7 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Continue card 8: make roll/clip OCR authoritative for production take identity and persist clip-sync status in the Operator Console.
+1. Validate card 8 on real RED overlays; tune OCR ROI/thresholds if any camera fails to reach stable consensus.
 2. Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.
 3. Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.
 4. Get operator/design review on card 3's Operator Console shell while card 6 is being wired.
