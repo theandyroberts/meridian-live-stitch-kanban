@@ -98,10 +98,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Why ready": "Card 7 now creates take artifacts for partial REC states, so the next stability risk is making OCR-derived roll/clip identity authoritative and operator-visible.",
-            "Definition of done": "Make roll/clip OCR drive production take identity with majority consensus, detect unreadable/mismatched OCR as a serious non-blocking warning, and expose a clear Verify Clip Sync action/report in the Operator Console."
+            "Why ready": "Starter slice landed in `fca62f6`: Overlay/QC now has a Clip Sync report action, and unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH` QC evidence.",
+            "Definition of done": "Finish the authoritative path: make roll/clip OCR drive production take identity with majority consensus, promote unreadable/mismatched OCR into persistent yellow Operator Console status, and use the Clip Sync report as the operator-facing verification view."
           },
-          "summary": "Make roll/clip OCR drive production take identity with majority consensus, detect unreadable/mismatched OCR as a serious non-blocking warning, and expose a clear Verify Clip Sync action/report in the Operator Console."
+          "summary": "Finish the authoritative path: make roll/clip OCR drive production take identity with majority consensus, promote unreadable/mismatched OCR into persistent yellow Operator Console status, and use the Clip Sync report as the operator-facing verification view."
         }
       ]
     },
@@ -373,7 +373,7 @@
     }
   ],
   "suggested_next_pulls": [
-    "Start card 8: make roll/clip OCR the authoritative production take identity and expose clip-sync verification.",
+    "Continue card 8: make roll/clip OCR authoritative for production take identity and persist clip-sync status in the Operator Console.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.",
     "Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.",
     "Get operator/design review on card 3's Operator Console shell while card 6 is being wired.",
