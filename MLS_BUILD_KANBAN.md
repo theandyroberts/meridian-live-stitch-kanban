@@ -14,7 +14,7 @@ Legend:
 
 | ID | Card | Type | Current note | Next action |
 | --- | --- | --- | --- | --- |
-| 1 | Startup, Resume, and Recovery Shell | AFK | Initial implementation committed in `4bb163d`; `swift build` passed. | Run app and verify cold start, resume, recovery, archive/ignore recovery. |
+| 1 | Startup, Resume, and Recovery Shell | AFK | Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed. | Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. |
 | 2 | Setup Mode and Working Mode Gate | AFK | Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. | Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline. |
 | 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. | Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata. |
 
@@ -67,11 +67,11 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.
-2. Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.
-3. After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.
-4. After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.
-5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.
+1. Get operator visual signoff on card 1's revised startup/new-job flow.
+2. Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.
+3. Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.
+4. After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.
+5. After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.
 
 ## Acceptance Gates Before Phase 2
 

@@ -394,10 +394,10 @@
             <span class="count">3</span>
           </div>
           <div class="cards">
-            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery. initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery.">
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
               <h2><span class="id">1</span><span>Startup, Resume, and Recovery Shell</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Initial implementation committed in <code>4bb163d</code>; <code>swift build</code> passed. Run app and verify cold start, resume, recovery, archive/ignore recovery.</p>
+              <p>Refined in <code>1f62d11</code> after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. <code>swift build</code> passed. Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline. initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline.">
@@ -615,11 +615,11 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
-          <li>Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.</li>
+          <li>Get operator visual signoff on card 1&#x27;s revised startup/new-job flow.</li>
+          <li>Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.</li>
           <li>Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes <code>_CALIBRATION/</code>.</li>
           <li>After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
           <li>After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.</li>
-          <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
         </ol>
       </div>
       <div class="list-panel">

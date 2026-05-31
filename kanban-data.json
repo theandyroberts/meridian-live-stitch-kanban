@@ -13,10 +13,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Current note": "Initial implementation committed in `4bb163d`; `swift build` passed.",
-            "Next action": "Run app and verify cold start, resume, recovery, archive/ignore recovery."
+            "Current note": "Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed.",
+            "Next action": "Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present."
           },
-          "summary": "Initial implementation committed in `4bb163d`; `swift build` passed. Run app and verify cold start, resume, recovery, archive/ignore recovery."
+          "summary": "Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed. Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present."
         },
         {
           "id": 2,
@@ -372,11 +372,11 @@
     }
   ],
   "suggested_next_pulls": [
-    "Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.",
+    "Get operator visual signoff on card 1's revised startup/new-job flow.",
+    "Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.",
     "Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.",
     "After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.",
-    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
-    "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
+    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification."
   ],
   "acceptance_gates": [
     "Startup/resume/recovery verified on the app.",
