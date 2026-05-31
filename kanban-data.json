@@ -30,6 +30,17 @@
           "summary": "Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work."
         },
         {
+          "id": 3,
+          "title": "Operator Console Readiness Dashboard",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial OC shell implemented in `1994477`; `swift build` passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls.",
+            "Next action": "Operator/design review for layout clarity and module terminology before deeper OC modules are accepted."
+          },
+          "summary": "Initial OC shell implemented in `1994477`; `swift build` passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls. Operator/design review for layout clarity and module terminology before deeper OC modules are accepted."
+        },
+        {
           "id": 4,
           "title": "Default PTGui Template and Active Calibration Lifecycle",
           "type": "AFK",
@@ -47,19 +58,7 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": [
-        {
-          "id": 3,
-          "title": "Operator Console Readiness Dashboard",
-          "type": "HITL",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Card 2 app smoke verification is complete; current window already launches after Working Mode and can be refactored into the OC shell.",
-            "Definition of done": "UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics."
-          },
-          "summary": "UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics."
-        }
-      ]
+      "cards": []
     },
     {
       "key": "phase1",
@@ -374,9 +373,9 @@
   ],
   "suggested_next_pulls": [
     "Get operator visual signoff on card 1's revised startup/new-job flow.",
-    "Start card 3: Operator Console Readiness Dashboard.",
+    "Get operator/design review on card 3's initial Operator Console shell.",
     "Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.",
-    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
+    "After card 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
     "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
   ],
   "acceptance_gates": [
