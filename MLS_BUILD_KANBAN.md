@@ -15,21 +15,21 @@ Legend:
 | ID | Card | Type | Current note | Next action |
 | --- | --- | --- | --- | --- |
 | 1 | Startup, Resume, and Recovery Shell | AFK | Initial implementation committed in `4bb163d`; `swift build` passed. | Run app and verify cold start, resume, recovery, archive/ignore recovery. |
+| 2 | Setup Mode and Working Mode Gate | AFK | Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. | Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline. |
+| 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. | Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata. |
 
 ## Ready Now
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 2 | Setup Mode and Working Mode Gate | AFK | Startup shell now routes into setup flow. | Setup/Working mode state, orange setup treatment, green Working Mode entry, non-blocking readiness acknowledgement, mode transition logs. |
-| 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Default calibration and PTGui loader already exist. | Default template active on new jobs, import/replace outside recording, project `_CALIBRATION/` copy, active template persisted to manifest/take sidecars. |
 
 ## Phase 1 Blocked
 
 | ID | Card | Type | Blocked by | Unblocks |
 | --- | --- | --- | --- | --- |
-| 3 | Operator Console Readiness Dashboard | HITL | 2 | 5, 6, 10, 12, 15, 16 |
-| 5 | 9-Grid and PTGui Mapping Verification | HITL | 2, 4 | 6, 26 |
-| 6 | ROI Profile Store and Overlay Verification Roll | HITL | 2, 5 | 7, 8, 25 |
+| 3 | Operator Console Readiness Dashboard | HITL | 2 app verification | 5, 6, 10, 12, 15, 16 |
+| 5 | 9-Grid and PTGui Mapping Verification | HITL | 2 app verification, 4 app verification | 6, 26 |
+| 6 | ROI Profile Store and Overlay Verification Roll | HITL | 2 app verification, 5 | 7, 8, 25 |
 | 7 | 500 ms REC Consensus and Recording Classification | AFK | 6 | 8, 9, 10, 25 |
 | 8 | Authoritative Roll/Clip OCR Take Identity | AFK | 6, 7 | 9, 25 |
 | 9 | Take Lifecycle Sorting, Sidecars, and Manifest Rollup | AFK | 7, 8 | 12, 13, 14, 15, 16, 21, 24, 29 |
@@ -37,7 +37,7 @@ Legend:
 | 11 | Live 9-Grid Recording/Alarm Overlays | HITL | 10 | 28 |
 | 12 | Independent Recorder Health and Protected 9-Grid Fallback | AFK | 9, 10 | Reliability baseline |
 | 13 | Late Stop and False Roll Flows | AFK | 9, 10 | Cleaner take lifecycle |
-| 14 | Setup Test Recording Sandbox | AFK | 2, 9 | Setup artifact isolation |
+| 14 | Setup Test Recording Sandbox | AFK | 2 app verification, 9 | Setup artifact isolation |
 | 15 | Minimal TC Source Status and Degraded-TC Marking | AFK | 9 | 17, 20, 22, 23, 24 |
 | 16 | Open Record Folder Action | AFK | 9 | Operator review workflow |
 
@@ -67,10 +67,10 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Assign an AFK agent to card 2: Setup Mode and Working Mode Gate.
-2. Assign a second AFK agent to card 4: Default PTGui Template and Active Calibration Lifecycle.
-3. After card 2 lands, schedule HITL design review for card 3: Operator Console Readiness Dashboard.
-4. After cards 2 and 4 land, start card 5: 9-Grid and PTGui Mapping Verification.
+1. Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.
+2. Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.
+3. After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.
+4. After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.
 5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.
 
 ## Acceptance Gates Before Phase 2

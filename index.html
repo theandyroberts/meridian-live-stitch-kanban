@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 2 and card 4.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are the next unblocked card.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">2</span>
+          <span class="metric-value">0</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">1</span>
+          <span class="metric-value">3</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">1</span>
+            <span class="count">3</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery. initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery.">
@@ -399,26 +399,27 @@
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Initial implementation committed in <code>4bb163d</code>; <code>swift build</code> passed. Run app and verify cold start, resume, recovery, archive/ignore recovery.</p>
             </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline. initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline.">
+              <h2><span class="id">2</span><span>Setup Mode and Working Mode Gate</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial implementation complete in working tree; <code>swift build</code> passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata. initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata.">
+              <h2><span class="id">4</span><span>Default PTGui Template and Active Calibration Lifecycle</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial implementation complete in working tree; <code>swift build</code> passed. Default/global template selection, project <code>_CALIBRATION/</code> copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into <code>_CALIBRATION/</code>, and take sidecars include template metadata.</p>
+            </article>
           </div>
         </section>
 
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">2</span>
+            <span class="count">0</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 setup/working mode state, orange setup treatment, green working mode entry, non-blocking readiness acknowledgement, mode transition logs. startup shell now routes into setup flow. setup/working mode state, orange setup treatment, green working mode entry, non-blocking readiness acknowledgement, mode transition logs.">
-              <h2><span class="id">2</span><span>Setup Mode and Working Mode Gate</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Setup/Working mode state, orange setup treatment, green Working Mode entry, non-blocking readiness acknowledgement, mode transition logs.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 default template active on new jobs, import/replace outside recording, project `_calibration/` copy, active template persisted to manifest/take sidecars. default calibration and ptgui loader already exist. default template active on new jobs, import/replace outside recording, project `_calibration/` copy, active template persisted to manifest/take sidecars.">
-              <h2><span class="id">4</span><span>Default PTGui Template and Active Calibration Lifecycle</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Default template active on new jobs, import/replace outside recording, project <code>_CALIBRATION/</code> copy, active template persisted to manifest/take sidecars.</p>
-            </article>
           </div>
         </section>
 
@@ -428,22 +429,22 @@
             <span class="count">13</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="3 operator console readiness dashboard hitl phase 1 blocked by 2. unblocks 5, 6, 10, 12, 15, 16. 2 5, 6, 10, 12, 15, 16">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="3 operator console readiness dashboard hitl phase 1 blocked by 2 app verification. unblocks 5, 6, 10, 12, 15, 16. 2 app verification 5, 6, 10, 12, 15, 16">
               <h2><span class="id">3</span><span>Operator Console Readiness Dashboard</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2</span></div>
-              <p>Blocked by 2. Unblocks 5, 6, 10, 12, 15, 16.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification</span></div>
+              <p>Blocked by 2 app verification. Unblocks 5, 6, 10, 12, 15, 16.</p>
             </article>
 
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 blocked by 2, 4. unblocks 6, 26. 2, 4 6, 26">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 blocked by 2 app verification, 4 app verification. unblocks 6, 26. 2 app verification, 4 app verification 6, 26">
               <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 4</span></div>
-              <p>Blocked by 2, 4. Unblocks 6, 26.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 4 app verification</span></div>
+              <p>Blocked by 2 app verification, 4 app verification. Unblocks 6, 26.</p>
             </article>
 
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 blocked by 2, 5. unblocks 7, 8, 25. 2, 5 7, 8, 25">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 blocked by 2 app verification, 5. unblocks 7, 8, 25. 2 app verification, 5 7, 8, 25">
               <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 5</span></div>
-              <p>Blocked by 2, 5. Unblocks 7, 8, 25.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 5</span></div>
+              <p>Blocked by 2 app verification, 5. Unblocks 7, 8, 25.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="7 500 ms rec consensus and recording classification afk phase 1 blocked by 6. unblocks 8, 9, 10, 25. 6 8, 9, 10, 25">
@@ -488,10 +489,10 @@
               <p>Blocked by 9, 10. Unblocks Cleaner take lifecycle.</p>
             </article>
 
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 blocked by 2, 9. unblocks setup artifact isolation. 2, 9 setup artifact isolation">
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 blocked by 2 app verification, 9. unblocks setup artifact isolation. 2 app verification, 9 setup artifact isolation">
               <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 9</span></div>
-              <p>Blocked by 2, 9. Unblocks Setup artifact isolation.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 9</span></div>
+              <p>Blocked by 2 app verification, 9. Unblocks Setup artifact isolation.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="15 minimal tc source status and degraded-tc marking afk phase 1 blocked by 9. unblocks 17, 20, 22, 23, 24. 9 17, 20, 22, 23, 24">
@@ -614,10 +615,10 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
-          <li>Assign an AFK agent to card 2: Setup Mode and Working Mode Gate.</li>
-          <li>Assign a second AFK agent to card 4: Default PTGui Template and Active Calibration Lifecycle.</li>
-          <li>After card 2 lands, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
-          <li>After cards 2 and 4 land, start card 5: 9-Grid and PTGui Mapping Verification.</li>
+          <li>Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.</li>
+          <li>Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes <code>_CALIBRATION/</code>.</li>
+          <li>After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
+          <li>After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.</li>
           <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
         </ol>
       </div>

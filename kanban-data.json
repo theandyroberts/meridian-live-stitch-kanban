@@ -17,6 +17,28 @@
             "Next action": "Run app and verify cold start, resume, recovery, archive/ignore recovery."
           },
           "summary": "Initial implementation committed in `4bb163d`; `swift build` passed. Run app and verify cold start, resume, recovery, archive/ignore recovery."
+        },
+        {
+          "id": 2,
+          "title": "Setup Mode and Working Mode Gate",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement.",
+            "Next action": "Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline."
+          },
+          "summary": "Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline."
+        },
+        {
+          "id": 4,
+          "title": "Default PTGui Template and Active Calibration Lifecycle",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired.",
+            "Next action": "Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata."
+          },
+          "summary": "Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata."
         }
       ]
     },
@@ -25,30 +47,7 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": [
-        {
-          "id": 2,
-          "title": "Setup Mode and Working Mode Gate",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Startup shell now routes into setup flow.",
-            "Definition of done": "Setup/Working mode state, orange setup treatment, green Working Mode entry, non-blocking readiness acknowledgement, mode transition logs."
-          },
-          "summary": "Setup/Working mode state, orange setup treatment, green Working Mode entry, non-blocking readiness acknowledgement, mode transition logs."
-        },
-        {
-          "id": 4,
-          "title": "Default PTGui Template and Active Calibration Lifecycle",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Default calibration and PTGui loader already exist.",
-            "Definition of done": "Default template active on new jobs, import/replace outside recording, project `_CALIBRATION/` copy, active template persisted to manifest/take sidecars."
-          },
-          "summary": "Default template active on new jobs, import/replace outside recording, project `_CALIBRATION/` copy, active template persisted to manifest/take sidecars."
-        }
-      ]
+      "cards": []
     },
     {
       "key": "phase1",
@@ -62,10 +61,10 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2",
+            "Blocked by": "2 app verification",
             "Unblocks": "5, 6, 10, 12, 15, 16"
           },
-          "summary": "Blocked by 2. Unblocks 5, 6, 10, 12, 15, 16."
+          "summary": "Blocked by 2 app verification. Unblocks 5, 6, 10, 12, 15, 16."
         },
         {
           "id": 5,
@@ -73,10 +72,10 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2, 4",
+            "Blocked by": "2 app verification, 4 app verification",
             "Unblocks": "6, 26"
           },
-          "summary": "Blocked by 2, 4. Unblocks 6, 26."
+          "summary": "Blocked by 2 app verification, 4 app verification. Unblocks 6, 26."
         },
         {
           "id": 6,
@@ -84,10 +83,10 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2, 5",
+            "Blocked by": "2 app verification, 5",
             "Unblocks": "7, 8, 25"
           },
-          "summary": "Blocked by 2, 5. Unblocks 7, 8, 25."
+          "summary": "Blocked by 2 app verification, 5. Unblocks 7, 8, 25."
         },
         {
           "id": 7,
@@ -172,10 +171,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2, 9",
+            "Blocked by": "2 app verification, 9",
             "Unblocks": "Setup artifact isolation"
           },
-          "summary": "Blocked by 2, 9. Unblocks Setup artifact isolation."
+          "summary": "Blocked by 2 app verification, 9. Unblocks Setup artifact isolation."
         },
         {
           "id": 15,
@@ -373,10 +372,10 @@
     }
   ],
   "suggested_next_pulls": [
-    "Assign an AFK agent to card 2: Setup Mode and Working Mode Gate.",
-    "Assign a second AFK agent to card 4: Default PTGui Template and Active Calibration Lifecycle.",
-    "After card 2 lands, schedule HITL design review for card 3: Operator Console Readiness Dashboard.",
-    "After cards 2 and 4 land, start card 5: 9-Grid and PTGui Mapping Verification.",
+    "Verify card 2 in the running app: startup/resume opens Setup Mode, warning acknowledgement works, and Enter Working Mode launches.",
+    "Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.",
+    "After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.",
+    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
     "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
   ],
   "acceptance_gates": [
