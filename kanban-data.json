@@ -9,10 +9,12 @@
       "cards": [
         {
           "id": 1,
+          "issue": "[#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2)",
           "title": "Startup, Resume, and Recovery Shell",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2)",
             "Current note": "Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed.",
             "Next action": "Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present."
           },
@@ -20,10 +22,12 @@
         },
         {
           "id": 2,
-          "title": "Setup Mode and Working Mode Gate",
+          "issue": "[#3](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/3)",
+          "title": "Setup Mode to Working Mode State Machine",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#3](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/3)",
             "Current note": "Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback.",
             "Next action": "Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work."
           },
@@ -31,10 +35,12 @@
         },
         {
           "id": 3,
+          "issue": "[#4](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/4)",
           "title": "Operator Console Readiness Dashboard",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#4](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/4)",
             "Current note": "Initial OC shell implemented in `1994477`; `swift build` passed and actual app smoke pass rendered the OC. Adds Operator Console terminology, Working Mode/source/alarm header pills, module tabs, job/project context, readiness cards with green/yellow states, embedded previews, source telemetry, and existing REC controls.",
             "Next action": "Operator/design review for layout clarity and module terminology before deeper OC modules are accepted."
           },
@@ -42,10 +48,12 @@
         },
         {
           "id": 4,
-          "title": "Default PTGui Template and Active Calibration Lifecycle",
+          "issue": "[#5](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/5)",
+          "title": "Default and Active PTGui Template Lifecycle",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#5](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/5)",
             "Current note": "Core artifact path app-verified 2026-05-30. Launch copied active PTGui to `_CALIBRATION/calibration_1bb8cd94.pts`; `manifest.json` records project-local template path and SHA-256; fresh `take_007` sidecar records project-level and take-level `calibrationTemplate`.",
             "Next action": "Operator test import/replace in Setup Mode and between takes, plus disabled-during-recording lock."
           },
@@ -53,10 +61,12 @@
         },
         {
           "id": 5,
-          "title": "9-Grid and PTGui Mapping Verification",
+          "issue": "[#6](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/6)",
+          "title": "9-Grid and Live Stitch Mapping Verification",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#6](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/6)",
             "Current note": "Initial mapping module implemented in `a41c49d`; `swift build` passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state.",
             "Next action": "Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered."
           },
@@ -64,10 +74,12 @@
         },
         {
           "id": 6,
-          "title": "ROI Profile Store and Overlay Verification Roll",
+          "issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
+          "title": "ROI Profiles and Required Overlay Verification Roll",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7)",
             "Current note": "Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage.",
             "Next action": "Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking."
           },
@@ -75,21 +87,38 @@
         },
         {
           "id": 7,
-          "title": "500 ms REC Consensus and Recording Classification",
+          "issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
+          "title": "Working Mode 500 ms REC Consensus Engine",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8)",
             "Current note": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`; SDI dropout grace landed in `e6a5ca0`; direct full-consensus start landed in `cf0c6e8`. Full 9/9 REC consensus now starts recording from the per-camera consensus path, while partial REC states that persist past 500 ms start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events. Missing SDI signal is handled separately with a 1s debounce and does not stop recording or create loud alarm spam. `swift build` passed.",
             "Next action": "Live-array verification across 9/9, 8/9, 1/9, 5/4 split, and bump/dropout patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
           },
           "summary": "Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`; SDI dropout grace landed in `e6a5ca0`; direct full-consensus start landed in `cf0c6e8`. Full 9/9 REC consensus now starts recording from the per-camera consensus path, while partial REC states that persist past 500 ms start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events. Missing SDI signal is handled separately with a 1s debounce and does not stop recording or create loud alarm spam. `swift build` passed. Live-array verification across 9/9, 8/9, 1/9, 5/4 split, and bump/dropout patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent."
         },
         {
-          "id": 9,
-          "title": "Take Lifecycle Sorting, Sidecars, and Manifest Rollup",
+          "id": 8,
+          "issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
+          "title": "Authoritative Roll/Clip OCR Take Identity",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9)",
+            "Current note": "Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag.",
+            "Next action": "Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
+          },
+          "summary": "Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag. Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
+        },
+        {
+          "id": 9,
+          "issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
+          "title": "Take Sorting, Sidecar, and Manifest Finalization",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
             "Current note": "Core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. Closed takes now get explicit `takeClassification` and `classificationReason`; critical REC consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as SDI dropout remain in `takes/` with QC metadata. Sidecar filenames follow the final folder name, clip-level QC flags are populated, manifest rollup scans all sort folders, QC-fail/false-roll takes create a non-blocking Operator Console review item, and good takes under the 5s short-take threshold queue review with Keep Good, Slate/VFX Chart, False Roll, and QC Fail choices. Slate/VFX Chart stays in `takes/` and adds `SLATE_OR_VFX_CHART` metadata. `swift build` passed.",
             "Next action": "App/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and Review Take override behavior."
           },
@@ -97,10 +126,12 @@
         },
         {
           "id": 10,
-          "title": "Alarm Controller and Acknowledgement Model",
+          "issue": "[#11](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/11)",
+          "title": "Late Stop and False Roll Operator Flows",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#11](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/11)",
             "Current note": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed.",
             "Next action": "Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
           },
@@ -108,10 +139,12 @@
         },
         {
           "id": 11,
-          "title": "Live 9-Grid Recording/Alarm Overlays",
-          "type": "HITL",
+          "issue": "[#12](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/12)",
+          "title": "Alarm State, Acknowledgement, and Visual Priority",
+          "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#12](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/12)",
             "Current note": "Initial monitoring overlay slice landed in `95ae8e2`. The primary 9-grid and Operator Console grid preview now show per-camera red REC borders plus a one-second REC bug on REC transition. Existing orange warning/error frames remain separate app-only NSView overlays, so these UI overlays are not baked into the recorded 9-grid texture. `swift build` passed.",
             "Next action": "Operator visual review on the actual monitoring display: confirm red REC borders/bug are visible but not distracting, warning overlays remain legible over REC, and clean recorded 9-grid assets stay overlay-free."
           },
@@ -119,10 +152,12 @@
         },
         {
           "id": 12,
-          "title": "Independent Recorder Health and Protected 9-Grid Fallback",
-          "type": "AFK",
+          "issue": "[#13](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/13)",
+          "title": "9-Grid Recording and Alarm Overlays",
+          "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#13](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/13)",
             "Current note": "Protected fallback landed in `16340d6`; live recorder telemetry landed in `915cd82`. The 9-grid writer starts first and is the required protected recorder. Live Stitch writer start failure no longer kills the take. During active production takes, writers now track submitted/appended/dropped/failure counters; sustained 9-grid stalls emit loud `PROTECTED_RECORDER_STALLED`, while Live Stitch/per-camera stalls and dropped frames emit warning metadata. Production sidecars include structured `recordingOutputs` with writer health fields and `protectedFallbackAvailable`. `swift build` passed.",
             "Next action": "Fault-inject Live Stitch/9-grid writer failures and heavy writer backpressure to verify alarms, sidecar fields, and 9-grid protection behavior."
           },
@@ -130,10 +165,12 @@
         },
         {
           "id": 13,
-          "title": "Late Stop and False Roll Flows",
+          "issue": "[#14](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/14)",
+          "title": "Independent Recorder Health and Protected 9-Grid Fallback",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#14](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/14)",
             "Current note": "Initial late-stop/false-roll slice landed in `6a65e14`. Sustained stop-side partial REC after a full-array take now emits loud `CAMERA_STOPPED_LATE` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. Operator Console now has a Mark False Roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `FALSE_ROLL_DETECTED`. `swift build` passed.",
             "Next action": "Hardware/OCR validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/TTS/clear behavior and sidecar offset. Then mark a closed take false roll and verify folder move plus manifest update."
           },
@@ -141,10 +178,12 @@
         },
         {
           "id": 14,
+          "issue": "[#15](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/15)",
           "title": "Setup Test Recording Sandbox",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#15](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/15)",
             "Current note": "Initial sandbox landed in `40cbb0f`. Project layout now includes `_SETUP_TESTS/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. `swift build` passed.",
             "Next action": "App smoke verification: run a setup test, confirm files land only under `_SETUP_TESTS/`, and confirm `manifest.json` production `takes[]` is unchanged."
           },
@@ -152,10 +191,12 @@
         },
         {
           "id": 15,
-          "title": "Minimal TC Source Status and Degraded-TC Marking",
+          "issue": "[#16](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/16)",
+          "title": "Minimal Timecode Status Plumbing",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#16](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/16)",
             "Current note": "Minimal TC status service landed in `c016972`. The router now tracks the best observed timing source, and per-take sidecars store start/end `TimecodeStatus` with source, confidence, certified/degraded flags, primary slot/camera, display TC, frame count, and detail. Current AVFoundation/file-playback paths are explicitly degraded/approximate until RP188 providers land. Operator Console Timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed.",
             "Next action": "Validate sidecar output on a short playback take; later cards still need DeckLink/RP188 capture, failover, and embedded QuickTime `tmcd`."
           },
@@ -163,10 +204,12 @@
         },
         {
           "id": 16,
+          "issue": "[#17](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/17)",
           "title": "Open Record Folder Action",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#17](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/17)",
             "Current note": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed.",
             "Next action": "App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
           },
@@ -174,10 +217,12 @@
         },
         {
           "id": 20,
+          "issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
           "title": "Live Stitch Program Overlay System",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21)",
             "Current note": "Initial preset slice landed in `de55659`. Live Stitch now has a default Production Review program overlay drawn in the Metal pass, so TC/roll-clip/slate placeholder text is intentionally recordable when enabled. TC turns red while recording, the Live Stitch red border remains live-only, and Operator Console exposes quick Overlay Review / Overlay Clean buttons. Clean disables the recordable overlay. `swift build` passed.",
             "Next action": "Operator visual review: confirm lower-band layout, TC/roll-clip legibility, red TC during REC, clean mode behavior, and whether placeholder slate fields should wait for card 21 controls before production use."
           },
@@ -185,10 +230,12 @@
         },
         {
           "id": 21,
+          "issue": "[#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22)",
           "title": "Slate Service and Operator Console Slate Controls",
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
+            "Issue": "[#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22)",
             "Current note": "Overlay controls landed in `cdb66c5`, durable REC-start snapshots in `e89f86f`, and take-advance/edit controls in `57bc1cd`. The Slate tab exposes Scene, Take, and DIR/DP fields, persists current slate state in `_STATE/current_slate.json`, feeds applied values into the Live Stitch overlay, snapshots non-empty slate values into production take sidecars/manifest at REC start, advances numeric take labels after good production takes, and can rewrite the latest take slate after recording. False-roll marking now preserves slate while flagging slate quality as `false_roll`. `swift build` passed.",
             "Next action": "App smoke verification: apply slate values, record a short production take, confirm overlay text, take auto-advance, per-take `slate` JSON, Update Last Take Slate, and false-roll slate quality. Remaining build work: daily report formatting."
           },
@@ -201,19 +248,7 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": [
-        {
-          "id": 8,
-          "title": "Authoritative Roll/Clip OCR Take Identity",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: Overlay/QC has a Clip Sync report action, unreadable/mismatched OCR is logged as non-loud `CLIP_MISMATCH`, clip-sync readiness persists into Overlay/QC rows, and production take renaming now requires at least 5 matching stable OCR cameras. If consensus fails, the take keeps its interim folder and gets a sidecar QC flag.",
-            "Definition of done": "Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
-          },
-          "summary": "Hardware/OCR validation with real overlays: prove OCR reaches 5/9+ reliably, tune ROI/Vision settings if needed, and then carry clip-sync status into daily reports."
-        }
-      ]
+      "cards": []
     },
     {
       "key": "phase1",
@@ -230,66 +265,78 @@
       "cards": [
         {
           "id": 17,
+          "issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
           "title": "DeckLink/RP188 Capture Provider",
           "type": "HITL",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "15",
+            "Issue": "[#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18)",
+            "Blocked by": "#16 (MLS-15)",
             "Notes": "Needs hardware/capture certification."
           },
           "summary": "Needs hardware/capture certification."
         },
         {
           "id": 18,
+          "issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
           "title": "Primary TC Source Failover and Drift Evidence",
           "type": "AFK",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "17",
+            "Issue": "[#19](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/19)",
+            "Blocked by": "#18 (MLS-17)",
             "Notes": "Position 1 default, median drift, failover without silent switchback."
           },
           "summary": "Position 1 default, median drift, failover without silent switchback."
         },
         {
           "id": 19,
-          "title": "Embedded QuickTime `tmcd` and Proxy TC Self-Test",
+          "issue": "[#20](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/20)",
+          "title": "Embedded QuickTime tmcd and Proxy TC Self-Test",
           "type": "AFK",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "17, 18",
+            "Issue": "[#20](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/20)",
+            "Blocked by": "#18 (MLS-17), #19 (MLS-18)",
             "Notes": "Production-valid proxy milestone."
           },
           "summary": "Production-valid proxy milestone."
         },
         {
           "id": 22,
+          "issue": "[#23](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/23)",
           "title": "GPS/IMU Motion Data Source and Per-Take Slicing",
           "type": "HITL",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "15, 17",
+            "Issue": "[#23](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/23)",
+            "Blocked by": "#16 (MLS-15), #18 (MLS-17)",
             "Notes": "Logging-first simpleRTK2B Fusion support; TC alignment."
           },
           "summary": "Logging-first simpleRTK2B Fusion support; TC alignment."
         },
         {
           "id": 23,
+          "issue": "[#24](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/24)",
           "title": "Stream Comment TC Stamping and Standby Blur",
           "type": "AFK",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "15, 20",
+            "Issue": "[#24](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/24)",
+            "Blocked by": "#16 (MLS-15), #21 (MLS-20)",
             "Notes": "Refine existing stream system."
           },
           "summary": "Refine existing stream system."
         },
         {
           "id": 24,
+          "issue": "[#25](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/25)",
           "title": "End-of-Day Camera Report Package",
           "type": "HITL",
           "phase": "Phase 2",
           "fields": {
-            "Blocked by": "9, 15, 21, 22, 23",
+            "Issue": "[#25](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/25)",
+            "Blocked by": "#10 (MLS-09), #16 (MLS-15), #22 (MLS-21), #23 (MLS-22), #24 (MLS-23)",
             "Notes": "PDF-first report plus JSON/package artifacts."
           },
           "summary": "PDF-first report plus JSON/package artifacts."
@@ -304,66 +351,78 @@
       "cards": [
         {
           "id": 25,
+          "issue": "[#26](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/26)",
           "title": "Analyzer Corpus and Simulator Harness",
           "type": "AFK",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "6, 7, 8",
+            "Issue": "[#26](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/26)",
+            "Blocked by": "#7 (MLS-06), #8 (MLS-07), #9 (MLS-08)",
             "Notes": "Can move earlier if OCR/REC reliability becomes the limiting risk."
           },
           "summary": "Can move earlier if OCR/REC reliability becomes the limiting risk."
         },
         {
           "id": 26,
+          "issue": "[#27](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/27)",
           "title": "PTGui Still Grab Support Tool",
           "type": "HITL",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "4, 5",
+            "Issue": "[#27](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/27)",
+            "Blocked by": "#5 (MLS-04), #6 (MLS-05)",
             "Notes": "TIFF preferred, overlay-off/on prompts, calibration still manifest."
           },
           "summary": "TIFF preferred, overlay-off/on prompts, calibration still manifest."
         },
         {
           "id": 27,
+          "issue": "[#28](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/28)",
           "title": "System Calibration Mode",
           "type": "HITL",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "25",
+            "Issue": "[#28](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/28)",
+            "Blocked by": "#26 (MLS-25)",
             "Notes": "Troubleshooting workflow beyond per-job verification."
           },
           "summary": "Troubleshooting workflow beyond per-job verification."
         },
         {
           "id": 28,
+          "issue": "[#29](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/29)",
           "title": "9-Grid Camera Punch-Up",
           "type": "AFK",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "11",
+            "Issue": "[#29](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/29)",
+            "Blocked by": "#12 (MLS-11)",
             "Notes": "Disabled during recording."
           },
           "summary": "Disabled during recording."
         },
         {
           "id": 29,
+          "issue": "[#30](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/30)",
           "title": "Flow Warp Validation Harness",
           "type": "AFK",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "4, 9",
+            "Issue": "[#30](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/30)",
+            "Blocked by": "#5 (MLS-04), #10 (MLS-09)",
             "Notes": "Post-MVP quality experiment unless it proves safe and high value."
           },
           "summary": "Post-MVP quality experiment unless it proves safe and high value."
         },
         {
           "id": 30,
+          "issue": "[#31](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/31)",
           "title": "Radial Distortion Parity Experiment",
           "type": "AFK",
           "phase": "Phase 3",
           "fields": {
-            "Blocked by": "4, 29",
+            "Issue": "[#31](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/31)",
+            "Blocked by": "#5 (MLS-04), #30 (MLS-29)",
             "Notes": "Keep disabled until PTGui parity is proven."
           },
           "summary": "Keep disabled until PTGui parity is proven."
@@ -372,10 +431,10 @@
     }
   ],
   "suggested_next_pulls": [
-    "Validate cards 8, 9, 10, 11, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, post-take classification review, alarms, grid REC overlays, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
-    "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
-    "Continue card 21 into daily report formatting once slate sidecar behavior is app-smoke verified.",
-    "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
+    "Work only open issues labeled `Sandcastle`.",
+    "Do not pick up `HITL`, `blocked`, or `needs-verification` issues unless explicitly assigned by Andrew/Drew.",
+    "When implementation lands, remove `Sandcastle` and add `needs-verification` if operator/hardware/app review is still required.",
+    "Close issues only after the acceptance criteria are actually satisfied."
   ],
   "acceptance_gates": [
     "Startup/resume/recovery verified on the app.",
