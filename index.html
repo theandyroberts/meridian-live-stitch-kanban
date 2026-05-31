@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are the next unblocked card.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 3.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,7 +372,7 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">0</span>
+          <span class="metric-value">1</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
@@ -400,10 +400,10 @@
               <p>Refined in <code>1f62d11</code> after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. <code>swift build</code> passed. Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.</p>
             </article>
 
-            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline. initial implementation complete in working tree; `swift build` passed. adds persisted mode transitions, orange setup mode treatment, green working mode entry, and non-blocking readiness acknowledgement. run app and verify resume/new job opens in setup mode, warnings acknowledge correctly, and enter working mode launches the pipeline.">
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 implemented in `35cf7cb`; app smoke-verified 2026-05-30. existing job opens setup mode, warning acknowledgement is shown for non-green readiness, and enter working mode launches the operator console on existing-footage playback. operator signoff on visual treatment across all active windows; then use as dependency for operator console and mapping work. implemented in `35cf7cb`; app smoke-verified 2026-05-30. existing job opens setup mode, warning acknowledgement is shown for non-green readiness, and enter working mode launches the operator console on existing-footage playback. operator signoff on visual treatment across all active windows; then use as dependency for operator console and mapping work.">
               <h2><span class="id">2</span><span>Setup Mode and Working Mode Gate</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Initial implementation complete in working tree; <code>swift build</code> passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline.</p>
+              <p>Implemented in <code>35cf7cb</code>; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata. initial implementation complete in working tree; `swift build` passed. default/global template selection, project `_calibration/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_calibration/`, and take sidecars include template metadata.">
@@ -417,24 +417,23 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">0</span>
+            <span class="count">1</span>
           </div>
           <div class="cards">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="3 operator console readiness dashboard hitl phase 1 ui uses operator console / oc terminology, shows setup vs working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for setup, cameras/mapping, overlay/qc, calibration, slate, stream, gps/imu, reports, and diagnostics. card 2 app smoke verification is complete; current window already launches after working mode and can be refactored into the oc shell. ui uses operator console / oc terminology, shows setup vs working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for setup, cameras/mapping, overlay/qc, calibration, slate, stream, gps/imu, reports, and diagnostics.">
+              <h2><span class="id">3</span><span>Operator Console Readiness Dashboard</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
+              <p>UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics.</p>
+            </article>
           </div>
         </section>
 
         <section class="column" aria-labelledby="phase1-title">
           <div class="column-header">
             <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
-            <span class="count">13</span>
+            <span class="count">12</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="3 operator console readiness dashboard hitl phase 1 blocked by 2 app verification. unblocks 5, 6, 10, 12, 15, 16. 2 app verification 5, 6, 10, 12, 15, 16">
-              <h2><span class="id">3</span><span>Operator Console Readiness Dashboard</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification</span></div>
-              <p>Blocked by 2 app verification. Unblocks 5, 6, 10, 12, 15, 16.</p>
-            </article>
-
             <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 blocked by 2 app verification, 4 app verification. unblocks 6, 26. 2 app verification, 4 app verification 6, 26">
               <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2 app verification, 4 app verification</span></div>
@@ -616,10 +615,10 @@
         <h2>Suggested Next Pulls</h2>
         <ol>
           <li>Get operator visual signoff on card 1&#x27;s revised startup/new-job flow.</li>
-          <li>Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.</li>
+          <li>Start card 3: Operator Console Readiness Dashboard.</li>
           <li>Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes <code>_CALIBRATION/</code>.</li>
-          <li>After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
           <li>After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.</li>
+          <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
         </ol>
       </div>
       <div class="list-panel">

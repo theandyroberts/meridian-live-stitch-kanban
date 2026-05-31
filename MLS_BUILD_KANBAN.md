@@ -15,19 +15,19 @@ Legend:
 | ID | Card | Type | Current note | Next action |
 | --- | --- | --- | --- | --- |
 | 1 | Startup, Resume, and Recovery Shell | AFK | Refined in `1f62d11` after operator feedback. Actual app smoke pass: first screen now shows Open Existing Job, Start New Job, and recovery only when interrupted state exists; Existing Job routes through a picker into Setup Mode; New Job now includes save folder and PTGui template selection. `swift build` passed. | Operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. |
-| 2 | Setup Mode and Working Mode Gate | AFK | Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. | Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline. |
+| 2 | Setup Mode and Working Mode Gate | AFK | Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. | Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work. |
 | 4 | Default PTGui Template and Active Calibration Lifecycle | AFK | Initial implementation complete in working tree; `swift build` passed. Default/global template selection, project `_CALIBRATION/` copy, manifest/take sidecar persistence, and recording-time calibration lock are wired. | Run app and verify new job starts from global default, resumed job restores project template, import/replace copies into `_CALIBRATION/`, and take sidecars include template metadata. |
 
 ## Ready Now
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
+| 3 | Operator Console Readiness Dashboard | HITL | Card 2 app smoke verification is complete; current window already launches after Working Mode and can be refactored into the OC shell. | UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics. |
 
 ## Phase 1 Blocked
 
 | ID | Card | Type | Blocked by | Unblocks |
 | --- | --- | --- | --- | --- |
-| 3 | Operator Console Readiness Dashboard | HITL | 2 app verification | 5, 6, 10, 12, 15, 16 |
 | 5 | 9-Grid and PTGui Mapping Verification | HITL | 2 app verification, 4 app verification | 6, 26 |
 | 6 | ROI Profile Store and Overlay Verification Roll | HITL | 2 app verification, 5 | 7, 8, 25 |
 | 7 | 500 ms REC Consensus and Recording Classification | AFK | 6 | 8, 9, 10, 25 |
@@ -68,10 +68,10 @@ Legend:
 ## Suggested Next Pulls
 
 1. Get operator visual signoff on card 1's revised startup/new-job flow.
-2. Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.
+2. Start card 3: Operator Console Readiness Dashboard.
 3. Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.
-4. After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.
-5. After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.
+4. After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.
+5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.
 
 ## Acceptance Gates Before Phase 2
 

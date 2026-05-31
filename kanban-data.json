@@ -24,10 +24,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Current note": "Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement.",
-            "Next action": "Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline."
+            "Current note": "Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback.",
+            "Next action": "Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work."
           },
-          "summary": "Initial implementation complete in working tree; `swift build` passed. Adds persisted mode transitions, orange Setup Mode treatment, green Working Mode entry, and non-blocking readiness acknowledgement. Run app and verify resume/new job opens in Setup Mode, warnings acknowledge correctly, and Enter Working Mode launches the pipeline."
+          "summary": "Implemented in `35cf7cb`; app smoke-verified 2026-05-30. Existing job opens Setup Mode, warning acknowledgement is shown for non-green readiness, and Enter Working Mode launches the Operator Console on existing-footage playback. Operator signoff on visual treatment across all active windows; then use as dependency for Operator Console and mapping work."
         },
         {
           "id": 4,
@@ -47,13 +47,6 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": []
-    },
-    {
-      "key": "phase1",
-      "title": "Phase 1 Blocked",
-      "dot": "blocked",
-      "phase": "Phase 1",
       "cards": [
         {
           "id": 3,
@@ -61,11 +54,19 @@
           "type": "HITL",
           "phase": "Phase 1",
           "fields": {
-            "Blocked by": "2 app verification",
-            "Unblocks": "5, 6, 10, 12, 15, 16"
+            "Why ready": "Card 2 app smoke verification is complete; current window already launches after Working Mode and can be refactored into the OC shell.",
+            "Definition of done": "UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics."
           },
-          "summary": "Blocked by 2 app verification. Unblocks 5, 6, 10, 12, 15, 16."
-        },
+          "summary": "UI uses Operator Console / OC terminology, shows Setup vs Working status clearly, exposes key readiness categories, and includes phase-1 drill-ins/placeholders for Setup, Cameras/Mapping, Overlay/QC, Calibration, Slate, Stream, GPS/IMU, Reports, and Diagnostics."
+        }
+      ]
+    },
+    {
+      "key": "phase1",
+      "title": "Phase 1 Blocked",
+      "dot": "blocked",
+      "phase": "Phase 1",
+      "cards": [
         {
           "id": 5,
           "title": "9-Grid and PTGui Mapping Verification",
@@ -373,10 +374,10 @@
   ],
   "suggested_next_pulls": [
     "Get operator visual signoff on card 1's revised startup/new-job flow.",
-    "Verify card 2 in the running app: existing/new/recovered jobs open Setup Mode, warning acknowledgement works, and Enter Working Mode launches.",
+    "Start card 3: Operator Console Readiness Dashboard.",
     "Verify card 4 in the running app: global default starts new jobs, resume restores project template, and import/replace writes `_CALIBRATION/`.",
-    "After card 2 verification, schedule HITL design review for card 3: Operator Console Readiness Dashboard.",
-    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification."
+    "After cards 2 and 4 verification, start card 5: 9-Grid and PTGui Mapping Verification.",
+    "Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work."
   ],
   "acceptance_gates": [
     "Startup/resume/recovery verified on the app.",
