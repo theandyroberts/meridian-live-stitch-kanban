@@ -24,7 +24,7 @@ Legend:
 
 | ID | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- |
-| 6 | ROI Profile Store and Overlay Verification Roll | HITL | Card 5's mapping surface exists, so ROI/OCR verification can now key off the active mapping context and Setup Mode entry flow. | Persist ROI profiles by SDI/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing ROI as yellow/non-blocking status unless production policy changes. |
+| 6 | ROI Profile Store and Overlay Verification Roll | HITL | Initial shell landed in `ae1bc2e`: Overlay/QC tab, context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, and repo-local project DB resolution are in place. | Finish the analyzer close-loop: observe REC bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing ROI yellow/non-blocking unless production policy changes. |
 
 ## Phase 1 Blocked
 
@@ -67,8 +67,8 @@ Legend:
 
 ## Suggested Next Pulls
 
-1. Get operator/hardware signoff on card 5's Cameras/Mapping module with the physical array connected.
-2. Start card 6: ROI Profile Store and Overlay Verification Roll.
+1. Finish card 6's analyzer close-loop so the Overlay/QC shell can actually pass or fail a forced verification roll.
+2. Get operator/hardware signoff on card 5's Cameras/Mapping module with the physical array connected.
 3. Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.
 4. Get operator/design review on card 3's Operator Console shell while card 6 is being wired.
 5. Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.

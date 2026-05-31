@@ -432,10 +432,10 @@
             <span class="count">1</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 persist roi profiles by sdi/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing roi as yellow/non-blocking status unless production policy changes. card 5&#x27;s mapping surface exists, so roi/ocr verification can now key off the active mapping context and setup mode entry flow. persist roi profiles by sdi/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing roi as yellow/non-blocking status unless production policy changes.">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 finish the analyzer close-loop: observe rec bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing roi yellow/non-blocking unless production policy changes. initial shell landed in `ae1bc2e`: overlay/qc tab, context-keyed roi fallback, fast/full verification actions, visualanalyzer roi injection, and repo-local project db resolution are in place. finish the analyzer close-loop: observe rec bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing roi yellow/non-blocking unless production policy changes.">
               <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
-              <p>Persist ROI profiles by SDI/profile/template context; run required setup verification roll; support fast/full verification; surface stale/missing ROI as yellow/non-blocking status unless production policy changes.</p>
+              <p>Finish the analyzer close-loop: observe REC bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing ROI yellow/non-blocking unless production policy changes.</p>
             </article>
           </div>
         </section>
@@ -614,8 +614,8 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
+          <li>Finish card 6&#x27;s analyzer close-loop so the Overlay/QC shell can actually pass or fail a forced verification roll.</li>
           <li>Get operator/hardware signoff on card 5&#x27;s Cameras/Mapping module with the physical array connected.</li>
-          <li>Start card 6: ROI Profile Store and Overlay Verification Roll.</li>
           <li>Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.</li>
           <li>Get operator/design review on card 3&#x27;s Operator Console shell while card 6 is being wired.</li>
           <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
