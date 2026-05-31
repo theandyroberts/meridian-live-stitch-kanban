@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 6.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 7.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -376,7 +376,7 @@
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">5</span>
+          <span class="metric-value">6</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">5</span>
+            <span class="count">6</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -423,6 +423,12 @@
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
               <p>Initial mapping module implemented in <code>a41c49d</code>; <code>swift build</code> passed and actual app smoke pass rendered the Cameras tab. It shows SDI/playback source, 9-grid cell, OCR ID, Pinwheel position, PTGui slot, expected Live Stitch ID, status, standard-template indicator, and side-by-side 9-grid/stitch previews. Job/manifest now persist the template mapping override state. Operator/hardware review on the live array, then add the advanced override editing flow if a nonstandard PTGui template is encountered.</p>
             </article>
+
+            <article class="card is-done" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. overlay/qc now has context-keyed roi fallback, fast/full verification actions, visualanalyzer roi injection, repo-local db resolution, 9/9 rec observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through overlay/qc on existing footage. live-array verification: confirm fast test passes after a forced roll/clip advance, full test requires stop after rec, and stale/missing roi stays yellow/non-blocking. initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. overlay/qc now has context-keyed roi fallback, fast/full verification actions, visualanalyzer roi injection, repo-local db resolution, 9/9 rec observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through overlay/qc on existing footage. live-array verification: confirm fast test passes after a forced roll/clip advance, full test requires stop after rec, and stale/missing roi stays yellow/non-blocking.">
+              <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial shell landed in <code>ae1bc2e</code>; close-loop landed in <code>9cefa66</code>. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. <code>swift build</code> passed; app smoke pass verified startup through Overlay/QC on existing footage. Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking.</p>
+            </article>
           </div>
         </section>
 
@@ -432,10 +438,10 @@
             <span class="count">1</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 finish the analyzer close-loop: observe rec bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing roi yellow/non-blocking unless production policy changes. initial shell landed in `ae1bc2e`: overlay/qc tab, context-keyed roi fallback, fast/full verification actions, visualanalyzer roi injection, and repo-local project db resolution are in place. finish the analyzer close-loop: observe rec bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing roi yellow/non-blocking unless production policy changes.">
-              <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
-              <p>Finish the analyzer close-loop: observe REC bug + roll/clip advance, mark fast/full verification pass/fail, refresh the dashboard state after completion, and keep stale/missing ROI yellow/non-blocking unless production policy changes.</p>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="7 500 ms rec consensus and recording classification afk phase 1 make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the operator console and event log agree on which cameras failed, false-rolled, or recorded alone. card 6 can now arm/observe overlay verification. existing tally consensus and partial-rec events are present, and `9cefa66` changed the partial-rec tolerance to the approved 500 ms. make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the operator console and event log agree on which cameras failed, false-rolled, or recorded alone.">
+              <h2><span class="id">7</span><span>500 ms REC Consensus and Recording Classification</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Make 9/9, 8/9, 1/9, and middle partial patterns drive deterministic take classification and metadata without blocking recording; ensure the Operator Console and event log agree on which cameras failed, false-rolled, or recorded alone.</p>
             </article>
           </div>
         </section>
@@ -443,15 +449,9 @@
         <section class="column" aria-labelledby="phase1-title">
           <div class="column-header">
             <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
-            <span class="count">10</span>
+            <span class="count">9</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="7 500 ms rec consensus and recording classification afk phase 1 blocked by 6. unblocks 8, 9, 10, 25. 6 8, 9, 10, 25">
-              <h2><span class="id">7</span><span>500 ms REC Consensus and Recording Classification</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 6</span></div>
-              <p>Blocked by 6. Unblocks 8, 9, 10, 25.</p>
-            </article>
-
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="8 authoritative roll/clip ocr take identity afk phase 1 blocked by 6, 7. unblocks 9, 25. 6, 7 9, 25">
               <h2><span class="id">8</span><span>Authoritative Roll/Clip OCR Take Identity</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 6, 7</span></div>
@@ -614,8 +614,8 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
-          <li>Finish card 6&#x27;s analyzer close-loop so the Overlay/QC shell can actually pass or fail a forced verification roll.</li>
-          <li>Get operator/hardware signoff on card 5&#x27;s Cameras/Mapping module with the physical array connected.</li>
+          <li>Start card 7: finish 500 ms REC consensus behavior so partial starts still create correctly classified take records.</li>
+          <li>Get operator/hardware signoff on cards 5 and 6 with the physical array connected.</li>
           <li>Complete remaining card 4 operator tests: import/replace in Setup Mode and between takes, plus disabled-during-recording lock.</li>
           <li>Get operator/design review on card 3&#x27;s Operator Console shell while card 6 is being wired.</li>
           <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
