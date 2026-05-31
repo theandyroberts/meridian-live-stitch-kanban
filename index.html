@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">3</span>
+          <span class="metric-value">2</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">13</span>
+          <span class="metric-value">14</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">13</span>
+            <span class="count">14</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -454,6 +454,12 @@
               <p>Initial protected fallback landed in <code>16340d6</code>. The 9-grid writer starts first and is treated as the required protected recorder. If Live Stitch writer start fails, the take can continue with 9-grid recording active. Production sidecars now include structured <code>recordingOutputs</code> for Live Stitch, 9-grid, and per-camera proxies, plus <code>protectedFallbackAvailable</code>. <code>swift build</code> passed. Add live writer-stall/drop-frame health during active takes, then fault-inject Live Stitch/9-grid writer failures to verify alarms, sidecar fields, and 9-grid protection behavior.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="13 late stop and false roll flows afk phase 1 initial late-stop/false-roll slice landed in `6a65e14`. sustained stop-side partial rec after a full-array take now emits loud `camera_stopped_late` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. operator console now has a mark false roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `false_roll_detected`. `swift build` passed. hardware/ocr validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/tts/clear behavior and sidecar offset. then mark a closed take false roll and verify folder move plus manifest update. initial late-stop/false-roll slice landed in `6a65e14`. sustained stop-side partial rec after a full-array take now emits loud `camera_stopped_late` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. operator console now has a mark false roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `false_roll_detected`. `swift build` passed. hardware/ocr validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/tts/clear behavior and sidecar offset. then mark a closed take false roll and verify folder move plus manifest update.">
+              <h2><span class="id">13</span><span>Late Stop and False Roll Flows</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial late-stop/false-roll slice landed in <code>6a65e14</code>. Sustained stop-side partial REC after a full-array take now emits loud <code>CAMERA_STOPPED_LATE</code> warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in <code>takes/</code>. Operator Console now has a Mark False Roll action that moves the latest closed take to <code>false_roll/</code>, updates its sidecar/manifest, and logs <code>FALSE_ROLL_DETECTED</code>. <code>swift build</code> passed. Hardware/OCR validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/TTS/clear behavior and sidecar offset. Then mark a closed take false roll and verify folder move plus manifest update.</p>
+            </article>
+
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 initial sandbox landed in `40cbb0f`. project layout now includes `_setup_tests/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write live stitch/9-grid/per-camera proxy files plus a debug json, and skip production sidecars/manifest rollup. operator console setup tab has a record setup test action and blocks setup-test start while production recording is active. `swift build` passed. app smoke verification: run a setup test, confirm files land only under `_setup_tests/`, and confirm `manifest.json` production `takes[]` is unchanged. initial sandbox landed in `40cbb0f`. project layout now includes `_setup_tests/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write live stitch/9-grid/per-camera proxy files plus a debug json, and skip production sidecars/manifest rollup. operator console setup tab has a record setup test action and blocks setup-test start while production recording is active. `swift build` passed. app smoke verification: run a setup test, confirm files land only under `_setup_tests/`, and confirm `manifest.json` production `takes[]` is unchanged.">
               <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
@@ -477,7 +483,7 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">3</span>
+            <span class="count">2</span>
           </div>
           <div class="cards">
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="8 authoritative roll/clip ocr take identity afk phase 1 hardware/ocr validation with real overlays: prove ocr reaches 5/9+ reliably, tune roi/vision settings if needed, and then carry clip-sync status into daily reports. slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: overlay/qc has a clip sync report action, unreadable/mismatched ocr is logged as non-loud `clip_mismatch`, clip-sync readiness persists into overlay/qc rows, and production take renaming now requires at least 5 matching stable ocr cameras. if consensus fails, the take keeps its interim folder and gets a sidecar qc flag. hardware/ocr validation with real overlays: prove ocr reaches 5/9+ reliably, tune roi/vision settings if needed, and then carry clip-sync status into daily reports.">
@@ -490,12 +496,6 @@
               <h2><span class="id">11</span><span>Live 9-Grid Recording/Alarm Overlays</span></h2>
               <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
               <p>9-grid shows red REC outlines/bugs for recording cameras and orange/yellow warning overlays by camera without recording app-only overlays into clean assets unless explicitly enabled.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="13 late stop and false roll flows afk phase 1 late-stop cameras create `camera_stopped_late` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`. take lifecycle routing and alarm silence behavior are in place. late-stop cameras create `camera_stopped_late` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`.">
-              <h2><span class="id">13</span><span>Late Stop and False Roll Flows</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Late-stop cameras create <code>CAMERA_STOPPED_LATE</code> warning metadata while the original take can stay good; false-roll operator action moves the take to <code>false_roll/</code>.</p>
             </article>
           </div>
         </section>
@@ -615,9 +615,9 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
-          <li>Implement card 13&#x27;s late-stop and false-roll flows now that lifecycle routing exists.</li>
           <li>Add live recorder stall/drop-frame health to extend card 12 beyond close-time/fallback metadata.</li>
-          <li>Validate cards 8, 9, 10, 12, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, recorder fallback, setup-test sandbox, degraded TC metadata, and Finder folder opening.</li>
+          <li>Implement card 11&#x27;s live 9-grid REC/alarm overlays on the operator monitoring surface.</li>
+          <li>Validate cards 8, 9, 10, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.</li>
           <li>Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.</li>
           <li>Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.</li>
         </ol>

@@ -118,6 +118,17 @@
           "summary": "Initial protected fallback landed in `16340d6`. The 9-grid writer starts first and is treated as the required protected recorder. If Live Stitch writer start fails, the take can continue with 9-grid recording active. Production sidecars now include structured `recordingOutputs` for Live Stitch, 9-grid, and per-camera proxies, plus `protectedFallbackAvailable`. `swift build` passed. Add live writer-stall/drop-frame health during active takes, then fault-inject Live Stitch/9-grid writer failures to verify alarms, sidecar fields, and 9-grid protection behavior."
         },
         {
+          "id": 13,
+          "title": "Late Stop and False Roll Flows",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial late-stop/false-roll slice landed in `6a65e14`. Sustained stop-side partial REC after a full-array take now emits loud `CAMERA_STOPPED_LATE` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. Operator Console now has a Mark False Roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `FALSE_ROLL_DETECTED`. `swift build` passed.",
+            "Next action": "Hardware/OCR validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/TTS/clear behavior and sidecar offset. Then mark a closed take false roll and verify folder move plus manifest update."
+          },
+          "summary": "Initial late-stop/false-roll slice landed in `6a65e14`. Sustained stop-side partial REC after a full-array take now emits loud `CAMERA_STOPPED_LATE` warnings, records final late-stop offsets when the late camera stops, and keeps warning-only late stops in `takes/`. Operator Console now has a Mark False Roll action that moves the latest closed take to `false_roll/`, updates its sidecar/manifest, and logs `FALSE_ROLL_DETECTED`. `swift build` passed. Hardware/OCR validation: roll a clean 9/9 take, force one camera to stop late, confirm warning/TTS/clear behavior and sidecar offset. Then mark a closed take false roll and verify folder move plus manifest update."
+        },
+        {
           "id": 14,
           "title": "Setup Test Recording Sandbox",
           "type": "AFK",
@@ -179,17 +190,6 @@
             "Definition of done": "9-grid shows red REC outlines/bugs for recording cameras and orange/yellow warning overlays by camera without recording app-only overlays into clean assets unless explicitly enabled."
           },
           "summary": "9-grid shows red REC outlines/bugs for recording cameras and orange/yellow warning overlays by camera without recording app-only overlays into clean assets unless explicitly enabled."
-        },
-        {
-          "id": 13,
-          "title": "Late Stop and False Roll Flows",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Take lifecycle routing and alarm silence behavior are in place.",
-            "Definition of done": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
-          },
-          "summary": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
         }
       ]
     },
@@ -372,9 +372,9 @@
     }
   ],
   "suggested_next_pulls": [
-    "Implement card 13's late-stop and false-roll flows now that lifecycle routing exists.",
     "Add live recorder stall/drop-frame health to extend card 12 beyond close-time/fallback metadata.",
-    "Validate cards 8, 9, 10, 12, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, recorder fallback, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
+    "Implement card 11's live 9-grid REC/alarm overlays on the operator monitoring surface.",
+    "Validate cards 8, 9, 10, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
     "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
