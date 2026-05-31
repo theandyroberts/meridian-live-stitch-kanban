@@ -107,6 +107,17 @@
           "summary": "Initial alarm model landed in `cebfcdd`. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. `swift build` passed. Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only."
         },
         {
+          "id": 14,
+          "title": "Setup Test Recording Sandbox",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Initial sandbox landed in `40cbb0f`. Project layout now includes `_SETUP_TESTS/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. `swift build` passed.",
+            "Next action": "App smoke verification: run a setup test, confirm files land only under `_SETUP_TESTS/`, and confirm `manifest.json` production `takes[]` is unchanged."
+          },
+          "summary": "Initial sandbox landed in `40cbb0f`. Project layout now includes `_SETUP_TESTS/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. `swift build` passed. App smoke verification: run a setup test, confirm files land only under `_SETUP_TESTS/`, and confirm `manifest.json` production `takes[]` is unchanged."
+        },
+        {
           "id": 15,
           "title": "Minimal TC Source Status and Degraded-TC Marking",
           "type": "AFK",
@@ -179,17 +190,6 @@
             "Definition of done": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
           },
           "summary": "Late-stop cameras create `CAMERA_STOPPED_LATE` warning metadata while the original take can stay good; false-roll operator action moves the take to `false_roll/`."
-        },
-        {
-          "id": 14,
-          "title": "Setup Test Recording Sandbox",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "Setup Mode and Working Mode exist, and closed-take classification no longer depends on writing everything into one folder.",
-            "Definition of done": "Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept."
-          },
-          "summary": "Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept."
         }
       ]
     },
@@ -372,9 +372,9 @@
     }
   ],
   "suggested_next_pulls": [
-    "Implement card 14's Setup Test Recording Sandbox so setup rolls stay out of production takes.",
     "Implement card 12's independent recorder-health/fallback path.",
-    "Validate cards 8, 9, 10, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, degraded TC metadata, and Finder folder opening.",
+    "Implement card 13's late-stop and false-roll flows now that lifecycle routing exists.",
+    "Validate cards 8, 9, 10, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
     "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],

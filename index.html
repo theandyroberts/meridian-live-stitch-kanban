@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">5</span>
+          <span class="metric-value">4</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">11</span>
+          <span class="metric-value">12</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">11</span>
+            <span class="count">12</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -448,6 +448,12 @@
               <p>Initial alarm model landed in <code>cebfcdd</code>. Critical REC/sync/genlock alarms are sticky, drive grid-cell visuals plus the Operator Console REC-pill alarm text, and trigger beep + AVFoundation TTS. Warning-only metadata such as clip mismatch and SDI dropout stays quiet/log-only. Operator Console now has a Silence Audio action that stops current TTS without clearing visual state. <code>swift build</code> passed. Operator/audio review: verify alarm wording, sound level, silence behavior, and whether additional alarm classes should be loud or visual-only.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 initial sandbox landed in `40cbb0f`. project layout now includes `_setup_tests/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write live stitch/9-grid/per-camera proxy files plus a debug json, and skip production sidecars/manifest rollup. operator console setup tab has a record setup test action and blocks setup-test start while production recording is active. `swift build` passed. app smoke verification: run a setup test, confirm files land only under `_setup_tests/`, and confirm `manifest.json` production `takes[]` is unchanged. initial sandbox landed in `40cbb0f`. project layout now includes `_setup_tests/`; setup-test recordings use `jobname_setup_test_0001` sequence naming, write live stitch/9-grid/per-camera proxy files plus a debug json, and skip production sidecars/manifest rollup. operator console setup tab has a record setup test action and blocks setup-test start while production recording is active. `swift build` passed. app smoke verification: run a setup test, confirm files land only under `_setup_tests/`, and confirm `manifest.json` production `takes[]` is unchanged.">
+              <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial sandbox landed in <code>40cbb0f</code>. Project layout now includes <code>_SETUP_TESTS/</code>; setup-test recordings use <code>jobname_setup_test_0001</code> sequence naming, write Live Stitch/9-grid/per-camera proxy files plus a debug JSON, and skip production sidecars/manifest rollup. Operator Console Setup tab has a Record Setup Test action and blocks setup-test start while production recording is active. <code>swift build</code> passed. App smoke verification: run a setup test, confirm files land only under <code>_SETUP_TESTS/</code>, and confirm <code>manifest.json</code> production <code>takes[]</code> is unchanged.</p>
+            </article>
+
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="15 minimal tc source status and degraded-tc marking afk phase 1 minimal tc status service landed in `c016972`. the router now tracks the best observed timing source, and per-take sidecars store start/end `timecodestatus` with source, confidence, certified/degraded flags, primary slot/camera, display tc, frame count, and detail. current avfoundation/file-playback paths are explicitly degraded/approximate until rp188 providers land. operator console timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. validate sidecar output on a short playback take; later cards still need decklink/rp188 capture, failover, and embedded quicktime `tmcd`. minimal tc status service landed in `c016972`. the router now tracks the best observed timing source, and per-take sidecars store start/end `timecodestatus` with source, confidence, certified/degraded flags, primary slot/camera, display tc, frame count, and detail. current avfoundation/file-playback paths are explicitly degraded/approximate until rp188 providers land. operator console timecode readiness copy now reflects non-certified/degraded modes. `swift build` passed. validate sidecar output on a short playback take; later cards still need decklink/rp188 capture, failover, and embedded quicktime `tmcd`.">
               <h2><span class="id">15</span><span>Minimal TC Source Status and Degraded-TC Marking</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
@@ -465,7 +471,7 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">5</span>
+            <span class="count">4</span>
           </div>
           <div class="cards">
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="8 authoritative roll/clip ocr take identity afk phase 1 hardware/ocr validation with real overlays: prove ocr reaches 5/9+ reliably, tune roi/vision settings if needed, and then carry clip-sync status into daily reports. slices landed in `fca62f6`, `c5fff9e`, and `984b1a6`: overlay/qc has a clip sync report action, unreadable/mismatched ocr is logged as non-loud `clip_mismatch`, clip-sync readiness persists into overlay/qc rows, and production take renaming now requires at least 5 matching stable ocr cameras. if consensus fails, the take keeps its interim folder and gets a sidecar qc flag. hardware/ocr validation with real overlays: prove ocr reaches 5/9+ reliably, tune roi/vision settings if needed, and then carry clip-sync status into daily reports.">
@@ -490,12 +496,6 @@
               <h2><span class="id">13</span><span>Late Stop and False Roll Flows</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Late-stop cameras create <code>CAMERA_STOPPED_LATE</code> warning metadata while the original take can stay good; false-roll operator action moves the take to <code>false_roll/</code>.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 setup mode records into setup-test naming/folders, can be cleared when entering working mode, and does not pollute production take manifests unless explicitly kept. setup mode and working mode exist, and closed-take classification no longer depends on writing everything into one folder. setup mode records into setup-test naming/folders, can be cleared when entering working mode, and does not pollute production take manifests unless explicitly kept.">
-              <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept.</p>
             </article>
           </div>
         </section>
@@ -615,9 +615,9 @@
       <div class="list-panel">
         <h2>Suggested Next Pulls</h2>
         <ol>
-          <li>Implement card 14&#x27;s Setup Test Recording Sandbox so setup rolls stay out of production takes.</li>
           <li>Implement card 12&#x27;s independent recorder-health/fallback path.</li>
-          <li>Validate cards 8, 9, 10, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, degraded TC metadata, and Finder folder opening.</li>
+          <li>Implement card 13&#x27;s late-stop and false-roll flows now that lifecycle routing exists.</li>
+          <li>Validate cards 8, 9, 10, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, setup-test sandbox, degraded TC metadata, and Finder folder opening.</li>
           <li>Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.</li>
           <li>Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.</li>
         </ol>
