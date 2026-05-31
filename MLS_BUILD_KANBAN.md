@@ -22,6 +22,7 @@ Legend:
 | 6 | ROI Profile Store and Overlay Verification Roll | HITL | Initial shell landed in `ae1bc2e`; close-loop landed in `9cefa66`. Overlay/QC now has context-keyed ROI fallback, fast/full verification actions, VisualAnalyzer ROI injection, repo-local DB resolution, 9/9 REC observation, majority roll/clip advance observation, and pass-state persistence. `swift build` passed; app smoke pass verified startup through Overlay/QC on existing footage. | Live-array verification: confirm Fast Test passes after a forced roll/clip advance, Full Test requires stop after REC, and stale/missing ROI stays yellow/non-blocking. |
 | 7 | 500 ms REC Consensus and Recording Classification | AFK | Implemented in `feee6fa` after the 500 ms tolerance change in `9cefa66`; SDI dropout grace landed in `e6a5ca0`. Partial REC states that persist past 500 ms now start recording before posting per-camera CAMERA_FAILED_TO_RECORD or CAMERA_RECORDED_ALONE events. Missing SDI signal is handled separately with a 1s debounce and does not stop recording or create loud alarm spam. `swift build` passed. | Live-array verification across 9/9, 8/9, 1/9, 5/4 split, and bump/dropout patterns; confirm event log, sidecar flags, Operator Console REC state, and folder sorting remain coherent. |
 | 9 | Take Lifecycle Sorting, Sidecars, and Manifest Rollup | AFK | Core lifecycle routing landed in `6d8340a`. Closed takes now get explicit `takeClassification` and `classificationReason`; critical REC consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as SDI dropout remain in `takes/` with QC metadata. Sidecar filenames now follow the final folder name, clip-level QC flags are populated, and manifest rollup scans all sort folders. `swift build` passed. | Hardware/OCR validation: record 9/9, 8/9, 1/9, and middle partial patterns, then inspect folder placement, per-take `data.json`, and `manifest.json`. False-roll routing still needs the operator action from card 13. |
+| 16 | Open Record Folder Action | AFK | Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. | App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder. |
 
 ## Ready Now
 
@@ -31,7 +32,6 @@ Legend:
 | 10 | Alarm Controller and Acknowledgement Model | AFK | REC consensus, SDI dropout debounce, and take-sidecar classification are now in place. The remaining gap is a proper operator alarm model instead of the current per-camera overlay/pill behavior. | Critical errors produce visible flashing state plus audio/TTS; warning-only issues stay quieter; acknowledge/silence suppresses audio while preserving visual status and event/sidecar history. |
 | 14 | Setup Test Recording Sandbox | AFK | Setup Mode and Working Mode exist, and closed-take classification no longer depends on writing everything into one folder. | Setup Mode records into setup-test naming/folders, can be cleared when entering Working Mode, and does not pollute production take manifests unless explicitly kept. |
 | 15 | Minimal TC Source Status and Degraded-TC Marking | AFK | Take sidecars now persist warning-only conditions without forcing `qc_fail/`, which is the needed foundation for degraded/non-certified TC metadata. | Operator Console shows primary/degraded/no-TC state, sidecars record the active TC source and degraded reason, and recording remains allowed. |
-| 16 | Open Record Folder Action | AFK | `takes/`, `qc_fail/`, and `false_roll/` are now first-class runtime folders with manifest rollup. | Working Mode Operator Console opens the project recording folder containing all three sort folders. |
 
 ## Phase 1 Blocked
 
@@ -68,9 +68,9 @@ Legend:
 ## Suggested Next Pulls
 
 1. Implement card 10's alarm controller so critical REC/sync issues have the correct visual/audio/TTS behavior before deeper overlay work.
-2. Implement card 16's Open Record Folder action as a quick operator workflow win.
-3. Start card 15's minimal TC source/degraded-state metadata, then use it to prepare for RP188 work.
-4. Validate cards 8 and 9 on real RED overlays: OCR consensus, folder routing, sidecars, and manifest rollup.
+2. Start card 15's minimal TC source/degraded-state metadata, then use it to prepare for RP188 work.
+3. Implement card 14's Setup Test Recording Sandbox so setup rolls stay out of production takes.
+4. Validate cards 8, 9, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, manifest rollup, and Finder folder opening.
 5. Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected.
 
 ## Acceptance Gates Before Phase 2

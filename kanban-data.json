@@ -94,6 +94,17 @@
             "Next action": "Hardware/OCR validation: record 9/9, 8/9, 1/9, and middle partial patterns, then inspect folder placement, per-take `data.json`, and `manifest.json`. False-roll routing still needs the operator action from card 13."
           },
           "summary": "Core lifecycle routing landed in `6d8340a`. Closed takes now get explicit `takeClassification` and `classificationReason`; critical REC consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as SDI dropout remain in `takes/` with QC metadata. Sidecar filenames now follow the final folder name, clip-level QC flags are populated, and manifest rollup scans all sort folders. `swift build` passed. Hardware/OCR validation: record 9/9, 8/9, 1/9, and middle partial patterns, then inspect folder placement, per-take `data.json`, and `manifest.json`. False-roll routing still needs the operator action from card 13."
+        },
+        {
+          "id": 16,
+          "title": "Open Record Folder Action",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Current note": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed.",
+            "Next action": "App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
+          },
+          "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
         }
       ]
     },
@@ -146,17 +157,6 @@
             "Definition of done": "Operator Console shows primary/degraded/no-TC state, sidecars record the active TC source and degraded reason, and recording remains allowed."
           },
           "summary": "Operator Console shows primary/degraded/no-TC state, sidecars record the active TC source and degraded reason, and recording remains allowed."
-        },
-        {
-          "id": 16,
-          "title": "Open Record Folder Action",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Why ready": "`takes/`, `qc_fail/`, and `false_roll/` are now first-class runtime folders with manifest rollup.",
-            "Definition of done": "Working Mode Operator Console opens the project recording folder containing all three sort folders."
-          },
-          "summary": "Working Mode Operator Console opens the project recording folder containing all three sort folders."
         }
       ]
     },
@@ -374,9 +374,9 @@
   ],
   "suggested_next_pulls": [
     "Implement card 10's alarm controller so critical REC/sync issues have the correct visual/audio/TTS behavior before deeper overlay work.",
-    "Implement card 16's Open Record Folder action as a quick operator workflow win.",
     "Start card 15's minimal TC source/degraded-state metadata, then use it to prepare for RP188 work.",
-    "Validate cards 8 and 9 on real RED overlays: OCR consensus, folder routing, sidecars, and manifest rollup.",
+    "Implement card 14's Setup Test Recording Sandbox so setup rolls stay out of production takes.",
+    "Validate cards 8, 9, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, manifest rollup, and Finder folder opening.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
