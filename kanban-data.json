@@ -99,6 +99,45 @@
           "summary": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues."
         },
         {
+          "id": "07A",
+          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+          "title": "REC consensus simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+            "Current note": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array. Closed in GitHub Issues."
+        },
+        {
+          "id": "07B",
+          "issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
+          "title": "Partial REC classification metadata",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
+            "Current note": "Ensure partial REC patterns produce precise classification metadata without deciding whether proxy files are written.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Ensure partial REC patterns produce precise classification metadata without deciding whether proxy files are written. Closed in GitHub Issues."
+        },
+        {
+          "id": "07C",
+          "issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
+          "title": "SDI dropout tolerance regression",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
+            "Current note": "Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. Closed in GitHub Issues."
+        },
+        {
           "id": "09",
           "issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
           "title": "Take Sorting, Sidecar, and Manifest Finalization",
@@ -261,45 +300,6 @@
             "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
           },
           "summary": "Stable overlay fields are checked against expected setup baseline values."
-        },
-        {
-          "id": "07A",
-          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-          "title": "REC consensus simulator fixtures",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-            "Why ready": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
-            "Definition of done": "Fixtures cover clean 9/9 REC within 500 ms."
-          },
-          "summary": "Fixtures cover clean 9/9 REC within 500 ms."
-        },
-        {
-          "id": "07B",
-          "issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
-          "title": "Partial REC classification metadata",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
-            "Why ready": "Ensure partial REC patterns produce precise classification metadata without deciding whether proxy files are written.",
-            "Definition of done": "8/9 produces CAMERA_FAILED_TO_RECORD with missing-camera evidence."
-          },
-          "summary": "8/9 produces CAMERA_FAILED_TO_RECORD with missing-camera evidence."
-        },
-        {
-          "id": "07C",
-          "issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
-          "title": "SDI dropout tolerance regression",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40)",
-            "Why ready": "Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps.",
-            "Definition of done": "Short SDI dropout fixture does not stop an active recording."
-          },
-          "summary": "Short SDI dropout fixture does not stop an active recording."
         },
         {
           "id": "08A",

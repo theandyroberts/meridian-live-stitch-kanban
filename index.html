@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">12</span>
+          <span class="metric-value">9</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">17</span>
+          <span class="metric-value">20</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">17</span>
+            <span class="count">20</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -434,6 +434,24 @@
               <h2><span class="id">06C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">Verification roll records REC bug evidence</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">#34</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="07a rec consensus simulator fixtures afk phase 1 add simulator or regression fixtures that drive the rec consensus engine through the agreed start patterns without requiring the physical array. closed in github issues. [#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38) add simulator or regression fixtures that drive the rec consensus engine through the agreed start patterns without requiring the physical array. closed in github issues.">
+              <h2><span class="id">07A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38">REC consensus simulator fixtures</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38">#38</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="07b partial rec classification metadata afk phase 1 ensure partial rec patterns produce precise classification metadata without deciding whether proxy files are written. closed in github issues. [#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39) ensure partial rec patterns produce precise classification metadata without deciding whether proxy files are written. closed in github issues.">
+              <h2><span class="id">07B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39">Partial REC classification metadata</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39">#39</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Ensure partial REC patterns produce precise classification metadata without deciding whether proxy files are written. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="07c sdi dropout tolerance regression afk phase 1 protect the agreed behavior for momentary sdi dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. closed in github issues. [#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40) protect the agreed behavior for momentary sdi dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. closed in github issues.">
+              <h2><span class="id">07C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">SDI dropout tolerance regression</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">#40</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. Closed in GitHub Issues.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="09 take sorting, sidecar, and manifest finalization afk phase 1 core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior. [#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10) core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior.">
@@ -501,7 +519,7 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">12</span>
+            <span class="count">9</span>
           </div>
           <div class="cards">
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 baseline roll/clip ocr is captured before the verification roll. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. baseline roll/clip ocr is captured before the verification roll.">
@@ -514,24 +532,6 @@
               <h2><span class="id">06E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">Passive overlay baseline and stale readiness rules</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">#36</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Stable overlay fields are checked against expected setup baseline values.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="07a rec consensus simulator fixtures afk phase 1 fixtures cover clean 9/9 rec within 500 ms. [#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38) add simulator or regression fixtures that drive the rec consensus engine through the agreed start patterns without requiring the physical array. fixtures cover clean 9/9 rec within 500 ms.">
-              <h2><span class="id">07A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38">REC consensus simulator fixtures</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38">#38</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Fixtures cover clean 9/9 REC within 500 ms.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="07b partial rec classification metadata afk phase 1 8/9 produces camera_failed_to_record with missing-camera evidence. [#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39) ensure partial rec patterns produce precise classification metadata without deciding whether proxy files are written. 8/9 produces camera_failed_to_record with missing-camera evidence.">
-              <h2><span class="id">07B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39">Partial REC classification metadata</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39">#39</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>8/9 produces CAMERA_FAILED_TO_RECORD with missing-camera evidence.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="07c sdi dropout tolerance regression afk phase 1 short sdi dropout fixture does not stop an active recording. [#40](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40) protect the agreed behavior for momentary sdi dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. short sdi dropout fixture does not stop an active recording.">
-              <h2><span class="id">07C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">SDI dropout tolerance regression</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">#40</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Short SDI dropout fixture does not stop an active recording.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="08a roll/clip ocr evidence debug report afk phase 1 clip sync report shows stable value, raw candidate, unreadable state, and slot/camera identity. [#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42) expose enough per-camera roll/clip ocr evidence to tune reliability without guessing which camera, crop, or confidence failed. clip sync report shows stable value, raw candidate, unreadable state, and slot/camera identity.">
