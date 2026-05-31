@@ -123,10 +123,10 @@
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Current note": "Initial protected fallback landed in `16340d6`. The 9-grid writer starts first and is treated as the required protected recorder. If Live Stitch writer start fails, the take can continue with 9-grid recording active. Production sidecars now include structured `recordingOutputs` for Live Stitch, 9-grid, and per-camera proxies, plus `protectedFallbackAvailable`. `swift build` passed.",
-            "Next action": "Add live writer-stall/drop-frame health during active takes, then fault-inject Live Stitch/9-grid writer failures to verify alarms, sidecar fields, and 9-grid protection behavior."
+            "Current note": "Protected fallback landed in `16340d6`; live recorder telemetry landed in `915cd82`. The 9-grid writer starts first and is the required protected recorder. Live Stitch writer start failure no longer kills the take. During active production takes, writers now track submitted/appended/dropped/failure counters; sustained 9-grid stalls emit loud `PROTECTED_RECORDER_STALLED`, while Live Stitch/per-camera stalls and dropped frames emit warning metadata. Production sidecars include structured `recordingOutputs` with writer health fields and `protectedFallbackAvailable`. `swift build` passed.",
+            "Next action": "Fault-inject Live Stitch/9-grid writer failures and heavy writer backpressure to verify alarms, sidecar fields, and 9-grid protection behavior."
           },
-          "summary": "Initial protected fallback landed in `16340d6`. The 9-grid writer starts first and is treated as the required protected recorder. If Live Stitch writer start fails, the take can continue with 9-grid recording active. Production sidecars now include structured `recordingOutputs` for Live Stitch, 9-grid, and per-camera proxies, plus `protectedFallbackAvailable`. `swift build` passed. Add live writer-stall/drop-frame health during active takes, then fault-inject Live Stitch/9-grid writer failures to verify alarms, sidecar fields, and 9-grid protection behavior."
+          "summary": "Protected fallback landed in `16340d6`; live recorder telemetry landed in `915cd82`. The 9-grid writer starts first and is the required protected recorder. Live Stitch writer start failure no longer kills the take. During active production takes, writers now track submitted/appended/dropped/failure counters; sustained 9-grid stalls emit loud `PROTECTED_RECORDER_STALLED`, while Live Stitch/per-camera stalls and dropped frames emit warning metadata. Production sidecars include structured `recordingOutputs` with writer health fields and `protectedFallbackAvailable`. `swift build` passed. Fault-inject Live Stitch/9-grid writer failures and heavy writer backpressure to verify alarms, sidecar fields, and 9-grid protection behavior."
         },
         {
           "id": 13,
@@ -372,9 +372,9 @@
     }
   ],
   "suggested_next_pulls": [
-    "Add live recorder stall/drop-frame health to extend card 12 beyond close-time/fallback metadata.",
     "Validate cards 8, 9, 10, 11, 12, 13, 14, 15, and 16 in-app/on-array: OCR consensus, folder routing, sidecars, alarms, grid REC overlays, recorder fallback, late stop, false roll, setup-test sandbox, degraded TC metadata, and Finder folder opening.",
     "Prepare card 17 DeckLink/RP188 capture provider once hardware is connected for certification.",
+    "Start card 20 Live Stitch program overlay system if hardware remains unavailable.",
     "Get operator/hardware signoff on cards 5, 6, and 7 with the physical array connected."
   ],
   "acceptance_gates": [
