@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meridian Live Stitch Build Kanban</title>
+  <meta name="description" content="Build kanban for the Meridian Live Stitch MVP.">
+  <style>
+    :root {
+      --bg: #090b0d;
+      --panel: #12161a;
+      --panel-2: #181e24;
+      --line: #2c343c;
+      --text: #f3f6f7;
+      --muted: #aab3bb;
+      --copper: #d1a16b;
+      --blue: #4e9bd9;
+      --green: #53b981;
+      --yellow: #f0c04f;
+      --orange: #e58a45;
+      --red: #de5b58;
+      --purple: #9f7aea;
+      --shadow: 0 16px 48px rgba(0, 0, 0, .28);
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(209, 161, 107, .08), transparent 300px),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(9, 11, 13, .92);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1760px;
+      margin: 0 auto;
+      padding: 14px 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 250px;
+    }
+
+    .brand img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .control {
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .04);
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1;
+      padding: 10px 12px;
+      text-decoration: none;
+    }
+
+    .control {
+      min-width: 240px;
+      outline: none;
+    }
+
+    .page {
+      max-width: 1760px;
+      margin: 0 auto;
+      padding: 26px 22px 56px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.4fr) minmax(320px, .9fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .summary-card,
+    .metric-card {
+      border: 1px solid rgba(255, 255, 255, .09);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .02));
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card {
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .summary-card p {
+      margin: 0;
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .metric-card {
+      padding: 14px;
+    }
+
+    .metric-value {
+      display: block;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .metric-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .board-wrap {
+      overflow-x: auto;
+      padding-bottom: 16px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(310px, 1fr));
+      gap: 14px;
+      min-width: 1560px;
+      align-items: start;
+    }
+
+    .column {
+      background: rgba(18, 22, 26, .86);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .column-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 13px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .column-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--muted);
+      flex: 0 0 auto;
+    }
+
+    .dot.done { background: var(--green); }
+    .dot.ready { background: var(--blue); }
+    .dot.blocked { background: var(--orange); }
+    .dot.phase2 { background: var(--purple); }
+    .dot.phase3 { background: var(--yellow); }
+
+    .count {
+      min-width: 26px;
+      padding: 4px 7px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .card {
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-left: 4px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 13px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .16);
+    }
+
+    .card[data-type="HITL"] {
+      border-left-color: var(--orange);
+    }
+
+    .card[data-type="AFK"] {
+      border-left-color: var(--blue);
+    }
+
+    .card.is-done {
+      border-left-color: var(--green);
+    }
+
+    .card h2 {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .id {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .meta {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 0 0 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, .11);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      padding: 5px 7px;
+      white-space: nowrap;
+    }
+
+    .pill.afk { color: #a8d8ff; border-color: rgba(78, 155, 217, .38); }
+    .pill.hitl { color: #ffd1a7; border-color: rgba(229, 138, 69, .42); }
+    .pill.phase { color: #f5dc92; border-color: rgba(240, 192, 79, .34); }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .section {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+      gap: 14px;
+    }
+
+    .list-panel {
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 8px;
+      background: rgba(18, 22, 26, .86);
+      padding: 16px;
+    }
+
+    .list-panel h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    li + li {
+      margin-top: 7px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .topbar-inner {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .control {
+        width: 100%;
+      }
+
+      .summary,
+      .section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="assets/spheris-logo.png" alt="Spheris">
+        <div class="brand-text">
+          <div class="brand-title">Meridian Live Stitch</div>
+          <div class="brand-subtitle">MVP Build Kanban</div>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Planning documents">
+        <input id="search" class="control" type="search" placeholder="Filter cards">
+        <a href="MLS_BUILD_KANBAN.md">Markdown Board</a>
+        <a href="MLS_AGENT_TASKS.md">Agent Tasks</a>
+        <a href="MLS_MVP_PRD.md">PRD</a>
+        <a href="MVP_KANBAN.md">Decision Kanban</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="summary" aria-labelledby="page-title">
+      <div class="summary-card">
+        <h1 id="page-title">MLS Build Kanban</h1>
+        <p>
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 2 and card 4.
+        </p>
+      </div>
+      <div class="metrics" aria-label="Board metrics">
+        <div class="metric-card">
+          <span class="metric-value">30</span>
+          <span class="metric-label">Total build cards</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value">2</span>
+          <span class="metric-label">Ready now</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value">1</span>
+          <span class="metric-label">Done, needs verification</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value">9</span>
+          <span class="metric-label">Phase 1 acceptance gates</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-wrap" aria-label="Kanban board">
+      <div class="board" id="board">
+        <section class="column" aria-labelledby="done-title">
+          <div class="column-header">
+            <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
+            <span class="count">1</span>
+          </div>
+          <div class="cards">
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="startup resume recovery shell initial implementation committed swift build passed verify cold start resume recovery archive ignore">
+              <h2><span class="id">1</span><span>Startup, Resume, and Recovery Shell</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Initial implementation committed in <code>4bb163d</code>. Run the app and verify cold start, resume, recovery, and archive/ignore recovery.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="column" aria-labelledby="ready-title">
+          <div class="column-header">
+            <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
+            <span class="count">2</span>
+          </div>
+          <div class="cards">
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="setup mode working mode gate orange treatment green entry readiness acknowledgement transition logs">
+              <h2><span class="id">2</span><span>Setup Mode and Working Mode Gate</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 1</span></div>
+              <p>Implement explicit setup/working state, orange setup treatment, large green entry action, non-blocking readiness acknowledgement, and mode logs.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="default ptgui template active calibration lifecycle import replace project calibration sidecars manifest">
+              <h2><span class="id">4</span><span>Default PTGui Template and Active Calibration Lifecycle</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 1</span></div>
+              <p>Make the global Spheris XL `.pts` template active for every job, support import/replace outside recording, and persist active template state.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="column" aria-labelledby="phase1-title">
+          <div class="column-header">
+            <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
+            <span class="count">13</span>
+          </div>
+          <div class="cards">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="operator console readiness dashboard obs spheris dashboard setup cameras mapping calibration slate stream gps reports diagnostics">
+              <h2><span class="id">3</span><span>Operator Console Readiness Dashboard</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2</span></div>
+              <p>Build OC modules and readiness overview; requires operator/design review.</p>
+            </article>
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="9-grid ptgui mapping verification sdi cell camera id pinwheel template slot override">
+              <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2, 4</span></div>
+              <p>Verify SDI/9-grid mapping separately from Live Stitch/PTGui mapping with advanced template override.</p>
+            </article>
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="roi profile store overlay verification roll rec bug roll clip advancement baseline">
+              <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2, 5</span></div>
+              <p>Saved ROI profiles plus required setup roll/cut verification for REC and roll/clip OCR.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="500 ms rec consensus recording classification camera failed recorded alone consensus failed">
+              <h2><span class="id">7</span><span>500 ms REC Consensus and Recording Classification</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6</span></div>
+              <p>Classify 9/9, 8/9, 1/9, and middle partial REC patterns in 500 ms.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="authoritative roll clip ocr take identity unreadable mission critical arbitrary roll">
+              <h2><span class="id">8</span><span>Authoritative Roll/Clip OCR Take Identity</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6, 7</span></div>
+              <p>Use OCR roll/clip consensus for production folder identity and treat unreadable OCR as readiness failure.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="take lifecycle sorting sidecars manifest rollup takes qc_fail false_roll">
+              <h2><span class="id">9</span><span>Take Lifecycle Sorting, Sidecars, and Manifest Rollup</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 7, 8</span></div>
+              <p>Close outputs, sort folders, write sidecars, and update manifest after every Working Mode take.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="alarm controller acknowledgement model red orange yellow tts sound visual">
+              <h2><span class="id">10</span><span>Alarm Controller and Acknowledgement Model</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 7</span></div>
+              <p>Shared alarm severity, visual priority, acknowledgement, and audio/TTS hook model.</p>
+            </article>
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="live 9-grid recording alarm overlays per camera clean recorded proxy">
+              <h2><span class="id">11</span><span>Live 9-Grid Recording/Alarm Overlays</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 10</span></div>
+              <p>Per-cell REC and alarm state on live 9-grid while keeping recorded proxy clean.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="independent recorder health protected 9-grid fallback frames written dropped disk last write">
+              <h2><span class="id">12</span><span>Independent Recorder Health and Protected 9-Grid Fallback</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9, 10</span></div>
+              <p>Independent Live Stitch/9-grid writer health and critical fallback behavior.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="late stop false roll camera stopped late offsets false_roll">
+              <h2><span class="id">13</span><span>Late Stop and False Roll Flows</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9, 10</span></div>
+              <p>Handle late-stopping cameras and operator false-roll routing.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="setup test recording sandbox _SETUP_TESTS setup_test clear keep">
+              <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 2, 9</span></div>
+              <p>Record disposable setup tests under `_SETUP_TESTS/` outside production manifests.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="minimal tc source status degraded tc marking rp188 host clock frame counter">
+              <h2><span class="id">15</span><span>Minimal TC Source Status and Degraded-TC Marking</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9</span></div>
+              <p>Expose TC confidence and persist degraded/non-certified timing status.</p>
+            </article>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="open record folder action takes qc_fail false_roll finder">
+              <h2><span class="id">16</span><span>Open Record Folder Action</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9</span></div>
+              <p>Working Mode action to open the project recording folder.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="column" aria-labelledby="phase2-title">
+          <div class="column-header">
+            <div class="column-title"><span class="dot phase2"></span><span id="phase2-title">Phase 2 Backlog</span></div>
+            <span class="count">8</span>
+          </div>
+          <div class="cards">
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="decklink rp188 capture provider hardware certification"><h2><span class="id">17</span><span>DeckLink/RP188 Capture Provider</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15</span></div><p>Certified capture path with per-frame RP188, signal state, source identity, and reconnect behavior.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="primary tc source failover drift evidence position 1 median"><h2><span class="id">18</span><span>Primary TC Source Failover and Drift Evidence</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 17</span></div><p>Position 1 default, automatic failover, median drift, and no silent switchback.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="quicktime tmcd proxy tc self-test"><h2><span class="id">19</span><span>Embedded QuickTime tmcd and Proxy TC Self-Test</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 17, 18</span></div><p>Production-valid MOV timecode tracks and startup proxy TC verification.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="live stitch program overlay tc roll clip slate presets clean production review minimal custom"><h2><span class="id">20</span><span>Live Stitch Program Overlay System</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15</span></div><p>Recordable overlays for TC, roll/clip, slate, presets, and clean/stock modes.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="slate service operator console controls scene shot take director dp company"><h2><span class="id">21</span><span>Slate Service and OC Slate Controls</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 9, 20</span></div><p>Sticky job fields, quick scene/shot/take, REC-start snapshots, and logged edits.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="gps imu motion data source per take slicing simpleRTK2B ubx nmea csv json"><h2><span class="id">22</span><span>GPS/IMU Motion Data Source and Per-Take Slicing</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15, 17</span></div><p>Logging-first GPS/IMU driver, TC alignment, per-take JSON/CSV, and hardware review.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="stream comment tc stamping standby blur"><h2><span class="id">23</span><span>Stream Comment TC Stamping and Standby Blur</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 15, 20</span></div><p>TC-stamped stream comments and blurred standby when not recording.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="end of day camera report package pdf json manifest comments gps media inventory"><h2><span class="id">24</span><span>End-of-Day Camera Report Package</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 9, 15, 21, 22, 23</span></div><p>PDF-first camera report plus JSON, manifest snapshot, comments, GPS summaries, and media inventory.</p></article>
+          </div>
+        </section>
+
+        <section class="column" aria-labelledby="phase3-title">
+          <div class="column-header">
+            <div class="column-title"><span class="dot phase3"></span><span id="phase3-title">Phase 3 Backlog</span></div>
+            <span class="count">6</span>
+          </div>
+          <div class="cards">
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="analyzer corpus simulator harness rec ocr red overlay fixtures"><h2><span class="id">25</span><span>Analyzer Corpus and Simulator Harness</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6, 7, 8</span></div><p>Saved RED overlay fixtures and hardware-free REC/OCR regression harness.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="ptgui still grab tiff overlay off on calibration stills"><h2><span class="id">26</span><span>PTGui Still Grab Support Tool</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 4, 5</span></div><p>One-button PTGui still capture with TIFF preference and overlay off/on prompts.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="system calibration mode troubleshooting analyzer roi confidence"><h2><span class="id">27</span><span>System Calibration Mode</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 25</span></div><p>Guided troubleshooting process for broader settings/status changes.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="9-grid camera punch-up focus settings disabled recording"><h2><span class="id">28</span><span>9-Grid Camera Punch-Up</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 11</span></div><p>Temporary single-camera enlargement for inspection, disabled during recording.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="flow warp validation harness before after stitch quality"><h2><span class="id">29</span><span>Flow Warp Validation Harness</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 4, 9</span></div><p>Before/after validation of experimental flow warp on known footage.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="radial distortion parity experiment ptgui renderer math"><h2><span class="id">30</span><span>Radial Distortion Parity Experiment</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 4, 29</span></div><p>Validate PTGui radial distortion convention before enabling renderer path.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Next pulls and gates">
+      <div class="list-panel">
+        <h2>Suggested Next Pulls</h2>
+        <ol>
+          <li>Assign an AFK agent to card 2: Setup Mode and Working Mode Gate.</li>
+          <li>Assign a second AFK agent to card 4: Default PTGui Template and Active Calibration Lifecycle.</li>
+          <li>After card 2 lands, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
+          <li>After cards 2 and 4 land, start card 5: 9-Grid and PTGui Mapping Verification.</li>
+          <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward.</li>
+        </ol>
+      </div>
+      <div class="list-panel">
+        <h2>Acceptance Gates Before Phase 2</h2>
+        <ul>
+          <li>Startup/resume/recovery verified on the app.</li>
+          <li>Setup Mode and Working Mode are explicit and visually distinct.</li>
+          <li>Default PTGui template loads for every job and active template is recorded.</li>
+          <li>Mapping and ROI/overlay verification are usable in Setup Mode.</li>
+          <li>REC consensus uses 500 ms and classifies 9/9, 8/9, 1/9, and middle partial patterns.</li>
+          <li>Roll/clip OCR drives production take identity.</li>
+          <li>Take sidecars and manifest update after every closed Working Mode take.</li>
+          <li>9-grid and Live Stitch recording health are visible and independent.</li>
+          <li>Degraded/non-certified TC status is visible and persisted.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const search = document.querySelector("#search");
+    const cards = [...document.querySelectorAll(".card")];
+
+    function applyFilter() {
+      const query = search.value.trim().toLowerCase();
+      cards.forEach((card) => {
+        const haystack = [
+          card.textContent,
+          card.dataset.text || "",
+          card.dataset.type || "",
+          card.dataset.phase || ""
+        ].join(" ").toLowerCase();
+        card.classList.toggle("hidden", query && !haystack.includes(query));
+      });
+    }
+
+    search.addEventListener("input", applyFilter);
+  </script>
+</body>
+</html>
