@@ -25,9 +25,7 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,9 +35,7 @@
         var(--bg);
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .topbar {
       position: sticky;
@@ -73,21 +69,9 @@
       display: block;
     }
 
-    .brand-text {
-      display: grid;
-      gap: 2px;
-    }
-
-    .brand-title {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .brand-subtitle {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .brand-text { display: grid; gap: 2px; }
+    .brand-title { font-size: 15px; font-weight: 700; line-height: 1.1; }
+    .brand-subtitle { color: var(--muted); font-size: 12px; }
 
     .nav-links {
       display: flex;
@@ -136,9 +120,7 @@
       box-shadow: var(--shadow);
     }
 
-    .summary-card {
-      padding: 20px;
-    }
+    .summary-card { padding: 20px; }
 
     h1 {
       margin: 0 0 10px;
@@ -162,23 +144,9 @@
       padding: 12px;
     }
 
-    .metric-card {
-      padding: 14px;
-    }
-
-    .metric-value {
-      display: block;
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .metric-label {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 8px;
-    }
+    .metric-card { padding: 14px; }
+    .metric-value { display: block; font-size: 28px; font-weight: 800; line-height: 1; }
+    .metric-label { display: block; color: var(--muted); font-size: 12px; margin-top: 8px; }
 
     .board-wrap {
       overflow-x: auto;
@@ -258,17 +226,9 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, .16);
     }
 
-    .card[data-type="HITL"] {
-      border-left-color: var(--orange);
-    }
-
-    .card[data-type="AFK"] {
-      border-left-color: var(--blue);
-    }
-
-    .card.is-done {
-      border-left-color: var(--green);
-    }
+    .card[data-type="HITL"] { border-left-color: var(--orange); }
+    .card[data-type="AFK"] { border-left-color: var(--blue); }
+    .card.is-done { border-left-color: var(--green); }
 
     .card h2 {
       display: flex;
@@ -324,6 +284,14 @@
       line-height: 1.45;
     }
 
+    code {
+      border: 1px solid rgba(255, 255, 255, .11);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, .06);
+      padding: 1px 4px;
+      font-size: .92em;
+    }
+
     .section {
       margin-top: 20px;
       display: grid;
@@ -353,13 +321,8 @@
       line-height: 1.55;
     }
 
-    li + li {
-      margin-top: 7px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
+    li + li { margin-top: 7px; }
+    .hidden { display: none !important; }
 
     @media (max-width: 900px) {
       .topbar-inner {
@@ -367,18 +330,10 @@
         flex-direction: column;
       }
 
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .control {
-        width: 100%;
-      }
-
+      .nav-links { justify-content: flex-start; }
+      .control { width: 100%; }
       .summary,
-      .section {
-        grid-template-columns: 1fr;
-      }
+      .section { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -398,6 +353,7 @@
         <a href="MLS_AGENT_TASKS.md">Agent Tasks</a>
         <a href="MLS_MVP_PRD.md">PRD</a>
         <a href="MVP_KANBAN.md">Decision Kanban</a>
+        <a href="kanban-data.json">Board JSON</a>
       </nav>
     </div>
   </header>
@@ -438,10 +394,10 @@
             <span class="count">1</span>
           </div>
           <div class="cards">
-            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="startup resume recovery shell initial implementation committed swift build passed verify cold start resume recovery archive ignore">
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="1 startup, resume, and recovery shell afk phase 1 initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery. initial implementation committed in `4bb163d`; `swift build` passed. run app and verify cold start, resume, recovery, archive/ignore recovery.">
               <h2><span class="id">1</span><span>Startup, Resume, and Recovery Shell</span></h2>
               <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Initial implementation committed in <code>4bb163d</code>. Run the app and verify cold start, resume, recovery, and archive/ignore recovery.</p>
+              <p>Initial implementation committed in <code>4bb163d</code>; <code>swift build</code> passed. Run app and verify cold start, resume, recovery, archive/ignore recovery.</p>
             </article>
           </div>
         </section>
@@ -452,15 +408,16 @@
             <span class="count">2</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="setup mode working mode gate orange treatment green entry readiness acknowledgement transition logs">
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="2 setup mode and working mode gate afk phase 1 setup/working mode state, orange setup treatment, green working mode entry, non-blocking readiness acknowledgement, mode transition logs. startup shell now routes into setup flow. setup/working mode state, orange setup treatment, green working mode entry, non-blocking readiness acknowledgement, mode transition logs.">
               <h2><span class="id">2</span><span>Setup Mode and Working Mode Gate</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 1</span></div>
-              <p>Implement explicit setup/working state, orange setup treatment, large green entry action, non-blocking readiness acknowledgement, and mode logs.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Setup/Working mode state, orange setup treatment, green Working Mode entry, non-blocking readiness acknowledgement, mode transition logs.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="default ptgui template active calibration lifecycle import replace project calibration sidecars manifest">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="4 default ptgui template and active calibration lifecycle afk phase 1 default template active on new jobs, import/replace outside recording, project `_calibration/` copy, active template persisted to manifest/take sidecars. default calibration and ptgui loader already exist. default template active on new jobs, import/replace outside recording, project `_calibration/` copy, active template persisted to manifest/take sidecars.">
               <h2><span class="id">4</span><span>Default PTGui Template and Active Calibration Lifecycle</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 1</span></div>
-              <p>Make the global Spheris XL `.pts` template active for every job, support import/replace outside recording, and persist active template state.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Default template active on new jobs, import/replace outside recording, project <code>_CALIBRATION/</code> copy, active template persisted to manifest/take sidecars.</p>
             </article>
           </div>
         </section>
@@ -471,70 +428,82 @@
             <span class="count">13</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="operator console readiness dashboard obs spheris dashboard setup cameras mapping calibration slate stream gps reports diagnostics">
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="3 operator console readiness dashboard hitl phase 1 blocked by 2. unblocks 5, 6, 10, 12, 15, 16. 2 5, 6, 10, 12, 15, 16">
               <h2><span class="id">3</span><span>Operator Console Readiness Dashboard</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2</span></div>
-              <p>Build OC modules and readiness overview; requires operator/design review.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2</span></div>
+              <p>Blocked by 2. Unblocks 5, 6, 10, 12, 15, 16.</p>
             </article>
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="9-grid ptgui mapping verification sdi cell camera id pinwheel template slot override">
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="5 9-grid and ptgui mapping verification hitl phase 1 blocked by 2, 4. unblocks 6, 26. 2, 4 6, 26">
               <h2><span class="id">5</span><span>9-Grid and PTGui Mapping Verification</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2, 4</span></div>
-              <p>Verify SDI/9-grid mapping separately from Live Stitch/PTGui mapping with advanced template override.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 4</span></div>
+              <p>Blocked by 2, 4. Unblocks 6, 26.</p>
             </article>
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="roi profile store overlay verification roll rec bug roll clip advancement baseline">
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="6 roi profile store and overlay verification roll hitl phase 1 blocked by 2, 5. unblocks 7, 8, 25. 2, 5 7, 8, 25">
               <h2><span class="id">6</span><span>ROI Profile Store and Overlay Verification Roll</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 2, 5</span></div>
-              <p>Saved ROI profiles plus required setup roll/cut verification for REC and roll/clip OCR.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 5</span></div>
+              <p>Blocked by 2, 5. Unblocks 7, 8, 25.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="500 ms rec consensus recording classification camera failed recorded alone consensus failed">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="7 500 ms rec consensus and recording classification afk phase 1 blocked by 6. unblocks 8, 9, 10, 25. 6 8, 9, 10, 25">
               <h2><span class="id">7</span><span>500 ms REC Consensus and Recording Classification</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6</span></div>
-              <p>Classify 9/9, 8/9, 1/9, and middle partial REC patterns in 500 ms.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 6</span></div>
+              <p>Blocked by 6. Unblocks 8, 9, 10, 25.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="authoritative roll clip ocr take identity unreadable mission critical arbitrary roll">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="8 authoritative roll/clip ocr take identity afk phase 1 blocked by 6, 7. unblocks 9, 25. 6, 7 9, 25">
               <h2><span class="id">8</span><span>Authoritative Roll/Clip OCR Take Identity</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6, 7</span></div>
-              <p>Use OCR roll/clip consensus for production folder identity and treat unreadable OCR as readiness failure.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 6, 7</span></div>
+              <p>Blocked by 6, 7. Unblocks 9, 25.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="take lifecycle sorting sidecars manifest rollup takes qc_fail false_roll">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="9 take lifecycle sorting, sidecars, and manifest rollup afk phase 1 blocked by 7, 8. unblocks 12, 13, 14, 15, 16, 21, 24, 29. 7, 8 12, 13, 14, 15, 16, 21, 24, 29">
               <h2><span class="id">9</span><span>Take Lifecycle Sorting, Sidecars, and Manifest Rollup</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 7, 8</span></div>
-              <p>Close outputs, sort folders, write sidecars, and update manifest after every Working Mode take.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 7, 8</span></div>
+              <p>Blocked by 7, 8. Unblocks 12, 13, 14, 15, 16, 21, 24, 29.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="alarm controller acknowledgement model red orange yellow tts sound visual">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="10 alarm controller and acknowledgement model afk phase 1 blocked by 7. unblocks 11, 12, 13. 7 11, 12, 13">
               <h2><span class="id">10</span><span>Alarm Controller and Acknowledgement Model</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 7</span></div>
-              <p>Shared alarm severity, visual priority, acknowledgement, and audio/TTS hook model.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 7</span></div>
+              <p>Blocked by 7. Unblocks 11, 12, 13.</p>
             </article>
-            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="live 9-grid recording alarm overlays per camera clean recorded proxy">
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="11 live 9-grid recording/alarm overlays hitl phase 1 blocked by 10. unblocks 28. 10 28">
               <h2><span class="id">11</span><span>Live 9-Grid Recording/Alarm Overlays</span></h2>
-              <div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 10</span></div>
-              <p>Per-cell REC and alarm state on live 9-grid while keeping recorded proxy clean.</p>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 10</span></div>
+              <p>Blocked by 10. Unblocks 28.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="independent recorder health protected 9-grid fallback frames written dropped disk last write">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="12 independent recorder health and protected 9-grid fallback afk phase 1 blocked by 9, 10. unblocks reliability baseline. 9, 10 reliability baseline">
               <h2><span class="id">12</span><span>Independent Recorder Health and Protected 9-Grid Fallback</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9, 10</span></div>
-              <p>Independent Live Stitch/9-grid writer health and critical fallback behavior.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 9, 10</span></div>
+              <p>Blocked by 9, 10. Unblocks Reliability baseline.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="late stop false roll camera stopped late offsets false_roll">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="13 late stop and false roll flows afk phase 1 blocked by 9, 10. unblocks cleaner take lifecycle. 9, 10 cleaner take lifecycle">
               <h2><span class="id">13</span><span>Late Stop and False Roll Flows</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9, 10</span></div>
-              <p>Handle late-stopping cameras and operator false-roll routing.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 9, 10</span></div>
+              <p>Blocked by 9, 10. Unblocks Cleaner take lifecycle.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="setup test recording sandbox _SETUP_TESTS setup_test clear keep">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="14 setup test recording sandbox afk phase 1 blocked by 2, 9. unblocks setup artifact isolation. 2, 9 setup artifact isolation">
               <h2><span class="id">14</span><span>Setup Test Recording Sandbox</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 2, 9</span></div>
-              <p>Record disposable setup tests under `_SETUP_TESTS/` outside production manifests.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 2, 9</span></div>
+              <p>Blocked by 2, 9. Unblocks Setup artifact isolation.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="minimal tc source status degraded tc marking rp188 host clock frame counter">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="15 minimal tc source status and degraded-tc marking afk phase 1 blocked by 9. unblocks 17, 20, 22, 23, 24. 9 17, 20, 22, 23, 24">
               <h2><span class="id">15</span><span>Minimal TC Source Status and Degraded-TC Marking</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9</span></div>
-              <p>Expose TC confidence and persist degraded/non-certified timing status.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 9</span></div>
+              <p>Blocked by 9. Unblocks 17, 20, 22, 23, 24.</p>
             </article>
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="open record folder action takes qc_fail false_roll finder">
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="16 open record folder action afk phase 1 blocked by 9. unblocks operator review workflow. 9 operator review workflow">
               <h2><span class="id">16</span><span>Open Record Folder Action</span></h2>
-              <div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 9</span></div>
-              <p>Working Mode action to open the project recording folder.</p>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by 9</span></div>
+              <p>Blocked by 9. Unblocks Operator review workflow.</p>
             </article>
           </div>
         </section>
@@ -545,14 +514,53 @@
             <span class="count">8</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="decklink rp188 capture provider hardware certification"><h2><span class="id">17</span><span>DeckLink/RP188 Capture Provider</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15</span></div><p>Certified capture path with per-frame RP188, signal state, source identity, and reconnect behavior.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="primary tc source failover drift evidence position 1 median"><h2><span class="id">18</span><span>Primary TC Source Failover and Drift Evidence</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 17</span></div><p>Position 1 default, automatic failover, median drift, and no silent switchback.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="quicktime tmcd proxy tc self-test"><h2><span class="id">19</span><span>Embedded QuickTime tmcd and Proxy TC Self-Test</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 17, 18</span></div><p>Production-valid MOV timecode tracks and startup proxy TC verification.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="live stitch program overlay tc roll clip slate presets clean production review minimal custom"><h2><span class="id">20</span><span>Live Stitch Program Overlay System</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15</span></div><p>Recordable overlays for TC, roll/clip, slate, presets, and clean/stock modes.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="slate service operator console controls scene shot take director dp company"><h2><span class="id">21</span><span>Slate Service and OC Slate Controls</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 9, 20</span></div><p>Sticky job fields, quick scene/shot/take, REC-start snapshots, and logged edits.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="gps imu motion data source per take slicing simpleRTK2B ubx nmea csv json"><h2><span class="id">22</span><span>GPS/IMU Motion Data Source and Per-Take Slicing</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 15, 17</span></div><p>Logging-first GPS/IMU driver, TC alignment, per-take JSON/CSV, and hardware review.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="stream comment tc stamping standby blur"><h2><span class="id">23</span><span>Stream Comment TC Stamping and Standby Blur</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 15, 20</span></div><p>TC-stamped stream comments and blurred standby when not recording.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="end of day camera report package pdf json manifest comments gps media inventory"><h2><span class="id">24</span><span>End-of-Day Camera Report Package</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 9, 15, 21, 22, 23</span></div><p>PDF-first camera report plus JSON, manifest snapshot, comments, GPS summaries, and media inventory.</p></article>
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="17 decklink/rp188 capture provider hitl phase 2 needs hardware/capture certification. 15 needs hardware/capture certification.">
+              <h2><span class="id">17</span><span>DeckLink/RP188 Capture Provider</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 15</span></div>
+              <p>Needs hardware/capture certification.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="18 primary tc source failover and drift evidence afk phase 2 position 1 default, median drift, failover without silent switchback. 17 position 1 default, median drift, failover without silent switchback.">
+              <h2><span class="id">18</span><span>Primary TC Source Failover and Drift Evidence</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 17</span></div>
+              <p>Position 1 default, median drift, failover without silent switchback.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="19 embedded quicktime `tmcd` and proxy tc self-test afk phase 2 production-valid proxy milestone. 17, 18 production-valid proxy milestone.">
+              <h2><span class="id">19</span><span>Embedded QuickTime `tmcd` and Proxy TC Self-Test</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 17, 18</span></div>
+              <p>Production-valid proxy milestone.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="20 live stitch program overlay system hitl phase 2 tc, roll/clip, slate, presets, live/record toggles. 15 tc, roll/clip, slate, presets, live/record toggles.">
+              <h2><span class="id">20</span><span>Live Stitch Program Overlay System</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 15</span></div>
+              <p>TC, roll/clip, slate, presets, live/record toggles.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="21 slate service and operator console slate controls hitl phase 2 sticky job fields, quick scene/shot/take, rec-start snapshot. 9, 20 sticky job fields, quick scene/shot/take, rec-start snapshot.">
+              <h2><span class="id">21</span><span>Slate Service and Operator Console Slate Controls</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 9, 20</span></div>
+              <p>Sticky job fields, quick scene/shot/take, REC-start snapshot.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="22 gps/imu motion data source and per-take slicing hitl phase 2 logging-first simplertk2b fusion support; tc alignment. 15, 17 logging-first simplertk2b fusion support; tc alignment.">
+              <h2><span class="id">22</span><span>GPS/IMU Motion Data Source and Per-Take Slicing</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 15, 17</span></div>
+              <p>Logging-first simpleRTK2B Fusion support; TC alignment.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 2" data-text="23 stream comment tc stamping and standby blur afk phase 2 refine existing stream system. 15, 20 refine existing stream system.">
+              <h2><span class="id">23</span><span>Stream Comment TC Stamping and Standby Blur</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 15, 20</span></div>
+              <p>Refine existing stream system.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 2" data-text="24 end-of-day camera report package hitl phase 2 pdf-first report plus json/package artifacts. 9, 15, 21, 22, 23 pdf-first report plus json/package artifacts.">
+              <h2><span class="id">24</span><span>End-of-Day Camera Report Package</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 2</span><span class="pill">Blocked by 9, 15, 21, 22, 23</span></div>
+              <p>PDF-first report plus JSON/package artifacts.</p>
+            </article>
           </div>
         </section>
 
@@ -562,12 +570,41 @@
             <span class="count">6</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="analyzer corpus simulator harness rec ocr red overlay fixtures"><h2><span class="id">25</span><span>Analyzer Corpus and Simulator Harness</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 6, 7, 8</span></div><p>Saved RED overlay fixtures and hardware-free REC/OCR regression harness.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="ptgui still grab tiff overlay off on calibration stills"><h2><span class="id">26</span><span>PTGui Still Grab Support Tool</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 4, 5</span></div><p>One-button PTGui still capture with TIFF preference and overlay off/on prompts.</p></article>
-            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="system calibration mode troubleshooting analyzer roi confidence"><h2><span class="id">27</span><span>System Calibration Mode</span></h2><div class="meta"><span class="pill hitl">HITL</span><span class="pill">Blocked by 25</span></div><p>Guided troubleshooting process for broader settings/status changes.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="9-grid camera punch-up focus settings disabled recording"><h2><span class="id">28</span><span>9-Grid Camera Punch-Up</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 11</span></div><p>Temporary single-camera enlargement for inspection, disabled during recording.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="flow warp validation harness before after stitch quality"><h2><span class="id">29</span><span>Flow Warp Validation Harness</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 4, 9</span></div><p>Before/after validation of experimental flow warp on known footage.</p></article>
-            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="radial distortion parity experiment ptgui renderer math"><h2><span class="id">30</span><span>Radial Distortion Parity Experiment</span></h2><div class="meta"><span class="pill afk">AFK</span><span class="pill">Blocked by 4, 29</span></div><p>Validate PTGui radial distortion convention before enabling renderer path.</p></article>
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="25 analyzer corpus and simulator harness afk phase 3 can move earlier if ocr/rec reliability becomes the limiting risk. 6, 7, 8 can move earlier if ocr/rec reliability becomes the limiting risk.">
+              <h2><span class="id">25</span><span>Analyzer Corpus and Simulator Harness</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 6, 7, 8</span></div>
+              <p>Can move earlier if OCR/REC reliability becomes the limiting risk.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="26 ptgui still grab support tool hitl phase 3 tiff preferred, overlay-off/on prompts, calibration still manifest. 4, 5 tiff preferred, overlay-off/on prompts, calibration still manifest.">
+              <h2><span class="id">26</span><span>PTGui Still Grab Support Tool</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 4, 5</span></div>
+              <p>TIFF preferred, overlay-off/on prompts, calibration still manifest.</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 3" data-text="27 system calibration mode hitl phase 3 troubleshooting workflow beyond per-job verification. 25 troubleshooting workflow beyond per-job verification.">
+              <h2><span class="id">27</span><span>System Calibration Mode</span></h2>
+              <div class="meta"><span class="pill hitl">HITL</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 25</span></div>
+              <p>Troubleshooting workflow beyond per-job verification.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="28 9-grid camera punch-up afk phase 3 disabled during recording. 11 disabled during recording.">
+              <h2><span class="id">28</span><span>9-Grid Camera Punch-Up</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 11</span></div>
+              <p>Disabled during recording.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="29 flow warp validation harness afk phase 3 post-mvp quality experiment unless it proves safe and high value. 4, 9 post-mvp quality experiment unless it proves safe and high value.">
+              <h2><span class="id">29</span><span>Flow Warp Validation Harness</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 4, 9</span></div>
+              <p>Post-MVP quality experiment unless it proves safe and high value.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 3" data-text="30 radial distortion parity experiment afk phase 3 keep disabled until ptgui parity is proven. 4, 29 keep disabled until ptgui parity is proven.">
+              <h2><span class="id">30</span><span>Radial Distortion Parity Experiment</span></h2>
+              <div class="meta"><span class="pill afk">AFK</span><span class="pill phase">Phase 3</span><span class="pill">Blocked by 4, 29</span></div>
+              <p>Keep disabled until PTGui parity is proven.</p>
+            </article>
           </div>
         </section>
       </div>
@@ -581,7 +618,7 @@
           <li>Assign a second AFK agent to card 4: Default PTGui Template and Active Calibration Lifecycle.</li>
           <li>After card 2 lands, schedule HITL design review for card 3: Operator Console Readiness Dashboard.</li>
           <li>After cards 2 and 4 land, start card 5: 9-Grid and PTGui Mapping Verification.</li>
-          <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward.</li>
+          <li>Keep card 25 in view; if REC/OCR work stalls, pull the analyzer harness forward before deeper UI work.</li>
         </ol>
       </div>
       <div class="list-panel">
