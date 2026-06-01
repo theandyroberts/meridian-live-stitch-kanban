@@ -99,19 +99,6 @@
           "summary": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues."
         },
         {
-          "id": "07A",
-          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-          "title": "REC consensus simulator fixtures",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-            "Current note": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
-            "Next action": "Closed in GitHub Issues."
-          },
-          "summary": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array. Closed in GitHub Issues."
-        },
-        {
           "id": "07B",
           "issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
           "title": "Partial REC classification metadata",
@@ -242,6 +229,19 @@
           "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
         },
         {
+          "id": "18D",
+          "issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
+          "title": "TC source and drift simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
+            "Current note": "Add mock-frame fixtures for TC source selection, no-RP188 fallback, failover, split TC, and drift thresholds.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Add mock-frame fixtures for TC source selection, no-RP188 fallback, failover, split TC, and drift thresholds. Closed in GitHub Issues."
+        },
+        {
           "id": "20A",
           "issue": "[#57](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/57)",
           "title": "Live Stitch overlay presets and field toggles",
@@ -300,6 +300,19 @@
             "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
           },
           "summary": "Stable overlay fields are checked against expected setup baseline values."
+        },
+        {
+          "id": "07A",
+          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+          "title": "REC consensus simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+            "Why ready": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
+            "Definition of done": "Fixtures cover clean 9/9 REC within 500 ms."
+          },
+          "summary": "Fixtures cover clean 9/9 REC within 500 ms."
         },
         {
           "id": "08A",
@@ -365,19 +378,6 @@
             "Definition of done": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
           },
           "summary": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
-        },
-        {
-          "id": "18D",
-          "issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
-          "title": "TC source and drift simulator fixtures",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
-            "Why ready": "Add mock-frame fixtures for TC source selection, no-RP188 fallback, failover, split TC, and drift thresholds.",
-            "Definition of done": "Fixture covers primary healthy RP188."
-          },
-          "summary": "Fixture covers primary healthy RP188."
         },
         {
           "id": "20C",
