@@ -99,6 +99,19 @@
           "summary": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues."
         },
         {
+          "id": "07A",
+          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+          "title": "REC consensus simulator fixtures",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
+            "Current note": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array. Closed in GitHub Issues."
+        },
+        {
           "id": "07B",
           "issue": "[#39](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/39)",
           "title": "Partial REC classification metadata",
@@ -300,19 +313,6 @@
             "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
           },
           "summary": "Stable overlay fields are checked against expected setup baseline values."
-        },
-        {
-          "id": "07A",
-          "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-          "title": "REC consensus simulator fixtures",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
-            "Why ready": "Add simulator or regression fixtures that drive the REC consensus engine through the agreed start patterns without requiring the physical array.",
-            "Definition of done": "Fixtures cover clean 9/9 REC within 500 ms."
-          },
-          "summary": "Fixtures cover clean 9/9 REC within 500 ms."
         },
         {
           "id": "08A",
