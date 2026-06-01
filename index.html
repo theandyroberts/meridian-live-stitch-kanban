@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">6</span>
+          <span class="metric-value">3</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">23</span>
+          <span class="metric-value">26</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">23</span>
+            <span class="count">26</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -460,6 +460,12 @@
               <p>Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed. Closed in GitHub Issues.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="08b ocr-derived production folder naming afk phase 1 finalize working mode take folder identity from stable camera ocr consensus, including arbitrary roll and clip values such as day-three roll 701. closed in github issues. [#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43) finalize working mode take folder identity from stable camera ocr consensus, including arbitrary roll and clip values such as day-three roll 701. closed in github issues.">
+              <h2><span class="id">08B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">OCR-derived production folder naming</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">#43</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Finalize Working Mode take folder identity from stable camera OCR consensus, including arbitrary roll and clip values such as day-three roll 701. Closed in GitHub Issues.</p>
+            </article>
+
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="08c unreadable ocr readiness state afk phase 1 treat unreadable or inconsistent roll/clip ocr as a serious analyzer/readiness state, without silently inventing production counters. closed in github issues. [#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44) treat unreadable or inconsistent roll/clip ocr as a serious analyzer/readiness state, without silently inventing production counters. closed in github issues.">
               <h2><span class="id">08C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">Unreadable OCR readiness state</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">#44</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
@@ -514,6 +520,18 @@
               <p>Implemented in <code>75d82cb</code>. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing <code>takes/</code>, <code>qc_fail/</code>, and <code>false_roll/</code>. <code>swift build</code> passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="17a decklink sdk availability and bridge plan afk phase 1 determine the concrete sdk/build path for using blackmagic decklink apis from the swift app without removing the existing avfoundation path. closed in github issues. [#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46) determine the concrete sdk/build path for using blackmagic decklink apis from the swift app without removing the existing avfoundation path. closed in github issues.">
+              <h2><span class="id">17A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46">DeckLink SDK availability and bridge plan</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46">#46</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Determine the concrete SDK/build path for using Blackmagic DeckLink APIs from the Swift app without removing the existing AVFoundation path. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="17b capture provider selector for avfoundation vs decklink afk phase 1 add the app-level provider-selection path that can choose decklink when available while keeping avfoundation as the emergency fallback. closed in github issues. [#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47) add the app-level provider-selection path that can choose decklink when available while keeping avfoundation as the emergency fallback. closed in github issues.">
+              <h2><span class="id">17B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47">Capture provider selector for AVFoundation vs DeckLink</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47">#47</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Add the app-level provider-selection path that can choose DeckLink when available while keeping AVFoundation as the emergency fallback. Closed in GitHub Issues.</p>
+            </article>
+
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="18d tc source and drift simulator fixtures afk phase 1 add mock-frame fixtures for tc source selection, no-rp188 fallback, failover, split tc, and drift thresholds. closed in github issues. [#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55) add mock-frame fixtures for tc source selection, no-rp188 fallback, failover, split tc, and drift thresholds. closed in github issues.">
               <h2><span class="id">18D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55">TC source and drift simulator fixtures</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55">#55</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
@@ -537,7 +555,7 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">6</span>
+            <span class="count">3</span>
           </div>
           <div class="cards">
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 baseline roll/clip ocr is captured before the verification roll. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. baseline roll/clip ocr is captured before the verification roll.">
@@ -550,24 +568,6 @@
               <h2><span class="id">06E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">Passive overlay baseline and stale readiness rules</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">#36</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Stable overlay fields are checked against expected setup baseline values.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="08b ocr-derived production folder naming afk phase 1 stable majority ocr consensus determines final production folder name. [#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43) finalize working mode take folder identity from stable camera ocr consensus, including arbitrary roll and clip values such as day-three roll 701. stable majority ocr consensus determines final production folder name.">
-              <h2><span class="id">08B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">OCR-derived production folder naming</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">#43</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Stable majority OCR consensus determines final production folder name.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="17a decklink sdk availability and bridge plan afk phase 1 local sdk/header/library availability is detected or documented as missing. [#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46) determine the concrete sdk/build path for using blackmagic decklink apis from the swift app without removing the existing avfoundation path. local sdk/header/library availability is detected or documented as missing.">
-              <h2><span class="id">17A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46">DeckLink SDK availability and bridge plan</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46">#46</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Local SDK/header/library availability is detected or documented as missing.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="17b capture provider selector for avfoundation vs decklink afk phase 1 operator/config path can distinguish avfoundation fallback from decklink provider. [#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47) add the app-level provider-selection path that can choose decklink when available while keeping avfoundation as the emergency fallback. operator/config path can distinguish avfoundation fallback from decklink provider.">
-              <h2><span class="id">17B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47">Capture provider selector for AVFoundation vs DeckLink</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47">#47</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Operator/config path can distinguish AVFoundation fallback from DeckLink provider.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="20c overlay layout reorder controls afk phase 1 operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp. [#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59) allow quick operator reordering/placement of live stitch overlay fields within preset-safe layout zones. operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp.">

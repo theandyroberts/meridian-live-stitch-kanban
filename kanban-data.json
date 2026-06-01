@@ -151,6 +151,19 @@
           "summary": "Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed. Closed in GitHub Issues."
         },
         {
+          "id": "08B",
+          "issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
+          "title": "OCR-derived production folder naming",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
+            "Current note": "Finalize Working Mode take folder identity from stable camera OCR consensus, including arbitrary roll and clip values such as day-three roll 701.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Finalize Working Mode take folder identity from stable camera OCR consensus, including arbitrary roll and clip values such as day-three roll 701. Closed in GitHub Issues."
+        },
+        {
           "id": "08C",
           "issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
           "title": "Unreadable OCR readiness state",
@@ -268,6 +281,32 @@
           "summary": "Implemented in `75d82cb`. The Operator Console project summary now has an Open Record Folder action that ensures the project layout exists and opens the current project root containing `takes/`, `qc_fail/`, and `false_roll/`. `swift build` passed. App smoke verification: click the action in Working Mode and confirm Finder opens the active project folder."
         },
         {
+          "id": "17A",
+          "issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
+          "title": "DeckLink SDK availability and bridge plan",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
+            "Current note": "Determine the concrete SDK/build path for using Blackmagic DeckLink APIs from the Swift app without removing the existing AVFoundation path.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Determine the concrete SDK/build path for using Blackmagic DeckLink APIs from the Swift app without removing the existing AVFoundation path. Closed in GitHub Issues."
+        },
+        {
+          "id": "17B",
+          "issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
+          "title": "Capture provider selector for AVFoundation vs DeckLink",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
+            "Current note": "Add the app-level provider-selection path that can choose DeckLink when available while keeping AVFoundation as the emergency fallback.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Add the app-level provider-selection path that can choose DeckLink when available while keeping AVFoundation as the emergency fallback. Closed in GitHub Issues."
+        },
+        {
           "id": "18D",
           "issue": "[#55](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/55)",
           "title": "TC source and drift simulator fixtures",
@@ -339,45 +378,6 @@
             "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
           },
           "summary": "Stable overlay fields are checked against expected setup baseline values."
-        },
-        {
-          "id": "08B",
-          "issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
-          "title": "OCR-derived production folder naming",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
-            "Why ready": "Finalize Working Mode take folder identity from stable camera OCR consensus, including arbitrary roll and clip values such as day-three roll 701.",
-            "Definition of done": "Stable majority OCR consensus determines final production folder name."
-          },
-          "summary": "Stable majority OCR consensus determines final production folder name."
-        },
-        {
-          "id": "17A",
-          "issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
-          "title": "DeckLink SDK availability and bridge plan",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46)",
-            "Why ready": "Determine the concrete SDK/build path for using Blackmagic DeckLink APIs from the Swift app without removing the existing AVFoundation path.",
-            "Definition of done": "Local SDK/header/library availability is detected or documented as missing."
-          },
-          "summary": "Local SDK/header/library availability is detected or documented as missing."
-        },
-        {
-          "id": "17B",
-          "issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
-          "title": "Capture provider selector for AVFoundation vs DeckLink",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#47](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/47)",
-            "Why ready": "Add the app-level provider-selection path that can choose DeckLink when available while keeping AVFoundation as the emergency fallback.",
-            "Definition of done": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
-          },
-          "summary": "Operator/config path can distinguish AVFoundation fallback from DeckLink provider."
         },
         {
           "id": "20C",
