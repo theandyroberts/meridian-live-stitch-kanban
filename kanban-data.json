@@ -138,6 +138,32 @@
           "summary": "Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. Closed in GitHub Issues."
         },
         {
+          "id": "08A",
+          "issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
+          "title": "Roll/clip OCR evidence debug report",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
+            "Current note": "Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed. Closed in GitHub Issues."
+        },
+        {
+          "id": "08C",
+          "issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
+          "title": "Unreadable OCR readiness state",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
+            "Current note": "Treat unreadable or inconsistent roll/clip OCR as a serious analyzer/readiness state, without silently inventing production counters.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Treat unreadable or inconsistent roll/clip OCR as a serious analyzer/readiness state, without silently inventing production counters. Closed in GitHub Issues."
+        },
+        {
           "id": "09",
           "issue": "[#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10)",
           "title": "Take Sorting, Sidecar, and Manifest Finalization",
@@ -315,19 +341,6 @@
           "summary": "Stable overlay fields are checked against expected setup baseline values."
         },
         {
-          "id": "08A",
-          "issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
-          "title": "Roll/clip OCR evidence debug report",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42)",
-            "Why ready": "Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed.",
-            "Definition of done": "Clip Sync report shows stable value, raw candidate, unreadable state, and slot/camera identity."
-          },
-          "summary": "Clip Sync report shows stable value, raw candidate, unreadable state, and slot/camera identity."
-        },
-        {
           "id": "08B",
           "issue": "[#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43)",
           "title": "OCR-derived production folder naming",
@@ -339,19 +352,6 @@
             "Definition of done": "Stable majority OCR consensus determines final production folder name."
           },
           "summary": "Stable majority OCR consensus determines final production folder name."
-        },
-        {
-          "id": "08C",
-          "issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
-          "title": "Unreadable OCR readiness state",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44)",
-            "Why ready": "Treat unreadable or inconsistent roll/clip OCR as a serious analyzer/readiness state, without silently inventing production counters.",
-            "Definition of done": "Unreadable OCR is visible in Operator Console readiness."
-          },
-          "summary": "Unreadable OCR is visible in Operator Console readiness."
         },
         {
           "id": "17A",

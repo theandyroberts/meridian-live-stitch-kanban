@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">8</span>
+          <span class="metric-value">6</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">21</span>
+          <span class="metric-value">23</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">21</span>
+            <span class="count">23</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -452,6 +452,18 @@
               <h2><span class="id">07C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">SDI dropout tolerance regression</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/40">#40</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Protect the agreed behavior for momentary SDI dropouts: do not stop recording and do not spam loud alarms for sub-second bumps. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="08a roll/clip ocr evidence debug report afk phase 1 expose enough per-camera roll/clip ocr evidence to tune reliability without guessing which camera, crop, or confidence failed. closed in github issues. [#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42) expose enough per-camera roll/clip ocr evidence to tune reliability without guessing which camera, crop, or confidence failed. closed in github issues.">
+              <h2><span class="id">08A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42">Roll/clip OCR evidence debug report</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42">#42</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Expose enough per-camera roll/clip OCR evidence to tune reliability without guessing which camera, crop, or confidence failed. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="08c unreadable ocr readiness state afk phase 1 treat unreadable or inconsistent roll/clip ocr as a serious analyzer/readiness state, without silently inventing production counters. closed in github issues. [#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44) treat unreadable or inconsistent roll/clip ocr as a serious analyzer/readiness state, without silently inventing production counters. closed in github issues.">
+              <h2><span class="id">08C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">Unreadable OCR readiness state</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">#44</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Treat unreadable or inconsistent roll/clip OCR as a serious analyzer/readiness state, without silently inventing production counters. Closed in GitHub Issues.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="09 take sorting, sidecar, and manifest finalization afk phase 1 core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior. [#10](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/10) core lifecycle routing landed in `6d8340a`; operator review override landed in `937e427`; short-take review landed in `02364ef`. closed takes now get explicit `takeclassification` and `classificationreason`; critical rec consensus flags route to `qc_fail/`; false-roll flags route to `false_roll/`; warning-only issues such as sdi dropout remain in `takes/` with qc metadata. sidecar filenames follow the final folder name, clip-level qc flags are populated, manifest rollup scans all sort folders, qc-fail/false-roll takes create a non-blocking operator console review item, and good takes under the 5s short-take threshold queue review with keep good, slate/vfx chart, false roll, and qc fail choices. slate/vfx chart stays in `takes/` and adds `slate_or_vfx_chart` metadata. `swift build` passed. app/hardware validation: record normal, short slate/chart, accidental short false roll, 8/9, 1/9, middle partial, late-stop, and manual false-roll patterns; inspect folder placement, per-take `data.json`, `manifest.json`, and review take override behavior.">
@@ -525,7 +537,7 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">8</span>
+            <span class="count">6</span>
           </div>
           <div class="cards">
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 baseline roll/clip ocr is captured before the verification roll. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. baseline roll/clip ocr is captured before the verification roll.">
@@ -540,22 +552,10 @@
               <p>Stable overlay fields are checked against expected setup baseline values.</p>
             </article>
 
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="08a roll/clip ocr evidence debug report afk phase 1 clip sync report shows stable value, raw candidate, unreadable state, and slot/camera identity. [#42](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42) expose enough per-camera roll/clip ocr evidence to tune reliability without guessing which camera, crop, or confidence failed. clip sync report shows stable value, raw candidate, unreadable state, and slot/camera identity.">
-              <h2><span class="id">08A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42">Roll/clip OCR evidence debug report</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/42">#42</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Clip Sync report shows stable value, raw candidate, unreadable state, and slot/camera identity.</p>
-            </article>
-
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="08b ocr-derived production folder naming afk phase 1 stable majority ocr consensus determines final production folder name. [#43](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43) finalize working mode take folder identity from stable camera ocr consensus, including arbitrary roll and clip values such as day-three roll 701. stable majority ocr consensus determines final production folder name.">
               <h2><span class="id">08B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">OCR-derived production folder naming</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/43">#43</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Stable majority OCR consensus determines final production folder name.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="08c unreadable ocr readiness state afk phase 1 unreadable ocr is visible in operator console readiness. [#44](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44) treat unreadable or inconsistent roll/clip ocr as a serious analyzer/readiness state, without silently inventing production counters. unreadable ocr is visible in operator console readiness.">
-              <h2><span class="id">08C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">Unreadable OCR readiness state</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/44">#44</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Unreadable OCR is visible in Operator Console readiness.</p>
             </article>
 
             <article class="card" data-type="AFK" data-phase="Phase 1" data-text="17a decklink sdk availability and bridge plan afk phase 1 local sdk/header/library availability is detected or documented as missing. [#46](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/46) determine the concrete sdk/build path for using blackmagic decklink apis from the swift app without removing the existing avfoundation path. local sdk/header/library availability is detected or documented as missing.">
