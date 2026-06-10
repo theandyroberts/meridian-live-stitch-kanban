@@ -422,15 +422,7 @@
             "Next action": "Closed in GitHub Issues."
           },
           "summary": "Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon. Closed in GitHub Issues."
-        }
-      ]
-    },
-    {
-      "key": "ready",
-      "title": "Ready Now",
-      "dot": "ready",
-      "phase": "Phase 1",
-      "cards": [
+        },
         {
           "id": "31D",
           "issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
@@ -439,10 +431,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
-            "Why ready": "Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready.",
-            "Definition of done": "New Job setup requires only minimum fields needed to create the job."
+            "Current note": "Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready.",
+            "Next action": "Closed in GitHub Issues."
           },
-          "summary": "New Job setup requires only minimum fields needed to create the job."
+          "summary": "Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready. Closed in GitHub Issues."
         },
         {
           "id": "31E",
@@ -452,12 +444,19 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
-            "Why ready": "Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources.",
-            "Definition of done": "SDI / Mapping shows one row/card per expected Spheris XL camera position."
+            "Current note": "Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources.",
+            "Next action": "Closed in GitHub Issues."
           },
-          "summary": "SDI / Mapping shows one row/card per expected Spheris XL camera position."
+          "summary": "Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources. Closed in GitHub Issues."
         }
       ]
+    },
+    {
+      "key": "ready",
+      "title": "Ready Now",
+      "dot": "ready",
+      "phase": "Phase 1",
+      "cards": []
     },
     {
       "key": "phase1",

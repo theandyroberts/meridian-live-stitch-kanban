@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 31D and card 31E.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are the next unblocked card.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">2</span>
+          <span class="metric-value">0</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">32</span>
+          <span class="metric-value">34</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">32</span>
+            <span class="count">34</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -585,26 +585,27 @@
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">#64</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon. Closed in GitHub Issues.</p>
             </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="31d job info metadata panel afk phase 1 keep new job setup lightweight, then expose full job metadata from the operator console sidebar via a job info panel. store and display production metadata without forcing the operator to fill everything before the rig is ready. closed in github issues. [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) keep new job setup lightweight, then expose full job metadata from the operator console sidebar via a job info panel. store and display production metadata without forcing the operator to fill everything before the rig is ready. closed in github issues.">
+              <h2><span class="id">31D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">Job Info metadata panel</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">#65</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="31e camera position and camera id model in sdi / mapping afk phase 1 make camera position the canonical mapping anchor and camera id a configurable job-specific label. demote sdi input to secondary transport metadata. the sdi / mapping section should let operators edit the job&#x27;s camera ids and position names while still seeing assigned sdi sources. closed in github issues. [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) make camera position the canonical mapping anchor and camera id a configurable job-specific label. demote sdi input to secondary transport metadata. the sdi / mapping section should let operators edit the job&#x27;s camera ids and position names while still seeing assigned sdi sources. closed in github issues.">
+              <h2><span class="id">31E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">Camera position and Camera ID model in SDI / Mapping</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">#66</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job&#x27;s camera IDs and position names while still seeing assigned SDI sources. Closed in GitHub Issues.</p>
+            </article>
           </div>
         </section>
 
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">2</span>
+            <span class="count">0</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31d job info metadata panel afk phase 1 new job setup requires only minimum fields needed to create the job. [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) keep new job setup lightweight, then expose full job metadata from the operator console sidebar via a job info panel. store and display production metadata without forcing the operator to fill everything before the rig is ready. new job setup requires only minimum fields needed to create the job.">
-              <h2><span class="id">31D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">Job Info metadata panel</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">#65</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>New Job setup requires only minimum fields needed to create the job.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31e camera position and camera id model in sdi / mapping afk phase 1 sdi / mapping shows one row/card per expected spheris xl camera position. [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) make camera position the canonical mapping anchor and camera id a configurable job-specific label. demote sdi input to secondary transport metadata. the sdi / mapping section should let operators edit the job&#x27;s camera ids and position names while still seeing assigned sdi sources. sdi / mapping shows one row/card per expected spheris xl camera position.">
-              <h2><span class="id">31E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">Camera position and Camera ID model in SDI / Mapping</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">#66</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>SDI / Mapping shows one row/card per expected Spheris XL camera position.</p>
-            </article>
           </div>
         </section>
 
