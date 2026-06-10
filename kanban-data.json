@@ -396,6 +396,19 @@
             "Next action": "Closed in GitHub Issues."
           },
           "summary": "Route completed Job Setup Wizard flows directly into Operator Console Setup Mode and remove the old standalone Setup Mode page from the normal operator flow. Preserve useful source/calibration/recording controls by moving or exposing them through later Operator Console sections rather than deleting capabilities. Closed in GitHub Issues."
+        },
+        {
+          "id": "31B",
+          "issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
+          "title": "Persistent readiness sidebar model and navigation",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
+            "Current note": "Replace the current readiness-as-tab/dashboard assumption with persistent Operator Console readiness chrome. The left sidebar should show job identity, high-level health/readiness items, and clickable status rows that navigate into the relevant Setup Mode section. Working Mode will later reuse a simplified version of the same health concept.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Replace the current readiness-as-tab/dashboard assumption with persistent Operator Console readiness chrome. The left sidebar should show job identity, high-level health/readiness items, and clickable status rows that navigate into the relevant Setup Mode section. Working Mode will later reuse a simplified version of the same health concept. Closed in GitHub Issues."
         }
       ]
     },
@@ -406,17 +419,17 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": "31B",
-          "issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
-          "title": "Persistent readiness sidebar model and navigation",
+          "id": "31C",
+          "issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+          "title": "Setup Mode section order and Array Profile tab",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
-            "Why ready": "Replace the current readiness-as-tab/dashboard assumption with persistent Operator Console readiness chrome. The left sidebar should show job identity, high-level health/readiness items, and clickable status rows that navigate into the relevant Setup Mode section. Working Mode will later reuse a simplified version of the same health concept.",
-            "Definition of done": "Readiness is visible while viewing any Setup Mode section."
+            "Issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+            "Why ready": "Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon.",
+            "Definition of done": "Setup Mode sections appear in the agreed order."
           },
-          "summary": "Readiness is visible while viewing any Setup Mode section."
+          "summary": "Setup Mode sections appear in the agreed order."
         }
       ]
     },
@@ -685,19 +698,6 @@
             "Unblocks": "See issue dependencies."
           },
           "summary": "Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies.."
-        },
-        {
-          "id": "31C",
-          "issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
-          "title": "Setup Mode section order and Array Profile tab",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
-            "Blocked by": "#62, #63",
-            "Unblocks": "See issue dependencies."
-          },
-          "summary": "Blocked by #62, #63. Unblocks See issue dependencies.."
         },
         {
           "id": "31D",
