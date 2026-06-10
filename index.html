@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 31C.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 31D and card 31E.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">1</span>
+          <span class="metric-value">2</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">31</span>
+          <span class="metric-value">32</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">31</span>
+            <span class="count">32</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -579,19 +579,31 @@
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63">#63</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Replace the current readiness-as-tab/dashboard assumption with persistent Operator Console readiness chrome. The left sidebar should show job identity, high-level health/readiness items, and clickable status rows that navigate into the relevant Setup Mode section. Working Mode will later reuse a simplified version of the same health concept. Closed in GitHub Issues.</p>
             </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="31c setup mode section order and array profile tab afk phase 1 reorganize setup mode around the agreed order of operations: array profile, sdi / mapping, live stitch / ptgui, overlay / ocr, record test, slate, stream, gps / imu, reports, diagnostics. add an array profile section with spheris xl enabled and spheris air / spheris helicopter disabled as coming soon. closed in github issues. [#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64) reorganize setup mode around the agreed order of operations: array profile, sdi / mapping, live stitch / ptgui, overlay / ocr, record test, slate, stream, gps / imu, reports, diagnostics. add an array profile section with spheris xl enabled and spheris air / spheris helicopter disabled as coming soon. closed in github issues.">
+              <h2><span class="id">31C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">Setup Mode section order and Array Profile tab</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">#64</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon. Closed in GitHub Issues.</p>
+            </article>
           </div>
         </section>
 
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">1</span>
+            <span class="count">2</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31c setup mode section order and array profile tab afk phase 1 setup mode sections appear in the agreed order. [#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64) reorganize setup mode around the agreed order of operations: array profile, sdi / mapping, live stitch / ptgui, overlay / ocr, record test, slate, stream, gps / imu, reports, diagnostics. add an array profile section with spheris xl enabled and spheris air / spheris helicopter disabled as coming soon. setup mode sections appear in the agreed order.">
-              <h2><span class="id">31C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">Setup Mode section order and Array Profile tab</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">#64</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Setup Mode sections appear in the agreed order.</p>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31d job info metadata panel afk phase 1 new job setup requires only minimum fields needed to create the job. [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) keep new job setup lightweight, then expose full job metadata from the operator console sidebar via a job info panel. store and display production metadata without forcing the operator to fill everything before the rig is ready. new job setup requires only minimum fields needed to create the job.">
+              <h2><span class="id">31D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">Job Info metadata panel</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">#65</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>New Job setup requires only minimum fields needed to create the job.</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31e camera position and camera id model in sdi / mapping afk phase 1 sdi / mapping shows one row/card per expected spheris xl camera position. [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) make camera position the canonical mapping anchor and camera id a configurable job-specific label. demote sdi input to secondary transport metadata. the sdi / mapping section should let operators edit the job&#x27;s camera ids and position names while still seeing assigned sdi sources. sdi / mapping shows one row/card per expected spheris xl camera position.">
+              <h2><span class="id">31E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">Camera position and Camera ID model in SDI / Mapping</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">#66</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>SDI / Mapping shows one row/card per expected Spheris XL camera position.</p>
             </article>
           </div>
         </section>
@@ -599,7 +611,7 @@
         <section class="column" aria-labelledby="phase1-title">
           <div class="column-header">
             <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
-            <span class="count">29</span>
+            <span class="count">27</span>
           </div>
           <div class="cards">
             <article class="card" data-type="TRACKING" data-phase="Phase 1" data-text="06 roi profiles and required overlay verification roll tracking phase 1 blocked by #3 (mls-02), #6 (mls-05), #10 (mls-09). unblocks see issue dependencies.. [#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7) #3 (mls-02), #6 (mls-05), #10 (mls-09) see issue dependencies.">
@@ -720,18 +732,6 @@
               <h2><span class="id">20D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60">Operator visual UAT for Live Stitch overlays</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60">#60</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by MLS-20A and MLS-20C</span></div>
               <p>Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies..</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31d job info metadata panel afk phase 1 blocked by #63. unblocks see issue dependencies.. [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) #63 see issue dependencies.">
-              <h2><span class="id">31D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">Job Info metadata panel</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">#65</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #63</span></div>
-              <p>Blocked by #63. Unblocks See issue dependencies..</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31e camera position and camera id model in sdi / mapping afk phase 1 blocked by #64. unblocks see issue dependencies.. [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) #64 see issue dependencies.">
-              <h2><span class="id">31E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">Camera position and Camera ID model in SDI / Mapping</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">#66</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #64</span></div>
-              <p>Blocked by #64. Unblocks See issue dependencies..</p>
             </article>
 
             <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31f locked and unlocked 9-grid vs live stitch mapping hitl phase 1 blocked by #66. unblocks see issue dependencies.. [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) #66 see issue dependencies.">

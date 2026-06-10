@@ -409,6 +409,19 @@
             "Next action": "Closed in GitHub Issues."
           },
           "summary": "Replace the current readiness-as-tab/dashboard assumption with persistent Operator Console readiness chrome. The left sidebar should show job identity, high-level health/readiness items, and clickable status rows that navigate into the relevant Setup Mode section. Working Mode will later reuse a simplified version of the same health concept. Closed in GitHub Issues."
+        },
+        {
+          "id": "31C",
+          "issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+          "title": "Setup Mode section order and Array Profile tab",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+            "Current note": "Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon. Closed in GitHub Issues."
         }
       ]
     },
@@ -419,17 +432,30 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": "31C",
-          "issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
-          "title": "Setup Mode section order and Array Profile tab",
+          "id": "31D",
+          "issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
+          "title": "Job Info metadata panel",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
-            "Why ready": "Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon.",
-            "Definition of done": "Setup Mode sections appear in the agreed order."
+            "Issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
+            "Why ready": "Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready.",
+            "Definition of done": "New Job setup requires only minimum fields needed to create the job."
           },
-          "summary": "Setup Mode sections appear in the agreed order."
+          "summary": "New Job setup requires only minimum fields needed to create the job."
+        },
+        {
+          "id": "31E",
+          "issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
+          "title": "Camera position and Camera ID model in SDI / Mapping",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
+            "Why ready": "Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources.",
+            "Definition of done": "SDI / Mapping shows one row/card per expected Spheris XL camera position."
+          },
+          "summary": "SDI / Mapping shows one row/card per expected Spheris XL camera position."
         }
       ]
     },
@@ -698,32 +724,6 @@
             "Unblocks": "See issue dependencies."
           },
           "summary": "Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies.."
-        },
-        {
-          "id": "31D",
-          "issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
-          "title": "Job Info metadata panel",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
-            "Blocked by": "#63",
-            "Unblocks": "See issue dependencies."
-          },
-          "summary": "Blocked by #63. Unblocks See issue dependencies.."
-        },
-        {
-          "id": "31E",
-          "issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
-          "title": "Camera position and Camera ID model in SDI / Mapping",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
-            "Blocked by": "#64",
-            "Unblocks": "See issue dependencies."
-          },
-          "summary": "Blocked by #64. Unblocks See issue dependencies.."
         },
         {
           "id": "31F",
