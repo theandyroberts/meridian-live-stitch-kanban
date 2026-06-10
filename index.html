@@ -363,7 +363,7 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 06B.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are the next unblocked card.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
@@ -372,11 +372,11 @@
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">1</span>
+          <span class="metric-value">0</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">35</span>
+          <span class="metric-value">36</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">35</span>
+            <span class="count">36</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -428,6 +428,12 @@
               <h2><span class="id">06A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">ROI profile persistence by SDI/output profile</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/32">#32</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06b manual roi rectangle repair path afk phase 1 add an advanced repair path that lets the operator adjust analyzer roi rectangles when the saved/default red overlay profile misses the live hud. closed in github issues. [#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33) add an advanced repair path that lets the operator adjust analyzer roi rectangles when the saved/default red overlay profile misses the live hud. closed in github issues.">
+              <h2><span class="id">06B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33">Manual ROI rectangle repair path</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33">#33</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD. Closed in GitHub Issues.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06c verification roll records rec bug evidence afk phase 1 make the setup verification roll prove that each camera rec bug is detected and recorded as per-camera evidence. closed in github issues. [#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34) make the setup verification roll prove that each camera rec bug is detected and recorded as per-camera evidence. closed in github issues.">
@@ -609,14 +615,9 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">1</span>
+            <span class="count">0</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06b manual roi rectangle repair path afk phase 1 operator can inspect and edit roi rectangles for rec/roll/clip/status analyzer fields. [#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33) add an advanced repair path that lets the operator adjust analyzer roi rectangles when the saved/default red overlay profile misses the live hud. operator can inspect and edit roi rectangles for rec/roll/clip/status analyzer fields.">
-              <h2><span class="id">06B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33">Manual ROI rectangle repair path</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33">#33</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields.</p>
-            </article>
           </div>
         </section>
 

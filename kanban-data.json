@@ -86,6 +86,19 @@
           "summary": "Make ROI profiles load and save against the current SDI/output profile so the RED overlay analyzer can reuse known-good rectangles when the same camera/output setup is reopened. Closed in GitHub Issues."
         },
         {
+          "id": "06B",
+          "issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+          "title": "Manual ROI rectangle repair path",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+            "Current note": "Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD. Closed in GitHub Issues."
+        },
+        {
           "id": "06C",
           "issue": "[#34](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34)",
           "title": "Verification roll records REC bug evidence",
@@ -469,21 +482,7 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": [
-        {
-          "id": "06B",
-          "issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
-          "title": "Manual ROI rectangle repair path",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
-            "Why ready": "Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD.",
-            "Definition of done": "Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields."
-          },
-          "summary": "Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields."
-        }
-      ]
+      "cards": []
     },
     {
       "key": "phase1",
