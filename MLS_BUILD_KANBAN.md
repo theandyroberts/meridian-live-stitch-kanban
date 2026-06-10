@@ -55,6 +55,7 @@ Legend:
 
 | ID | Issue | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- | --- |
+| 31G | [#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68) | Live Stitch / PTGui template library and compatibility status | AFK | Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks. | New Spheris XL jobs load the default Spheris XL PTGui template immediately. |
 
 ## Phase 1 Blocked
 
@@ -80,10 +81,9 @@ Legend:
 | 20 | [#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21) | Live Stitch Program Overlay System | TRACKING | None - can start immediately. | See issue dependencies. |
 | 20B | [#58](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/58) | Live Stitch overlay TC source priority | AFK | #49 and #52 | See issue dependencies. |
 | 20D | [#60](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60) | Operator visual UAT for Live Stitch overlays | HITL | MLS-20A and MLS-20C | See issue dependencies. |
-| 31F | [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) | Locked and unlocked 9-grid vs Live Stitch mapping | HITL | #66 | See issue dependencies. |
-| 31G | [#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68) | Live Stitch / PTGui template library and compatibility status | AFK | #64, #66 | See issue dependencies. |
+| 31F | [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) | Locked and unlocked 9-grid vs Live Stitch mapping | HITL | None - #66 is complete. | See issue dependencies. |
 | 31H | [#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69) | Calibration still capture workflow | HITL | #68 | See issue dependencies. |
-| 31I | [#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70) | Working Mode production dashboard surface | HITL | #62, #63 | See issue dependencies. |
+| 31I | [#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70) | Working Mode production dashboard surface | HITL | None - #62 and #63 are complete. | See issue dependencies. |
 | 31J | [#71](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71) | Working Mode safe actions and mode-switch rules | AFK | #70 | See issue dependencies. |
 | 31K | [#72](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72) | Slate and Live Stitch overlay redesign | HITL | #65, #68, #70 | See issue dependencies. |
 | 31L | [#73](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73) | Operator visual UAT for redesigned Console workflow | HITL | #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72 | See issue dependencies. |

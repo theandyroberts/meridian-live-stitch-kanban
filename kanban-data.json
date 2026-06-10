@@ -456,7 +456,21 @@
       "title": "Ready Now",
       "dot": "ready",
       "phase": "Phase 1",
-      "cards": []
+      "cards": [
+        {
+          "id": "31G",
+          "issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+          "title": "Live Stitch / PTGui template library and compatibility status",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+            "Why ready": "Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks.",
+            "Definition of done": "New Spheris XL jobs load the default Spheris XL PTGui template immediately."
+          },
+          "summary": "New Spheris XL jobs load the default Spheris XL PTGui template immediately."
+        }
+      ]
     },
     {
       "key": "phase1",
@@ -732,23 +746,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67)",
-            "Blocked by": "#66",
+            "Blocked by": "None - #66 is complete.",
             "Unblocks": "See issue dependencies."
           },
-          "summary": "Blocked by #66. Unblocks See issue dependencies.."
-        },
-        {
-          "id": "31G",
-          "issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
-          "title": "Live Stitch / PTGui template library and compatibility status",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
-            "Blocked by": "#64, #66",
-            "Unblocks": "See issue dependencies."
-          },
-          "summary": "Blocked by #64, #66. Unblocks See issue dependencies.."
+          "summary": "Blocked by None - #66 is complete.. Unblocks See issue dependencies.."
         },
         {
           "id": "31H",
@@ -771,10 +772,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70)",
-            "Blocked by": "#62, #63",
+            "Blocked by": "None - #62 and #63 are complete.",
             "Unblocks": "See issue dependencies."
           },
-          "summary": "Blocked by #62, #63. Unblocks See issue dependencies.."
+          "summary": "Blocked by None - #62 and #63 are complete.. Unblocks See issue dependencies.."
         },
         {
           "id": "31J",
