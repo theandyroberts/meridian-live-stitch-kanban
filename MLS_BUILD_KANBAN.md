@@ -50,24 +50,24 @@ Legend:
 | 31C | [#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64) | Setup Mode section order and Array Profile tab | AFK | Reorganize Setup Mode around the agreed order of operations: Array Profile, SDI / Mapping, Live Stitch / PTGui, Overlay / OCR, Record Test, Slate, Stream, GPS / IMU, Reports, Diagnostics. Add an Array Profile section with Spheris XL enabled and Spheris Air / Spheris Helicopter disabled as coming soon. | Closed in GitHub Issues. |
 | 31D | [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) | Job Info metadata panel | AFK | Keep New Job setup lightweight, then expose full job metadata from the Operator Console sidebar via a Job Info panel. Store and display production metadata without forcing the operator to fill everything before the rig is ready. | Closed in GitHub Issues. |
 | 31E | [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) | Camera position and Camera ID model in SDI / Mapping | AFK | Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources. | Closed in GitHub Issues. |
+| 31G | [#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68) | Live Stitch / PTGui template library and compatibility status | AFK | Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks. | Closed in GitHub Issues. |
 
 ## Ready Now
 
 | ID | Issue | Card | Type | Why ready | Definition of done |
 | --- | --- | --- | --- | --- | --- |
-| 31G | [#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68) | Live Stitch / PTGui template library and compatibility status | AFK | Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks. | New Spheris XL jobs load the default Spheris XL PTGui template immediately. |
+| 06B | [#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33) | Manual ROI rectangle repair path | AFK | Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD. | Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields. |
 
 ## Phase 1 Blocked
 
 | ID | Issue | Card | Type | Blocked by | Unblocks |
 | --- | --- | --- | --- | --- | --- |
 | 06 | [#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7) | ROI Profiles and Required Overlay Verification Roll | TRACKING | #3 (MLS-02), #6 (MLS-05), #10 (MLS-09) | See issue dependencies. |
-| 06B | [#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33) | Manual ROI rectangle repair path | AFK | #32 | See issue dependencies. |
-| 06F | [#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37) | Live-array UAT for setup verification flow | HITL | #32, #34, #35, #36 | See issue dependencies. |
+| 06F | [#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37) | Live-array UAT for setup verification flow | HITL | None - listed dependencies are complete. | See issue dependencies. |
 | 07 | [#8](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/8) | Working Mode 500 ms REC Consensus Engine | TRACKING | #3 (MLS-02), #7 (MLS-06) | See issue dependencies. |
 | 07D | [#41](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/41) | Live-array UAT for REC consensus patterns | HITL | #37, #38, #39 | See issue dependencies. |
 | 08 | [#9](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/9) | Authoritative Roll/Clip OCR Take Identity | TRACKING | #7 (MLS-06), #8 (MLS-07) | See issue dependencies. |
-| 08D | [#45](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/45) | Live-array OCR UAT for roll and clip identity | HITL | #42, #43, #44 | See issue dependencies. |
+| 08D | [#45](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/45) | Live-array OCR UAT for roll and clip identity | HITL | None - listed dependencies are complete. | See issue dependencies. |
 | 17 | [#18](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/18) | DeckLink/RP188 Capture Provider | TRACKING | #16 (MLS-15) | See issue dependencies. |
 | 17C | [#48](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/48) | DeckLink frame ingestion provider shell | AFK | MLS-17A and MLS-17B | See issue dependencies. |
 | 17D | [#49](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/49) | RP188 extraction into CapturedFrame | AFK | MLS-17C | See issue dependencies. |
@@ -82,7 +82,7 @@ Legend:
 | 20B | [#58](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/58) | Live Stitch overlay TC source priority | AFK | #49 and #52 | See issue dependencies. |
 | 20D | [#60](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60) | Operator visual UAT for Live Stitch overlays | HITL | MLS-20A and MLS-20C | See issue dependencies. |
 | 31F | [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) | Locked and unlocked 9-grid vs Live Stitch mapping | HITL | None - #66 is complete. | See issue dependencies. |
-| 31H | [#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69) | Calibration still capture workflow | HITL | #68 | See issue dependencies. |
+| 31H | [#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69) | Calibration still capture workflow | HITL | None - listed dependencies are complete. | See issue dependencies. |
 | 31I | [#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70) | Working Mode production dashboard surface | HITL | None - #62 and #63 are complete. | See issue dependencies. |
 | 31J | [#71](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71) | Working Mode safe actions and mode-switch rules | AFK | #70 | See issue dependencies. |
 | 31K | [#72](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72) | Slate and Live Stitch overlay redesign | HITL | #65, #68, #70 | See issue dependencies. |

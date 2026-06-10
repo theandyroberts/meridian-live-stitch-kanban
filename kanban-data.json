@@ -448,6 +448,19 @@
             "Next action": "Closed in GitHub Issues."
           },
           "summary": "Make Camera Position the canonical mapping anchor and Camera ID a configurable job-specific label. Demote SDI input to secondary transport metadata. The SDI / Mapping section should let operators edit the job's camera IDs and position names while still seeing assigned SDI sources. Closed in GitHub Issues."
+        },
+        {
+          "id": "31G",
+          "issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+          "title": "Live Stitch / PTGui template library and compatibility status",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+            "Current note": "Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks. Closed in GitHub Issues."
         }
       ]
     },
@@ -458,17 +471,17 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": "31G",
-          "issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
-          "title": "Live Stitch / PTGui template library and compatibility status",
+          "id": "06B",
+          "issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+          "title": "Manual ROI rectangle repair path",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
-            "Why ready": "Build the Live Stitch / PTGui section around active template status, friendly template names, template history, import/replace, active switching, compatibility checks against the active Array Profile, and recording-time safety locks.",
-            "Definition of done": "New Spheris XL jobs load the default Spheris XL PTGui template immediately."
+            "Issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
+            "Why ready": "Add an advanced repair path that lets the operator adjust analyzer ROI rectangles when the saved/default RED overlay profile misses the live HUD.",
+            "Definition of done": "Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields."
           },
-          "summary": "New Spheris XL jobs load the default Spheris XL PTGui template immediately."
+          "summary": "Operator can inspect and edit ROI rectangles for REC/roll/clip/status analyzer fields."
         }
       ]
     },
@@ -492,19 +505,6 @@
           "summary": "Blocked by #3 (MLS-02), #6 (MLS-05), #10 (MLS-09). Unblocks See issue dependencies.."
         },
         {
-          "id": "06B",
-          "issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
-          "title": "Manual ROI rectangle repair path",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#33](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/33)",
-            "Blocked by": "#32",
-            "Unblocks": "See issue dependencies."
-          },
-          "summary": "Blocked by #32. Unblocks See issue dependencies.."
-        },
-        {
           "id": "06F",
           "issue": "[#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37)",
           "title": "Live-array UAT for setup verification flow",
@@ -512,10 +512,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#37](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/37)",
-            "Blocked by": "#32, #34, #35, #36",
+            "Blocked by": "None - listed dependencies are complete.",
             "Unblocks": "See issue dependencies."
           },
-          "summary": "Blocked by #32, #34, #35, #36. Unblocks See issue dependencies.."
+          "summary": "Blocked by None - listed dependencies are complete.. Unblocks See issue dependencies.."
         },
         {
           "id": "07",
@@ -564,10 +564,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#45](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/45)",
-            "Blocked by": "#42, #43, #44",
+            "Blocked by": "None - listed dependencies are complete.",
             "Unblocks": "See issue dependencies."
           },
-          "summary": "Blocked by #42, #43, #44. Unblocks See issue dependencies.."
+          "summary": "Blocked by None - listed dependencies are complete.. Unblocks See issue dependencies.."
         },
         {
           "id": "17",
@@ -759,10 +759,10 @@
           "phase": "Phase 1",
           "fields": {
             "Issue": "[#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69)",
-            "Blocked by": "#68",
+            "Blocked by": "None - listed dependencies are complete.",
             "Unblocks": "See issue dependencies."
           },
-          "summary": "Blocked by #68. Unblocks See issue dependencies.."
+          "summary": "Blocked by None - listed dependencies are complete.. Unblocks See issue dependencies.."
         },
         {
           "id": "31I",
