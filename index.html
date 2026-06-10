@@ -363,20 +363,20 @@
       <div class="summary-card">
         <h1 id="page-title">MLS Build Kanban</h1>
         <p>
-          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 06D and card 06E.
+          Working board for Meridian Live Stitch MVP implementation. Cards are grouped by current build status and dependency stage, with AFK/HITL labels for agent assignment. The next practical pulls are card 31A.
         </p>
       </div>
       <div class="metrics" aria-label="Board metrics">
         <div class="metric-card">
-          <span class="metric-value">59</span>
+          <span class="metric-value">71</span>
           <span class="metric-label">Total build cards</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">3</span>
+          <span class="metric-value">1</span>
           <span class="metric-label">Ready now</span>
         </div>
         <div class="metric-card">
-          <span class="metric-value">26</span>
+          <span class="metric-value">29</span>
           <span class="metric-label">Done, needs verification</span>
         </div>
         <div class="metric-card">
@@ -391,7 +391,7 @@
         <section class="column" aria-labelledby="done-title">
           <div class="column-header">
             <div class="column-title"><span class="dot done"></span><span id="done-title">Done / Needs Verification</span></div>
-            <span class="count">26</span>
+            <span class="count">29</span>
           </div>
           <div class="cards">
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="01 startup, resume, and recovery shell afk phase 1 refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present. [#2](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/2) refined in `1f62d11` after operator feedback. actual app smoke pass: first screen now shows open existing job, start new job, and recovery only when interrupted state exists; existing job routes through a picker into setup mode; new job now includes save folder and ptgui template selection. `swift build` passed. operator visual signoff on revised startup/new-job flow, then verify archive/ignore recovery once a real crash state is present.">
@@ -434,6 +434,18 @@
               <h2><span class="id">06C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">Verification roll records REC bug evidence</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/34">#34</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
               <p>Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. closed in github issues. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. closed in github issues.">
+              <h2><span class="id">06D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">Verification roll records roll/clip advancement</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">#35</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Make the setup verification roll prove that roll/clip OCR advances after a roll/cut cycle and stores per-camera evidence. Closed in GitHub Issues.</p>
+            </article>
+
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="06e passive overlay baseline and stale readiness rules afk phase 1 passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes. closed in github issues. [#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36) passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes. closed in github issues.">
+              <h2><span class="id">06E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">Passive overlay baseline and stale readiness rules</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">#36</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes. Closed in GitHub Issues.</p>
             </article>
 
             <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="07a rec consensus simulator fixtures afk phase 1 add simulator or regression fixtures that drive the rec consensus engine through the agreed start patterns without requiring the physical array. closed in github issues. [#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38) add simulator or regression fixtures that drive the rec consensus engine through the agreed start patterns without requiring the physical array. closed in github issues.">
@@ -544,6 +556,12 @@
               <p>Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays. Closed in GitHub Issues.</p>
             </article>
 
+            <article class="card is-done" data-type="AFK" data-phase="Phase 1" data-text="20c overlay layout reorder controls afk phase 1 allow quick operator reordering/placement of live stitch overlay fields within preset-safe layout zones. closed in github issues. [#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59) allow quick operator reordering/placement of live stitch overlay fields within preset-safe layout zones. closed in github issues.">
+              <h2><span class="id">20C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59">Overlay layout reorder controls</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59">#59</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>Allow quick operator reordering/placement of Live Stitch overlay fields within preset-safe layout zones. Closed in GitHub Issues.</p>
+            </article>
+
             <article class="card is-done" data-type="HITL" data-phase="Phase 1" data-text="21 slate service and operator console slate controls hitl phase 1 overlay controls landed in `cdb66c5`, durable rec-start snapshots in `e89f86f`, and take-advance/edit controls in `57bc1cd`. the slate tab exposes scene, take, and dir/dp fields, persists current slate state in `_state/current_slate.json`, feeds applied values into the live stitch overlay, snapshots non-empty slate values into production take sidecars/manifest at rec start, advances numeric take labels after good production takes, and can rewrite the latest take slate after recording. false-roll marking now preserves slate while flagging slate quality as `false_roll`. `swift build` passed. app smoke verification: apply slate values, record a short production take, confirm overlay text, take auto-advance, per-take `slate` json, update last take slate, and false-roll slate quality. remaining build work: daily report formatting. [#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22) overlay controls landed in `cdb66c5`, durable rec-start snapshots in `e89f86f`, and take-advance/edit controls in `57bc1cd`. the slate tab exposes scene, take, and dir/dp fields, persists current slate state in `_state/current_slate.json`, feeds applied values into the live stitch overlay, snapshots non-empty slate values into production take sidecars/manifest at rec start, advances numeric take labels after good production takes, and can rewrite the latest take slate after recording. false-roll marking now preserves slate while flagging slate quality as `false_roll`. `swift build` passed. app smoke verification: apply slate values, record a short production take, confirm overlay text, take auto-advance, per-take `slate` json, update last take slate, and false-roll slate quality. remaining build work: daily report formatting.">
               <h2><span class="id">21</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22">Slate Service and Operator Console Slate Controls</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22">#22</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span></div>
@@ -555,25 +573,13 @@
         <section class="column" aria-labelledby="ready-title">
           <div class="column-header">
             <div class="column-title"><span class="dot ready"></span><span id="ready-title">Ready Now</span></div>
-            <span class="count">3</span>
+            <span class="count">1</span>
           </div>
           <div class="cards">
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06d verification roll records roll/clip advancement afk phase 1 baseline roll/clip ocr is captured before the verification roll. [#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35) make the setup verification roll prove that roll/clip ocr advances after a roll/cut cycle and stores per-camera evidence. baseline roll/clip ocr is captured before the verification roll.">
-              <h2><span class="id">06D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">Verification roll records roll/clip advancement</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35">#35</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Baseline roll/clip OCR is captured before the verification roll.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="06e passive overlay baseline and stale readiness rules afk phase 1 stable overlay fields are checked against expected setup baseline values. [#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36) passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes. stable overlay fields are checked against expected setup baseline values.">
-              <h2><span class="id">06E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">Passive overlay baseline and stale readiness rules</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36">#36</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Stable overlay fields are checked against expected setup baseline values.</p>
-            </article>
-
-            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="20c overlay layout reorder controls afk phase 1 operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp. [#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59) allow quick operator reordering/placement of live stitch overlay fields within preset-safe layout zones. operator can reorder major fields such as tc, roll/clip, scene/take, and dir/dp.">
-              <h2><span class="id">20C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59">Overlay layout reorder controls</a></span></h2>
-              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59">#59</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
-              <p>Operator can reorder major fields such as TC, roll/clip, scene/take, and DIR/DP.</p>
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31a operator console mode shell and standalone setup page removal afk phase 1 new jobs open operator console in setup mode after required job/camera setup steps. [#62](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/62) route completed job setup wizard flows directly into operator console setup mode and remove the old standalone setup mode page from the normal operator flow. preserve useful source/calibration/recording controls by moving or exposing them through later operator console sections rather than deleting capabilities. new jobs open operator console in setup mode after required job/camera setup steps.">
+              <h2><span class="id">31A</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/62">Operator Console mode shell and standalone Setup page removal</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/62">#62</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span></div>
+              <p>New jobs open Operator Console in Setup Mode after required job/camera setup steps.</p>
             </article>
           </div>
         </section>
@@ -581,7 +587,7 @@
         <section class="column" aria-labelledby="phase1-title">
           <div class="column-header">
             <div class="column-title"><span class="dot blocked"></span><span id="phase1-title">Phase 1 Blocked</span></div>
-            <span class="count">20</span>
+            <span class="count">31</span>
           </div>
           <div class="cards">
             <article class="card" data-type="TRACKING" data-phase="Phase 1" data-text="06 roi profiles and required overlay verification roll tracking phase 1 blocked by #3 (mls-02), #6 (mls-05), #10 (mls-09). unblocks see issue dependencies.. [#7](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/7) #3 (mls-02), #6 (mls-05), #10 (mls-09) see issue dependencies.">
@@ -702,6 +708,72 @@
               <h2><span class="id">20D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60">Operator visual UAT for Live Stitch overlays</a></span></h2>
               <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60">#60</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by MLS-20A and MLS-20C</span></div>
               <p>Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31b persistent readiness sidebar model and navigation afk phase 1 blocked by #62. unblocks see issue dependencies.. [#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63) #62 see issue dependencies.">
+              <h2><span class="id">31B</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63">Persistent readiness sidebar model and navigation</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63">#63</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #62</span></div>
+              <p>Blocked by #62. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31c setup mode section order and array profile tab afk phase 1 blocked by #62, #63. unblocks see issue dependencies.. [#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64) #62, #63 see issue dependencies.">
+              <h2><span class="id">31C</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">Setup Mode section order and Array Profile tab</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64">#64</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #62, #63</span></div>
+              <p>Blocked by #62, #63. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31d job info metadata panel afk phase 1 blocked by #63. unblocks see issue dependencies.. [#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65) #63 see issue dependencies.">
+              <h2><span class="id">31D</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">Job Info metadata panel</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65">#65</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #63</span></div>
+              <p>Blocked by #63. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31e camera position and camera id model in sdi / mapping afk phase 1 blocked by #64. unblocks see issue dependencies.. [#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66) #64 see issue dependencies.">
+              <h2><span class="id">31E</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">Camera position and Camera ID model in SDI / Mapping</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66">#66</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #64</span></div>
+              <p>Blocked by #64. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31f locked and unlocked 9-grid vs live stitch mapping hitl phase 1 blocked by #66. unblocks see issue dependencies.. [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) #66 see issue dependencies.">
+              <h2><span class="id">31F</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67">Locked and unlocked 9-grid vs Live Stitch mapping</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67">#67</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #66</span></div>
+              <p>Blocked by #66. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31g live stitch / ptgui template library and compatibility status afk phase 1 blocked by #64, #66. unblocks see issue dependencies.. [#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68) #64, #66 see issue dependencies.">
+              <h2><span class="id">31G</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68">Live Stitch / PTGui template library and compatibility status</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68">#68</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #64, #66</span></div>
+              <p>Blocked by #64, #66. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31h calibration still capture workflow hitl phase 1 blocked by #68. unblocks see issue dependencies.. [#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69) #68 see issue dependencies.">
+              <h2><span class="id">31H</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69">Calibration still capture workflow</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69">#69</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #68</span></div>
+              <p>Blocked by #68. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31i working mode production dashboard surface hitl phase 1 blocked by #62, #63. unblocks see issue dependencies.. [#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70) #62, #63 see issue dependencies.">
+              <h2><span class="id">31I</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70">Working Mode production dashboard surface</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70">#70</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #62, #63</span></div>
+              <p>Blocked by #62, #63. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="AFK" data-phase="Phase 1" data-text="31j working mode safe actions and mode-switch rules afk phase 1 blocked by #70. unblocks see issue dependencies.. [#71](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71) #70 see issue dependencies.">
+              <h2><span class="id">31J</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71">Working Mode safe actions and mode-switch rules</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71">#71</a></span><span class="pill afk">AFK</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #70</span></div>
+              <p>Blocked by #70. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31k slate and live stitch overlay redesign hitl phase 1 blocked by #65, #68, #70. unblocks see issue dependencies.. [#72](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72) #65, #68, #70 see issue dependencies.">
+              <h2><span class="id">31K</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72">Slate and Live Stitch overlay redesign</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72">#72</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #65, #68, #70</span></div>
+              <p>Blocked by #65, #68, #70. Unblocks See issue dependencies..</p>
+            </article>
+
+            <article class="card" data-type="HITL" data-phase="Phase 1" data-text="31l operator visual uat for redesigned console workflow hitl phase 1 blocked by #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72. unblocks see issue dependencies.. [#73](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73) #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72 see issue dependencies.">
+              <h2><span class="id">31L</span><span><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73">Operator visual UAT for redesigned Console workflow</a></span></h2>
+              <div class="meta"><span class="pill issue"><a href="https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73">#73</a></span><span class="pill hitl">HITL</span><span class="pill phase">Phase 1</span><span class="pill">Blocked by #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72</span></div>
+              <p>Blocked by #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72. Unblocks See issue dependencies..</p>
             </article>
           </div>
         </section>

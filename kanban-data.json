@@ -99,6 +99,32 @@
           "summary": "Make the setup verification roll prove that each camera REC bug is detected and recorded as per-camera evidence. Closed in GitHub Issues."
         },
         {
+          "id": "06D",
+          "issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
+          "title": "Verification roll records roll/clip advancement",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
+            "Current note": "Make the setup verification roll prove that roll/clip OCR advances after a roll/cut cycle and stores per-camera evidence.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Make the setup verification roll prove that roll/clip OCR advances after a roll/cut cycle and stores per-camera evidence. Closed in GitHub Issues."
+        },
+        {
+          "id": "06E",
+          "issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
+          "title": "Passive overlay baseline and stale readiness rules",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
+            "Current note": "Passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes. Closed in GitHub Issues."
+        },
+        {
           "id": "07A",
           "issue": "[#38](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/38)",
           "title": "REC consensus simulator fixtures",
@@ -333,6 +359,19 @@
           "summary": "Let the operator switch between production-review and clean overlay presets, with explicit field-level toggles for recordable Live Stitch overlays. Closed in GitHub Issues."
         },
         {
+          "id": "20C",
+          "issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
+          "title": "Overlay layout reorder controls",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
+            "Current note": "Allow quick operator reordering/placement of Live Stitch overlay fields within preset-safe layout zones.",
+            "Next action": "Closed in GitHub Issues."
+          },
+          "summary": "Allow quick operator reordering/placement of Live Stitch overlay fields within preset-safe layout zones. Closed in GitHub Issues."
+        },
+        {
           "id": "21",
           "issue": "[#22](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/22)",
           "title": "Slate Service and Operator Console Slate Controls",
@@ -354,43 +393,17 @@
       "phase": "Phase 1",
       "cards": [
         {
-          "id": "06D",
-          "issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
-          "title": "Verification roll records roll/clip advancement",
+          "id": "31A",
+          "issue": "[#62](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/62)",
+          "title": "Operator Console mode shell and standalone Setup page removal",
           "type": "AFK",
           "phase": "Phase 1",
           "fields": {
-            "Issue": "[#35](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/35)",
-            "Why ready": "Make the setup verification roll prove that roll/clip OCR advances after a roll/cut cycle and stores per-camera evidence.",
-            "Definition of done": "Baseline roll/clip OCR is captured before the verification roll."
+            "Issue": "[#62](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/62)",
+            "Why ready": "Route completed Job Setup Wizard flows directly into Operator Console Setup Mode and remove the old standalone Setup Mode page from the normal operator flow. Preserve useful source/calibration/recording controls by moving or exposing them through later Operator Console sections rather than deleting capabilities.",
+            "Definition of done": "New jobs open Operator Console in Setup Mode after required job/camera setup steps."
           },
-          "summary": "Baseline roll/clip OCR is captured before the verification roll."
-        },
-        {
-          "id": "06E",
-          "issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
-          "title": "Passive overlay baseline and stale readiness rules",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#36](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/36)",
-            "Why ready": "Passively compare stable overlay fields against the expected setup baseline and mark verification stale when relevant job/capture context changes.",
-            "Definition of done": "Stable overlay fields are checked against expected setup baseline values."
-          },
-          "summary": "Stable overlay fields are checked against expected setup baseline values."
-        },
-        {
-          "id": "20C",
-          "issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
-          "title": "Overlay layout reorder controls",
-          "type": "AFK",
-          "phase": "Phase 1",
-          "fields": {
-            "Issue": "[#59](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/59)",
-            "Why ready": "Allow quick operator reordering/placement of Live Stitch overlay fields within preset-safe layout zones.",
-            "Definition of done": "Operator can reorder major fields such as TC, roll/clip, scene/take, and DIR/DP."
-          },
-          "summary": "Operator can reorder major fields such as TC, roll/clip, scene/take, and DIR/DP."
+          "summary": "New jobs open Operator Console in Setup Mode after required job/camera setup steps."
         }
       ]
     },
@@ -659,6 +672,149 @@
             "Unblocks": "See issue dependencies."
           },
           "summary": "Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31B",
+          "issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
+          "title": "Persistent readiness sidebar model and navigation",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#63](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/63)",
+            "Blocked by": "#62",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #62. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31C",
+          "issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+          "title": "Setup Mode section order and Array Profile tab",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#64](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/64)",
+            "Blocked by": "#62, #63",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #62, #63. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31D",
+          "issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
+          "title": "Job Info metadata panel",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#65](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/65)",
+            "Blocked by": "#63",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #63. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31E",
+          "issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
+          "title": "Camera position and Camera ID model in SDI / Mapping",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#66](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/66)",
+            "Blocked by": "#64",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #64. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31F",
+          "issue": "[#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67)",
+          "title": "Locked and unlocked 9-grid vs Live Stitch mapping",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67)",
+            "Blocked by": "#66",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #66. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31G",
+          "issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+          "title": "Live Stitch / PTGui template library and compatibility status",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#68](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/68)",
+            "Blocked by": "#64, #66",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #64, #66. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31H",
+          "issue": "[#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69)",
+          "title": "Calibration still capture workflow",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69)",
+            "Blocked by": "#68",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #68. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31I",
+          "issue": "[#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70)",
+          "title": "Working Mode production dashboard surface",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70)",
+            "Blocked by": "#62, #63",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #62, #63. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31J",
+          "issue": "[#71](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71)",
+          "title": "Working Mode safe actions and mode-switch rules",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#71](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/71)",
+            "Blocked by": "#70",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #70. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31K",
+          "issue": "[#72](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72)",
+          "title": "Slate and Live Stitch overlay redesign",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#72](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/72)",
+            "Blocked by": "#65, #68, #70",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #65, #68, #70. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "31L",
+          "issue": "[#73](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73)",
+          "title": "Operator visual UAT for redesigned Console workflow",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#73](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/73)",
+            "Blocked by": "#62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #62, #63, #64, #65, #66, #67, #68, #69, #70, #71, #72. Unblocks See issue dependencies.."
         }
       ]
     },
