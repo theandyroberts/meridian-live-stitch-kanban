@@ -81,6 +81,10 @@ Legend:
 | 20 | [#21](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/21) | Live Stitch Program Overlay System | TRACKING | None - can start immediately. | See issue dependencies. |
 | 20B | [#58](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/58) | Live Stitch overlay TC source priority | AFK | #49 and #52 | See issue dependencies. |
 | 20D | [#60](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/60) | Operator visual UAT for Live Stitch overlays | HITL | MLS-20A and MLS-20C | See issue dependencies. |
+| 22A | [#75](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/75) | Take-Centered GPS/IMU Timecode-Fused Motion Log Contract | AFK | None - can start immediately with fixture/mock sensor data and the existing timecode service. | See issue dependencies. |
+| 22B | [#76](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/76) | GPS/IMU Map Refresh for Recorded Routes | AFK | #75 / MLS-22A motion log contract for real data. Can start with fixtures. | See issue dependencies. |
+| 22C | [#77](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/77) | On-Demand IMU Live Test Panel | HITL | Hardware availability for final verification; fixture UI can start immediately. | See issue dependencies. |
+| 24A | [#78](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/78) | Take Log and Daily Camera Report MVP | AFK | None - can start from current manifests/events with GPS/IMU fields empty until MLS-22A lands. | See issue dependencies. |
 | 31F | [#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67) | Locked and unlocked 9-grid vs Live Stitch mapping | HITL | None - #66 is complete. | See issue dependencies. |
 | 31H | [#69](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/69) | Calibration still capture workflow | HITL | None - listed dependencies are complete. | See issue dependencies. |
 | 31I | [#70](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/70) | Working Mode production dashboard surface | HITL | None - #62 and #63 are complete. | See issue dependencies. |

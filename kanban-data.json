@@ -738,6 +738,58 @@
           "summary": "Blocked by MLS-20A and MLS-20C. Unblocks See issue dependencies.."
         },
         {
+          "id": "22A",
+          "issue": "[#75](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/75)",
+          "title": "Take-Centered GPS/IMU Timecode-Fused Motion Log Contract",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#75](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/75)",
+            "Blocked by": "None - can start immediately with fixture/mock sensor data and the existing timecode service.",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by None - can start immediately with fixture/mock sensor data and the existing timecode service.. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "22B",
+          "issue": "[#76](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/76)",
+          "title": "GPS/IMU Map Refresh for Recorded Routes",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#76](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/76)",
+            "Blocked by": "#75 / MLS-22A motion log contract for real data. Can start with fixtures.",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by #75 / MLS-22A motion log contract for real data. Can start with fixtures.. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "22C",
+          "issue": "[#77](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/77)",
+          "title": "On-Demand IMU Live Test Panel",
+          "type": "HITL",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#77](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/77)",
+            "Blocked by": "Hardware availability for final verification; fixture UI can start immediately.",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by Hardware availability for final verification; fixture UI can start immediately.. Unblocks See issue dependencies.."
+        },
+        {
+          "id": "24A",
+          "issue": "[#78](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/78)",
+          "title": "Take Log and Daily Camera Report MVP",
+          "type": "AFK",
+          "phase": "Phase 1",
+          "fields": {
+            "Issue": "[#78](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/78)",
+            "Blocked by": "None - can start from current manifests/events with GPS/IMU fields empty until MLS-22A lands.",
+            "Unblocks": "See issue dependencies."
+          },
+          "summary": "Blocked by None - can start from current manifests/events with GPS/IMU fields empty until MLS-22A lands.. Unblocks See issue dependencies.."
+        },
+        {
           "id": "31F",
           "issue": "[#67](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/67)",
           "title": "Locked and unlocked 9-grid vs Live Stitch mapping",
