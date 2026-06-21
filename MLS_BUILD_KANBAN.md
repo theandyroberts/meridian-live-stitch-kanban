@@ -107,6 +107,7 @@ Legend:
 | 28 | [#29](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/29) | 9-Grid Camera Punch-Up | AFK | #12 (MLS-11) | Disabled during recording. |
 | 29 | [#30](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/30) | Flow Warp Validation Harness | AFK | #5 (MLS-04), #10 (MLS-09) | Post-MVP quality experiment unless it proves safe and high value. |
 | 30 | [#31](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/31) | Radial Distortion Parity Experiment | AFK | #5 (MLS-04), #30 (MLS-29) | Keep disabled until PTGui parity is proven. |
+| 32 | [#74](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/74) | 2nd AC web notes synced per clip into camera reports | HITL | stable take manifest, camera report schema, and web companion/auth design. |  |
 
 ## Suggested Next Pulls
 

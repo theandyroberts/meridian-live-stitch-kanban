@@ -960,6 +960,19 @@
             "Notes": "Keep disabled until PTGui parity is proven."
           },
           "summary": "Keep disabled until PTGui parity is proven."
+        },
+        {
+          "id": "32",
+          "issue": "[#74](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/74)",
+          "title": "2nd AC web notes synced per clip into camera reports",
+          "type": "HITL",
+          "phase": "Phase 3",
+          "fields": {
+            "Issue": "[#74](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/74)",
+            "Blocked by": "stable take manifest, camera report schema, and web companion/auth design.",
+            "Notes": ""
+          },
+          "summary": ""
         }
       ]
     }
