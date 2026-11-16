@@ -100,6 +100,7 @@ Legend:
 | 22 | [#23](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/23) | GPS/IMU Motion Data Source and Per-Take Slicing | HITL | #16 (MLS-15), #18 (MLS-17) | Logging-first simpleRTK2B Fusion support; TC alignment. |
 | 23 | [#24](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/24) | Stream Comment TC Stamping and Standby Blur | AFK | #16 (MLS-15), #21 (MLS-20) | Refine existing stream system. |
 | 24 | [#25](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/25) | End-of-Day Camera Report Package | HITL | #10 (MLS-09), #16 (MLS-15), #22 (MLS-21), #23 (MLS-22), #24 (MLS-23) | PDF-first report plus JSON/package artifacts. |
+| 24B | [#81](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/81) | Redesign report formatting, wrapping, and pagination | AFK | Deferred by operator until after current XL acceptance/lock work. No Sandcastle label: not available for immediate implementation. | Requested November 16 after reviewing an exported report with clipped notes/audit text. Backlog only; no report-rendering changes requested now. |
 
 ## Phase 3 Backlog
 

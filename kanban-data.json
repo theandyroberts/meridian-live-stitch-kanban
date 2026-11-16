@@ -926,6 +926,19 @@
             "Notes": "PDF-first report plus JSON/package artifacts."
           },
           "summary": "PDF-first report plus JSON/package artifacts."
+        },
+        {
+          "id": "24B",
+          "issue": "[#81](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/81)",
+          "title": "Redesign report formatting, wrapping, and pagination",
+          "type": "AFK",
+          "phase": "Phase 2",
+          "fields": {
+            "Issue": "[#81](https://github.com/theandyroberts/spheris-smart-stitch-live/issues/81)",
+            "Blocked by": "Deferred by operator until after current XL acceptance/lock work. No Sandcastle label: not available for immediate implementation.",
+            "Notes": "Requested November 16 after reviewing an exported report with clipped notes/audit text. Backlog only; no report-rendering changes requested now."
+          },
+          "summary": "Requested November 16 after reviewing an exported report with clipped notes/audit text. Backlog only; no report-rendering changes requested now."
         }
       ]
     },
